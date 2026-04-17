@@ -120,6 +120,7 @@
     -%}
     <ul hidden><li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li><li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li></ul>
     <script id="theme-file-js" src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+    <script id="cart-drawer-custom-js" src="{{ 'cart-drawer-custom.js' | asset_url }}" defer="defer"></script>
     {%- if request.design_mode -%}
       <script src="{{ 'editor.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}

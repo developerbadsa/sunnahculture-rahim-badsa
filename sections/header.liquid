@@ -108,11 +108,7 @@
   </div>
 {%- endcapture -%}
 
-{% liquid
-  if section.settings.cart_type == 'drawer'
-    render 'cart-drawer'
-  endif
-%}
+{% render 'cart-drawer' %}
 
 <sht-sticky-header class="{{ sticky_header }} {{ bg_transparent }} color-{{ section.settings.color_scheme }}" data-is-enabled="{{ section.settings.enable_sticky_header }}">
   <sht-header class="js-header section-header p-relative" data-ui-component="Header Section">
@@ -350,7 +346,7 @@
               render 'header-cart-status', cart: cart
             endcapture
           -%}
-          <a role="button" href="{{ routes.cart_url }}" onclick="event.preventDefault();try { window.shtCartDrawer.openDrawer(this); } catch(err) { window.location.assign('{{ routes.cart_url }}');}" aria-haspopup="true" aria-expanded="false" aria-controls="shtCartDrawer" class="js-header-cart-status-btn btn btn-plain btn-large btn-icon p-relative" id="headerCartStatus">{{ header_cart_status }}</a>
+          <a role="button" href="{{ routes.cart_url }}" onclick="event.preventDefault(); window.shtOpenCartDrawer && window.shtOpenCartDrawer(this);" aria-haspopup="true" aria-expanded="false" aria-controls="shtCartDrawer" class="js-header-cart-status-btn btn btn-plain btn-large btn-icon p-relative" id="headerCartStatus">{{ header_cart_status }}</a>
         </div>
       </div>
       <!-- end Header Icons Right -->
