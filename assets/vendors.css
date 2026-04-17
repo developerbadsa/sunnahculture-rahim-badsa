@@ -1,0 +1,227 @@
+/* Customer Reviews */
+.shopify-app-block .spr-form-input-email,
+.shopify-app-block .spr-form-input-text,
+.shopify-app-block .spr-form-input-textarea {
+  padding: 0 20px;
+  border: 1px solid var(--color-border);
+  transition: box-shadow 0.3s, border 0.3s, border-radius 0.3s;
+  height: var(--form-field-lg);
+  background: rgb(var(--color-page-bg-rgb));
+  color: var(--color-normal-text);
+}
+.shopify-app-block .spr-form-input-textarea {
+  padding-top: 12px;
+}
+.shopify-app-block .spr-form-input-email:focus,
+.shopify-app-block .spr-form-input-text:focus,
+.shopify-app-block .spr-form-input-textarea:focus {
+  box-shadow: 0 0 0 3px rgb(var(--color-btn-bg-rgb));
+}
+.shopify-app-block .spr-form-input-email::placeholder,
+.shopify-app-block .spr-form-input-text::placeholder,
+.shopify-app-block .spr-form-input-textarea::placeholder {
+  color: rgba(var(--color-normal-text-rgb), 0.32);
+}
+.shopify-app-block .spr-form-input-email:focus-visible,
+.shopify-app-block .spr-form-input-text:focus-visible,
+.shopify-app-block .spr-form-input-textarea:focus-visible {
+  box-shadow: 0 0 0 3px rgb(var(--color-btn-bg-rgb));
+  outline: 0;
+}
+.shopify-app-block .spr-form-input-email:hover,
+.shopify-app-block .spr-form-input-text:hover,
+.shopify-app-block .spr-form-input-textarea:hover {
+  border-color: rgba(var(--color-btn-bg-rgb), 0.16);
+  box-shadow: 0 0 0 3px rgba(var(--color-btn-bg-rgb), 0.16);
+}
+.shopify-app-block .spr-header-title {
+  font-size: var(--heading-5);
+  margin-bottom: 16px;
+  text-align: left;
+}
+.shopify-app-block .spr-summary-actions {
+  min-height: var(--form-field-lg);
+  font-size: var(--heading-6);
+  padding: 12px 0;
+  text-underline-offset: 4px;
+  font-family: var(--font-heading-family);
+  font-weight: var(--font-heading-weight);
+}
+.shopify-app-block .spr-summary-actions a {
+  color: rgba(var(--color-btn-bg-rgb), 1);
+  transition: all 0.3s ease;
+}
+.shopify-app-block .spr-summary-actions a:hover,
+.shopify-app-block .spr-summary-actions a:active {
+  color: rgba(var(--color-btn-bg-rgb), 0.7);
+}
+.shopify-app-block .spr-summary-caption {
+  flex: auto;
+  margin-right: 8px;
+  text-align: left;
+}
+.shopify-app-block .spr-summary {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  grid-row-gap: 16px;
+}
+.spr-starrating.spr-summary-starrating {
+  padding-inline: var(--pd-sides, 0);
+}
+.spr-summary .spr-summary-starrating {
+  padding: 0;
+  margin-right: 8px;
+}
+.spr-starrating .link {
+  text-decoration: underline;
+}
+.shopify-app-block .spr-icon-star-empty.spr-icon-star-hover:before,
+[class^="spr-icon-"]:before,
+[class*=" spr-icon-"]:before {
+  color: #f4bb27;
+}
+.shopify-app-block .spr-icon-star-empty:before {
+  color: var(--color-divider);
+}
+.shopify-app-block .spr-form-title {
+  font-size: var(--heading-6);
+  margin-bottom: 24px;
+}
+.shopify-app-block .spr-form-label {
+  display: block;
+  font-size: var(--font-body-size);
+  line-height: calc(var(--font-body-size) * 1.5);
+  color: var(--color-normal-text);
+  margin-bottom: 12px;
+}
+.shopify-app-block .spr-form-actions {
+  text-align: center;
+}
+.shopify-app-block .spr-button-primary {
+  float: unset;
+  min-height: var(--form-field-lg);
+  font-size: var(--heading-6);
+}
+.spr-form-contact-name,
+.spr-form-contact-email,
+.spr-form-contact-location,
+.spr-form-review-rating,
+.spr-form-review-title,
+.spr-form-review-body {
+  margin-bottom: 24px !important;
+}
+.shopify-app-block .spr-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+.shopify-app-block .spr-starratings {
+  font-size: inherit;
+  margin: 0;
+}
+.shopify-app-block .spr-review-header,
+.shopify-app-block .spr-review-content {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 12px;
+}
+.shopify-app-block .spr-review-header-byline,
+.shopify-app-block .spr-review-content {
+  margin-bottom: 0;
+}
+.shopify-app-block .spr-review-header-byline,
+.shopify-app-block .spr-review-content-body {
+  font-size: var(--font-body-size);
+  line-height: calc(var(--font-body-size) * 1.5);
+  color: var(--color-normal-text);
+}
+.shopify-app-block .spr-review-header-byline {
+  color: var(--color-light-text);
+  font-style: inherit;
+}
+.shopify-app-block .spr-review-header-byline strong {
+  font-weight: var(--font-body-weight);
+}
+.shopify-app-block .spr-review-reportreview {
+  float: unset;
+  color: rgba(var(--color-btn-bg-rgb), 0.85);
+}
+.shopify-app-block .spr-review-header-byline,
+.shopify-app-block .spr-review-reportreview,
+.shopify-app-block .spr-pagination-next,
+.shopify-app-block .spr-pagination-prev,
+.spr-summary-starrating .spr-stars:last-child {
+  font-size: 1.4rem;
+  line-height: calc(1.4rem * 1.5);
+}
+.shopify-app-block .spr-review-header-title {
+  font-weight: 700;
+  font-family: var(--font-body-family);
+}
+.shopify-app-block .spr-form-message {
+  padding: 0;
+  background: transparent;
+  margin-bottom: 24px;
+}
+.shopify-app-block .spr-form-message-error {
+  color: var(--color-danger);
+  font-weight: 700;
+}
+.shopify-app-block .spr-form-message-success {
+  color: var(--color-success);
+  font-weight: 700;
+}
+.shopify-app-block .spr-pagination > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.shopify-app-block .spr-pagination-page {
+  min-height: var(--form-field-sm);
+  font-size: var(--heading-6);
+  font-family: var(--font-heading-family);
+  font-weight: var(--font-heading-weight);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  color: rgb(var(--color-normal-text-rgb));
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+  cursor: pointer;
+}
+.shopify-app-block .spr-pagination-page:hover,
+.shopify-app-block .spr-pagination-page:active {
+  color: rgb(var(--color-btn-bg-rgb));
+}
+.shopify-app-block .spr-pagination-page.is-active {
+  color: rgb(var(--color-btn-bg-rgb));
+  text-decoration: none;
+}
+.shopify-app-block .spr-pagination-next,
+.shopify-app-block .spr-pagination-prev {
+  color: var(--color-light-text);
+}
+
+@media (min-width: 769px) {
+  .shopify-app-block .spr-form-contact {
+    display: flex;
+  }
+  .shopify-app-block .spr-form-contact-name {
+    flex: 1;
+    margin-right: 24px;
+  }
+  .shopify-app-block .spr-form-contact-email {
+    flex: 1;
+  }
+  .shopify-app-block .spr-pagination > div:first-child {
+    gap: 16px;
+  }
+}
+@media (min-width: 1025px) {
+  .shopify-app-block .spr-summary-actions {
+    padding: 18px 0;
+  }
+}

@@ -1,0 +1,15 @@
+.section-404__form .field__text {
+  padding-right: 56px;
+}
+@media (min-width: 459px) {
+  .section-404__form {
+    max-width: 400px;
+  }
+}
+@media (min-width: 768px) {
+  .section-404 .section-404__desc {
+    margin-top: calc(var(--spacing) * 2);
+    margin-inline-end: calc(var(--spacing) * var(--times, 4));
+    margin-left: 0;
+  }
+}

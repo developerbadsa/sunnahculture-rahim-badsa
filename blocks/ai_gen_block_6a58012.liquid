@@ -1,0 +1,992 @@
+{% doc %}
+  @prompt
+     Create a modern, clean Shopify header for an eCommerce electronics store.
+    
+    The header should include:
+    
+    Left side: Minimal logo (simple icon style)
+    Center: Large search bar with placeholder text "Search"
+    Right side:
+    Customer support section with phone number (example: 1-800-123-45-67)
+    User account icon
+    Wishlist icon with notification badge
+    Shopping cart icon with item count and subtotal price ($0.00)
+    
+    Below the main header, add a navigation menu with categories:
+    
+    Stores
+    Watch (with "Sale" badge)
+    Cellphones
+    Accessories (with "Trending" badge)
+    Laptops
+    Support
+    
+    On the far right of the menu:
+    
+    "All sales" link
+    "Shipping & Delivery" link
+    
+    Design style:
+    
+    Clean, modern, light background
+    Subtle shadows
+    Rounded search bar
+    Minimal icons
+    Professional eCommerce UI (similar to tech stores)
+    📱 Mobile Responsive Instructions (IMPORTANT — include this in prompt)
+    
+    Add this section to ensure perfect mobile behavior:
+    
+    Make the header fully mobile responsive:
+    
+    Replace menu with hamburger menu on mobile
+    Keep logo on left, icons on right
+    Move search bar below header or use expandable search icon
+    Stack elements cleanly with proper spacing
+    Ensure icons are touch-friendly
+    Keep cart and wishlist visible at all times
+    Optimize for fast loading and clean UX, logo need center mobile view and menu need left also Navigation menu
+     need seleted any menu from store so it show automtic, logo size need contorl also 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-header-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .ai-header-top-{{ ai_gen_id }} {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .ai-header-logo-{{ ai_gen_id }} {
+    flex-shrink: 0;
+    width: {{ block.settings.logo_width }}px;
+    height: {{ block.settings.logo_height }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: {{ block.settings.logo_bg_color }};
+    border-radius: {{ block.settings.logo_border_radius }}px;
+  }
+
+  .ai-header-logo-{{ ai_gen_id }} img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .ai-header-logo-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-header-logo-placeholder-{{ ai_gen_id }} svg {
+    width: 70%;
+    height: 70%;
+    fill: {{ block.settings.logo_icon_color }};
+  }
+
+  .ai-header-search-{{ ai_gen_id }} {
+    flex-grow: 1;
+    max-width: 600px;
+    position: relative;
+  }
+
+  .ai-header-search-input-{{ ai_gen_id }} {
+    width: 100%;
+    padding: 12px 48px 12px 20px;
+    border: 1px solid {{ block.settings.search_border_color }};
+    border-radius: {{ block.settings.search_border_radius }}px;
+    font-size: 15px;
+    background-color: {{ block.settings.search_bg_color }};
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-header-search-input-{{ ai_gen_id }}::placeholder {
+    color: {{ block.settings.placeholder_color }};
+  }
+
+  .ai-header-search-icon-{{ ai_gen_id }} {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+  }
+
+  .ai-header-search-icon-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    stroke: {{ block.settings.icon_color }};
+  }
+
+  .ai-header-actions-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-shrink: 0;
+  }
+
+  .ai-header-support-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .ai-header-support-label-{{ ai_gen_id }} {
+    font-size: 12px;
+    color: {{ block.settings.label_color }};
+  }
+
+  .ai-header-support-phone-{{ ai_gen_id }} {
+    font-size: 14px;
+    font-weight: 600;
+    color: {{ block.settings.text_color }};
+    text-decoration: none;
+  }
+
+  .ai-header-icon-group-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .ai-header-icon-btn-{{ ai_gen_id }} {
+    position: relative;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-header-icon-btn-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    stroke: {{ block.settings.icon_color }};
+    fill: none;
+  }
+
+  .ai-header-badge-{{ ai_gen_id }} {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background-color: {{ block.settings.badge_bg_color }};
+    color: {{ block.settings.badge_text_color }};
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 5px;
+    border-radius: 10px;
+    min-width: 18px;
+    text-align: center;
+  }
+
+  .ai-header-cart-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .ai-header-cart-info-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .ai-header-cart-count-{{ ai_gen_id }} {
+    font-size: 12px;
+    color: {{ block.settings.label_color }};
+  }
+
+  .ai-header-cart-total-{{ ai_gen_id }} {
+    font-size: 14px;
+    font-weight: 600;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-header-nav-{{ ai_gen_id }} {
+    background-color: {{ block.settings.nav_bg_color }};
+    border-top: 1px solid {{ block.settings.nav_border_color }};
+  }
+
+  .ai-header-nav-container-{{ ai_gen_id }} {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .ai-header-nav-menu-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ai-header-nav-item-{{ ai_gen_id }} {
+    position: relative;
+  }
+
+  .ai-header-nav-link-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 16px 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: {{ block.settings.nav_text_color }};
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .ai-header-nav-link-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.nav_hover_color }};
+  }
+
+  .ai-header-nav-badge-{{ ai_gen_id }} {
+    background-color: {{ block.settings.nav_badge_bg }};
+    color: {{ block.settings.nav_badge_text }};
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  .ai-header-nav-links-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .ai-header-nav-secondary-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: {{ block.settings.nav_text_color }};
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .ai-header-nav-secondary-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.nav_hover_color }};
+  }
+
+  .ai-header-hamburger-{{ ai_gen_id }} {
+    display: none;
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .ai-header-hamburger-line-{{ ai_gen_id }} {
+    width: 24px;
+    height: 2px;
+    background-color: {{ block.settings.icon_color }};
+    transition: all 0.3s ease;
+  }
+
+  .ai-header-mobile-menu-{{ ai_gen_id }} {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: {{ block.settings.background_color }};
+    z-index: 200;
+    overflow-y: auto;
+    padding: 20px;
+  }
+
+  .ai-header-mobile-menu-{{ ai_gen_id }}.active {
+    display: block;
+  }
+
+  .ai-header-mobile-header-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .ai-header-mobile-close-{{ ai_gen_id }} {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+  }
+
+  .ai-header-mobile-close-{{ ai_gen_id }} svg {
+    width: 24px;
+    height: 24px;
+    stroke: {{ block.settings.icon_color }};
+  }
+
+  .ai-header-mobile-nav-{{ ai_gen_id }} {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ai-header-mobile-nav-item-{{ ai_gen_id }} {
+    border-bottom: 1px solid {{ block.settings.nav_border_color }};
+  }
+
+  .ai-header-mobile-nav-link-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: {{ block.settings.text_color }};
+    text-decoration: none;
+  }
+
+  .ai-header-mobile-search-{{ ai_gen_id }} {
+    margin-bottom: 24px;
+  }
+
+  .ai-header-mobile-support-{{ ai_gen_id }} {
+    padding: 20px 0;
+    border-top: 1px solid {{ block.settings.nav_border_color }};
+    margin-top: 20px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .ai-header-search-{{ ai_gen_id }} {
+      max-width: 400px;
+    }
+
+    .ai-header-support-{{ ai_gen_id }} {
+      display: none;
+    }
+
+    .ai-header-nav-menu-{{ ai_gen_id }} {
+      gap: 20px;
+    }
+
+    .ai-header-nav-links-{{ ai_gen_id }} {
+      gap: 16px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-header-top-{{ ai_gen_id }} {
+      padding: 12px 16px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .ai-header-hamburger-{{ ai_gen_id }} {
+      display: flex;
+      order: 1;
+    }
+
+    .ai-header-logo-{{ ai_gen_id }} {
+      order: 2;
+      margin: 0 auto;
+      width: {{ block.settings.logo_width_mobile }}px;
+      height: {{ block.settings.logo_height_mobile }}px;
+    }
+
+    .ai-header-actions-{{ ai_gen_id }} {
+      order: 3;
+      gap: 12px;
+    }
+
+    .ai-header-search-{{ ai_gen_id }} {
+      order: 4;
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+
+    .ai-header-icon-group-{{ ai_gen_id }} {
+      gap: 16px;
+    }
+
+    .ai-header-cart-info-{{ ai_gen_id }} {
+      display: none;
+    }
+
+    .ai-header-nav-{{ ai_gen_id }} {
+      display: none;
+    }
+
+    .ai-header-icon-btn-{{ ai_gen_id }} {
+      width: 28px;
+      height: 28px;
+    }
+
+    .ai-header-mobile-nav-{{ ai_gen_id }} {
+      text-align: left;
+    }
+  }
+{% endstyle %}
+
+<header-electronics-{{ ai_gen_id }} class="ai-header-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-header-top-{{ ai_gen_id }}">
+    <button class="ai-header-hamburger-{{ ai_gen_id }}" aria-label="Open menu" aria-expanded="false">
+      <span class="ai-header-hamburger-line-{{ ai_gen_id }}"></span>
+      <span class="ai-header-hamburger-line-{{ ai_gen_id }}"></span>
+      <span class="ai-header-hamburger-line-{{ ai_gen_id }}"></span>
+    </button>
+
+    <a href="/" class="ai-header-logo-{{ ai_gen_id }}">
+      {% if block.settings.logo %}
+        <img src="{{ block.settings.logo | image_url: width: 200 }}" alt="{{ shop.name }}" width="{{ block.settings.logo_width }}" height="{{ block.settings.logo_height }}" loading="lazy">
+      {% else %}
+        <div class="ai-header-logo-placeholder-{{ ai_gen_id }}">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
+        </div>
+      {% endif %}
+    </a>
+
+    <div class="ai-header-search-{{ ai_gen_id }}">
+      <form action="/search" method="get" role="search">
+        <input
+          type="search"
+          name="q"
+          class="ai-header-search-input-{{ ai_gen_id }}"
+          placeholder="{{ block.settings.search_placeholder }}"
+          aria-label="Search"
+        >
+        <div class="ai-header-search-icon-{{ ai_gen_id }}">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </div>
+      </form>
+    </div>
+
+    <div class="ai-header-actions-{{ ai_gen_id }}">
+      {% if block.settings.show_support %}
+        <div class="ai-header-support-{{ ai_gen_id }}">
+          <span class="ai-header-support-label-{{ ai_gen_id }}">{{ block.settings.support_label }}</span>
+          <a href="tel:{{ block.settings.phone_number | replace: ' ', '' | replace: '-', '' }}" class="ai-header-support-phone-{{ ai_gen_id }}">
+            {{ block.settings.phone_number }}
+          </a>
+        </div>
+      {% endif %}
+
+      <div class="ai-header-icon-group-{{ ai_gen_id }}">
+        {% if block.settings.show_account %}
+          <a href="/account" class="ai-header-icon-btn-{{ ai_gen_id }}" aria-label="Account">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </a>
+        {% endif %}
+
+        {% if block.settings.show_wishlist %}
+          <button class="ai-header-icon-btn-{{ ai_gen_id }}" aria-label="Wishlist">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            {% if block.settings.wishlist_count > 0 %}
+              <span class="ai-header-badge-{{ ai_gen_id }}">{{ block.settings.wishlist_count }}</span>
+            {% endif %}
+          </button>
+        {% endif %}
+
+        <a href="/cart" class="ai-header-cart-{{ ai_gen_id }}">
+          <div class="ai-header-icon-btn-{{ ai_gen_id }}">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            {% if cart.item_count > 0 %}
+              <span class="ai-header-badge-{{ ai_gen_id }}">{{ cart.item_count }}</span>
+            {% endif %}
+          </div>
+          <div class="ai-header-cart-info-{{ ai_gen_id }}">
+            <span class="ai-header-cart-count-{{ ai_gen_id }}">{{ cart.item_count }} {% if cart.item_count == 1 %}item{% else %}items{% endif %}</span>
+            <span class="ai-header-cart-total-{{ ai_gen_id }}">{{ cart.total_price | money }}</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="ai-header-nav-{{ ai_gen_id }}">
+    <div class="ai-header-nav-container-{{ ai_gen_id }}">
+      {% if block.settings.menu != blank %}
+        {% assign main_menu = linklists[block.settings.menu] %}
+        <ul class="ai-header-nav-menu-{{ ai_gen_id }}">
+          {% for link in main_menu.links %}
+            <li class="ai-header-nav-item-{{ ai_gen_id }}">
+              <a href="{{ link.url }}" class="ai-header-nav-link-{{ ai_gen_id }}">
+                {{ link.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      <div class="ai-header-nav-links-{{ ai_gen_id }}">
+        {% if block.settings.secondary_link_1_text != blank %}
+          <a href="{{ block.settings.secondary_link_1_url }}" class="ai-header-nav-secondary-{{ ai_gen_id }}">
+            {{ block.settings.secondary_link_1_text }}
+          </a>
+        {% endif %}
+        {% if block.settings.secondary_link_2_text != blank %}
+          <a href="{{ block.settings.secondary_link_2_url }}" class="ai-header-nav-secondary-{{ ai_gen_id }}">
+            {{ block.settings.secondary_link_2_text }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+
+  <div class="ai-header-mobile-menu-{{ ai_gen_id }}">
+    <div class="ai-header-mobile-header-{{ ai_gen_id }}">
+      <a href="/" class="ai-header-logo-{{ ai_gen_id }}">
+        {% if block.settings.logo %}
+          <img src="{{ block.settings.logo | image_url: width: 200 }}" alt="{{ shop.name }}" width="{{ block.settings.logo_width_mobile }}" height="{{ block.settings.logo_height_mobile }}" loading="lazy">
+        {% else %}
+          <div class="ai-header-logo-placeholder-{{ ai_gen_id }}">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </div>
+        {% endif %}
+      </a>
+      <button class="ai-header-mobile-close-{{ ai_gen_id }}" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="ai-header-mobile-search-{{ ai_gen_id }}">
+      <form action="/search" method="get" role="search">
+        <input
+          type="search"
+          name="q"
+          class="ai-header-search-input-{{ ai_gen_id }}"
+          placeholder="{{ block.settings.search_placeholder }}"
+          aria-label="Search"
+        >
+        <div class="ai-header-search-icon-{{ ai_gen_id }}">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </div>
+      </form>
+    </div>
+
+    {% if block.settings.menu != blank %}
+      {% assign main_menu = linklists[block.settings.menu] %}
+      <ul class="ai-header-mobile-nav-{{ ai_gen_id }}">
+        {% for link in main_menu.links %}
+          <li class="ai-header-mobile-nav-item-{{ ai_gen_id }}">
+            <a href="{{ link.url }}" class="ai-header-mobile-nav-link-{{ ai_gen_id }}">
+              {{ link.title }}
+            </a>
+          </li>
+        {% endfor %}
+        {% if block.settings.secondary_link_1_text != blank %}
+          <li class="ai-header-mobile-nav-item-{{ ai_gen_id }}">
+            <a href="{{ block.settings.secondary_link_1_url }}" class="ai-header-mobile-nav-link-{{ ai_gen_id }}">
+              {{ block.settings.secondary_link_1_text }}
+            </a>
+          </li>
+        {% endif %}
+        {% if block.settings.secondary_link_2_text != blank %}
+          <li class="ai-header-mobile-nav-item-{{ ai_gen_id }}">
+            <a href="{{ block.settings.secondary_link_2_url }}" class="ai-header-mobile-nav-link-{{ ai_gen_id }}">
+              {{ block.settings.secondary_link_2_text }}
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    {% endif %}
+
+    {% if block.settings.show_support %}
+      <div class="ai-header-mobile-support-{{ ai_gen_id }}">
+        <div class="ai-header-support-{{ ai_gen_id }}" style="display: flex;">
+          <span class="ai-header-support-label-{{ ai_gen_id }}">{{ block.settings.support_label }}</span>
+          <a href="tel:{{ block.settings.phone_number | replace: ' ', '' | replace: '-', '' }}" class="ai-header-support-phone-{{ ai_gen_id }}">
+            {{ block.settings.phone_number }}
+          </a>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</header-electronics-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class HeaderElectronics{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.hamburger = this.querySelector('.ai-header-hamburger-{{ ai_gen_id }}');
+        this.mobileMenu = this.querySelector('.ai-header-mobile-menu-{{ ai_gen_id }}');
+        this.closeBtn = this.querySelector('.ai-header-mobile-close-{{ ai_gen_id }}');
+
+        if (this.hamburger) {
+          this.hamburger.addEventListener('click', () => this.openMenu());
+        }
+
+        if (this.closeBtn) {
+          this.closeBtn.addEventListener('click', () => this.closeMenu());
+        }
+      }
+
+      openMenu() {
+        this.mobileMenu.classList.add('active');
+        this.hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+
+      closeMenu() {
+        this.mobileMenu.classList.remove('active');
+        this.hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+    }
+
+    customElements.define('header-electronics-{{ ai_gen_id }}', HeaderElectronics{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Electronics header",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "label": "Desktop width",
+      "min": 30,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "logo_height",
+      "label": "Desktop height",
+      "min": 30,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "logo_width_mobile",
+      "label": "Mobile width",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "logo_height_mobile",
+      "label": "Mobile height",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "color",
+      "id": "logo_bg_color",
+      "label": "Background",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "logo_icon_color",
+      "label": "Icon color",
+      "default": "#101010"
+    },
+    {
+      "type": "range",
+      "id": "logo_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Search"
+    },
+    {
+      "type": "text",
+      "id": "search_placeholder",
+      "label": "Placeholder text",
+      "default": "Search"
+    },
+    {
+      "type": "color",
+      "id": "search_bg_color",
+      "label": "Background",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "color",
+      "id": "search_border_color",
+      "label": "Border color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "range",
+      "id": "search_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Customer support"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_support",
+      "label": "Show support section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "support_label",
+      "label": "Support label",
+      "default": "Customer support"
+    },
+    {
+      "type": "text",
+      "id": "phone_number",
+      "label": "Phone number",
+      "default": "1-800-123-45-67"
+    },
+    {
+      "type": "header",
+      "content": "Header icons"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_account",
+      "label": "Show account icon",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_wishlist",
+      "label": "Show wishlist icon",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "wishlist_count",
+      "label": "Wishlist count",
+      "min": 0,
+      "max": 99,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "header",
+      "content": "Navigation menu"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "header",
+      "content": "Secondary links"
+    },
+    {
+      "type": "text",
+      "id": "secondary_link_1_text",
+      "label": "Link 1 text",
+      "default": "All sales"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link_1_url",
+      "label": "Link 1 URL"
+    },
+    {
+      "type": "text",
+      "id": "secondary_link_2_text",
+      "label": "Link 2 text",
+      "default": "Shipping & Delivery"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link_2_url",
+      "label": "Link 2 URL"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#101010"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label text",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "placeholder_color",
+      "label": "Placeholder text",
+      "default": "#999999"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icons",
+      "default": "#101010"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "Badge background",
+      "default": "#ff4444"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Navigation colors"
+    },
+    {
+      "type": "color",
+      "id": "nav_bg_color",
+      "label": "Background",
+      "default": "#fafafa"
+    },
+    {
+      "type": "color",
+      "id": "nav_border_color",
+      "label": "Border",
+      "default": "#e5e5e5"
+    },
+    {
+      "type": "color",
+      "id": "nav_text_color",
+      "label": "Text",
+      "default": "#101010"
+    },
+    {
+      "type": "color",
+      "id": "nav_hover_color",
+      "label": "Hover text",
+      "default": "#0066cc"
+    },
+    {
+      "type": "color",
+      "id": "nav_badge_bg",
+      "label": "Badge background",
+      "default": "#ff4444"
+    },
+    {
+      "type": "color",
+      "id": "nav_badge_text",
+      "label": "Badge text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Electronics header"
+    }
+  ]
+}
+{% endschema %}

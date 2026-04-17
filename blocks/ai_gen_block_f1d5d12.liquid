@@ -1,0 +1,1327 @@
+{% doc %}
+  @prompt
+    Create a modern "FAQ / Common Questions" section for a Shopify website.
+    
+    Layout:
+    
+    Small background heading text (faded): "Have a question?"
+    Main title (bold): "Our common questions"
+    Clean spacing with minimal design
+    
+    Below the title, display a vertical accordion list of questions.
+    
+    Each FAQ item should include:
+    
+    Small icon on the left (related to question type)
+    Question text (bold)
+    Expand/collapse button on the right (+ / - icon)
+    Divider line between items
+    
+    When clicked:
+    
+    Expand smoothly to show the answer
+    Collapse other items (only one open at a time)
+    
+    Example questions:
+    
+    Is free shipping available?
+    Is the product I'm looking for in stock?
+    What are your return policies?
+    When will I receive my order?
+    Are you an authorized retailer?
+    What is covered by your warranty?
+    Is express shipping available?
+    How do I get service after purchase?
+    
+    Example answer style:
+    
+    Simple paragraph text
+    Include optional link (e.g., "Shipping & Delivery")
+    🎨 Design Style
+    Clean, minimal, modern
+    Soft hover effect on questions
+    Smooth accordion animation
+    Light background with subtle spacing
+    Professional eCommerce trust section
+    📱 Mobile Responsive (IMPORTANT)
+    
+    Make the section fully mobile responsive:
+    
+    Stack all FAQ items vertically
+    Make questions easy to tap (large touch area)
+    Keep icons and toggle buttons aligned
+    Ensure smooth expand/collapse animation
+    Optimize spacing for readability
+    Keep text size readable on small screens
+    🔥 Pro Upgrade (Optional but high converting)
+    
+    Add search bar at top of FAQ to quickly find questions.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-faq-section-{{ ai_gen_id }} {
+    width: 100%;
+    display: block;
+    padding: {{ block.settings.section_padding_top }}px 20px {{ block.settings.section_padding_bottom }}px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-faq-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+    width: {{ block.settings.desktop_width_percent }}%;
+  }
+
+  .ai-faq-header-{{ ai_gen_id }} {
+    text-align: {{ block.settings.text_alignment }};
+    margin-bottom: 40px;
+  }
+
+  .ai-faq-background-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.background_text_size }}px;
+    color: {{ block.settings.background_text_color }};
+    opacity: 0.15;
+    font-weight: 300;
+    margin: 0 0 -10px 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .ai-faq-main-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.main_title_size }}px;
+    color: {{ block.settings.main_title_color }};
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+  }
+
+  .ai-faq-search-wrapper-{{ ai_gen_id }} {
+    max-width: 600px;
+    margin: 0 auto 40px;
+  }
+
+  .ai-faq-search-container-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+  }
+
+  .ai-faq-search-icon-{{ ai_gen_id }} {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: {{ block.settings.search_icon_color }};
+    pointer-events: none;
+  }
+
+  .ai-faq-search-input-{{ ai_gen_id }} {
+    width: 100%;
+    padding: 14px 16px 14px 48px;
+    border: 2px solid {{ block.settings.search_border_color }};
+    border-radius: {{ block.settings.search_border_radius }}px;
+    font-size: 16px;
+    background-color: {{ block.settings.search_background_color }};
+    color: {{ block.settings.search_text_color }};
+    transition: border-color 0.3s ease;
+  }
+
+  .ai-faq-search-input-{{ ai_gen_id }}:focus {
+    outline: none;
+    border-color: {{ block.settings.search_focus_border_color }};
+  }
+
+  .ai-faq-search-input-{{ ai_gen_id }}::placeholder {
+    color: {{ block.settings.search_placeholder_color }};
+  }
+
+  .ai-faq-list-{{ ai_gen_id }} {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .ai-faq-item-{{ ai_gen_id }} {
+    border-bottom: 1px solid {{ block.settings.divider_color }};
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-faq-item-{{ ai_gen_id }}.hidden {
+    display: none;
+  }
+
+  .ai-faq-question-wrapper-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: {{ block.settings.item_padding }}px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    user-select: none;
+  }
+
+  .ai-faq-question-wrapper-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.hover_background_color }};
+  }
+
+  .ai-faq-icon-{{ ai_gen_id }} {
+    flex-shrink: 0;
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    color: {{ block.settings.icon_color }};
+  }
+
+  .ai-faq-question-text-{{ ai_gen_id }} {
+    flex-grow: 1;
+    font-size: {{ block.settings.question_font_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.question_color }};
+    margin: 0;
+  }
+
+  .ai-faq-toggle-{{ ai_gen_id }} {
+    flex-shrink: 0;
+    width: {{ block.settings.toggle_size }}px;
+    height: {{ block.settings.toggle_size }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: {{ block.settings.toggle_color }};
+    transition: transform 0.3s ease;
+    padding: 0;
+  }
+
+  .ai-faq-toggle-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .ai-faq-item-{{ ai_gen_id }}.active .ai-faq-toggle-{{ ai_gen_id }} {
+    transform: rotate(45deg);
+  }
+
+  .ai-faq-answer-wrapper-{{ ai_gen_id }} {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+  }
+
+  .ai-faq-item-{{ ai_gen_id }}.active .ai-faq-answer-wrapper-{{ ai_gen_id }} {
+    max-height: 500px;
+    padding-bottom: {{ block.settings.item_padding }}px;
+  }
+
+  .ai-faq-answer-content-{{ ai_gen_id }} {
+    padding-left: calc({{ block.settings.icon_size }}px + 16px);
+    padding-right: calc({{ block.settings.toggle_size }}px + 16px);
+  }
+
+  .ai-faq-answer-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.answer_font_size }}px;
+    color: {{ block.settings.answer_color }};
+    line-height: 1.6;
+    margin: 0 0 12px 0;
+  }
+
+  .ai-faq-answer-link-{{ ai_gen_id }} {
+    color: {{ block.settings.link_color }};
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .ai-faq-answer-link-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.link_hover_color }};
+  }
+
+  .ai-faq-no-results-{{ ai_gen_id }} {
+    text-align: center;
+    padding: 40px 20px;
+    color: {{ block.settings.answer_color }};
+    font-size: 16px;
+    display: none;
+  }
+
+  .ai-faq-no-results-{{ ai_gen_id }}.show {
+    display: block;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-faq-container-{{ ai_gen_id }} {
+      width: 100%;
+    }
+
+    .ai-faq-background-text-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.background_text_size }}px * 0.7);
+    }
+
+    .ai-faq-main-title-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.main_title_size }}px * 0.75);
+    }
+
+    .ai-faq-question-wrapper-{{ ai_gen_id }} {
+      gap: 12px;
+      padding: {{ block.settings.item_padding | times: 0.8 }}px 0;
+    }
+
+    .ai-faq-icon-{{ ai_gen_id }} {
+      width: calc({{ block.settings.icon_size }}px * 0.85);
+      height: calc({{ block.settings.icon_size }}px * 0.85);
+    }
+
+    .ai-faq-question-text-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.question_font_size }}px * 0.9);
+    }
+
+    .ai-faq-answer-content-{{ ai_gen_id }} {
+      padding-left: calc(({{ block.settings.icon_size }}px * 0.85) + 12px);
+      padding-right: calc({{ block.settings.toggle_size }}px + 12px);
+    }
+
+    .ai-faq-item-{{ ai_gen_id }}.active .ai-faq-answer-wrapper-{{ ai_gen_id }} {
+      padding-bottom: {{ block.settings.item_padding | times: 0.8 }}px;
+    }
+  }
+{% endstyle %}
+
+<faq-section-{{ ai_gen_id }} class="ai-faq-section-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-faq-container-{{ ai_gen_id }}">
+    <div class="ai-faq-header-{{ ai_gen_id }}">
+      {% if block.settings.background_text != blank %}
+        <p class="ai-faq-background-text-{{ ai_gen_id }}">{{ block.settings.background_text }}</p>
+      {% endif %}
+      {% if block.settings.main_title != blank %}
+        <h2 class="ai-faq-main-title-{{ ai_gen_id }}">{{ block.settings.main_title }}</h2>
+      {% endif %}
+    </div>
+
+    {% if block.settings.enable_search %}
+      <div class="ai-faq-search-wrapper-{{ ai_gen_id }}">
+        <div class="ai-faq-search-container-{{ ai_gen_id }}">
+          <div class="ai-faq-search-icon-{{ ai_gen_id }}">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+          </div>
+          <input
+            type="text"
+            class="ai-faq-search-input-{{ ai_gen_id }}"
+            placeholder="{{ block.settings.search_placeholder }}"
+            aria-label="Search FAQs"
+          >
+        </div>
+      </div>
+    {% endif %}
+
+    <ul class="ai-faq-list-{{ ai_gen_id }}">
+      {% for i in (1..8) %}
+        {% assign question_key = 'question_' | append: i %}
+        {% assign answer_key = 'answer_' | append: i %}
+        {% assign link_text_key = 'link_text_' | append: i %}
+        {% assign link_url_key = 'link_url_' | append: i %}
+        {% assign icon_key = 'icon_' | append: i %}
+
+        {% assign question = block.settings[question_key] %}
+        {% assign answer = block.settings[answer_key] %}
+        {% assign link_text = block.settings[link_text_key] %}
+        {% assign link_url = block.settings[link_url_key] %}
+        {% assign icon = block.settings[icon_key] %}
+
+        {% if question != blank %}
+          <li class="ai-faq-item-{{ ai_gen_id }}" data-faq-item>
+            <div class="ai-faq-question-wrapper-{{ ai_gen_id }}" data-faq-question>
+              <div class="ai-faq-icon-{{ ai_gen_id }}">
+                {% if icon == 'shipping' %}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                  </svg>
+                {% elsif icon == 'stock' %}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                  </svg>
+                {% elsif icon == 'return' %}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 14 4 9 9 4"></polyline>
+                    <path d="M20 20v-7a4 4 0 0 0-4-4H4"></path>
+                  </svg>
+                {% elsif icon == 'time' %}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                {% elsif icon == 'verified' %}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                {% elsif icon == 'warranty' %}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                {% elsif icon == 'express' %}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                {% else %}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg>
+                {% endif %}
+              </div>
+              <h3 class="ai-faq-question-text-{{ ai_gen_id }}">{{ question }}</h3>
+              <button class="ai-faq-toggle-{{ ai_gen_id }}" aria-label="Toggle answer" aria-expanded="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </button>
+            </div>
+            <div class="ai-faq-answer-wrapper-{{ ai_gen_id }}">
+              <div class="ai-faq-answer-content-{{ ai_gen_id }}">
+                {% if answer != blank %}
+                  <p class="ai-faq-answer-text-{{ ai_gen_id }}">{{ answer }}</p>
+                {% endif %}
+                {% if link_text != blank and link_url != blank %}
+                  <a href="{{ link_url }}" class="ai-faq-answer-link-{{ ai_gen_id }}">{{ link_text }}</a>
+                {% endif %}
+              </div>
+            </div>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+    <div class="ai-faq-no-results-{{ ai_gen_id }}">
+      {{ block.settings.no_results_text }}
+    </div>
+  </div>
+</faq-section-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class FaqSection{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.items = this.querySelectorAll('.ai-faq-item-{{ ai_gen_id }}');
+        this.searchInput = this.querySelector('.ai-faq-search-input-{{ ai_gen_id }}');
+        this.noResults = this.querySelector('.ai-faq-no-results-{{ ai_gen_id }}');
+      }
+
+      connectedCallback() {
+        this.setupAccordion();
+        if (this.searchInput) {
+          this.setupSearch();
+        }
+      }
+
+      setupAccordion() {
+        this.items.forEach((item) => {
+          const questionWrapper = item.querySelector('.ai-faq-question-wrapper-{{ ai_gen_id }}');
+          const toggleButton = item.querySelector('.ai-faq-toggle-{{ ai_gen_id }}');
+
+          questionWrapper.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+
+            this.items.forEach((otherItem) => {
+              if (otherItem !== item) {
+                otherItem.classList.remove('active');
+                const otherToggle = otherItem.querySelector('.ai-faq-toggle-{{ ai_gen_id }}');
+                if (otherToggle) {
+                  otherToggle.setAttribute('aria-expanded', 'false');
+                }
+              }
+            });
+
+            if (isActive) {
+              item.classList.remove('active');
+              toggleButton.setAttribute('aria-expanded', 'false');
+            } else {
+              item.classList.add('active');
+              toggleButton.setAttribute('aria-expanded', 'true');
+            }
+          });
+        });
+      }
+
+      setupSearch() {
+        this.searchInput.addEventListener('input', (e) => {
+          const searchTerm = e.target.value.toLowerCase().trim();
+          let visibleCount = 0;
+
+          this.items.forEach((item) => {
+            const question = item.querySelector('.ai-faq-question-text-{{ ai_gen_id }}').textContent.toLowerCase();
+            const answer = item.querySelector('.ai-faq-answer-text-{{ ai_gen_id }}');
+            const answerText = answer ? answer.textContent.toLowerCase() : '';
+
+            if (searchTerm === '' || question.includes(searchTerm) || answerText.includes(searchTerm)) {
+              item.classList.remove('hidden');
+              visibleCount++;
+            } else {
+              item.classList.add('hidden');
+              item.classList.remove('active');
+            }
+          });
+
+          if (visibleCount === 0) {
+            this.noResults.classList.add('show');
+          } else {
+            this.noResults.classList.remove('show');
+          }
+        });
+      }
+    }
+
+    customElements.define('faq-section-{{ ai_gen_id }}', FaqSection{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "FAQ section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "text",
+      "id": "background_text",
+      "label": "Background text",
+      "default": "Have a question?"
+    },
+    {
+      "type": "range",
+      "id": "background_text_size",
+      "label": "Background text size",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main title",
+      "default": "Our common questions"
+    },
+    {
+      "type": "range",
+      "id": "main_title_size",
+      "label": "Main title size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Search"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_search",
+      "label": "Enable search",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "search_placeholder",
+      "label": "Search placeholder",
+      "default": "Search questions..."
+    },
+    {
+      "type": "text",
+      "id": "no_results_text",
+      "label": "No results text",
+      "default": "No questions found. Try a different search term."
+    },
+    {
+      "type": "range",
+      "id": "search_border_radius",
+      "label": "Search border radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Question 1"
+    },
+    {
+      "type": "text",
+      "id": "question_1",
+      "label": "Question",
+      "default": "Is free shipping available?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_1",
+      "label": "Answer",
+      "default": "Yes! We offer free standard shipping on all orders over £50. Orders are typically processed within 1-2 business days."
+    },
+    {
+      "type": "text",
+      "id": "link_text_1",
+      "label": "Link text"
+    },
+    {
+      "type": "url",
+      "id": "link_url_1",
+      "label": "Link URL"
+    },
+    {
+      "type": "select",
+      "id": "icon_1",
+      "label": "Icon",
+      "options": [
+        {
+          "value": "shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "stock",
+          "label": "Stock"
+        },
+        {
+          "value": "return",
+          "label": "Return"
+        },
+        {
+          "value": "time",
+          "label": "Time"
+        },
+        {
+          "value": "verified",
+          "label": "Verified"
+        },
+        {
+          "value": "warranty",
+          "label": "Warranty"
+        },
+        {
+          "value": "express",
+          "label": "Express"
+        },
+        {
+          "value": "help",
+          "label": "Help"
+        }
+      ],
+      "default": "shipping"
+    },
+    {
+      "type": "header",
+      "content": "Question 2"
+    },
+    {
+      "type": "text",
+      "id": "question_2",
+      "label": "Question",
+      "default": "Is the product I'm looking for in stock?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_2",
+      "label": "Answer",
+      "default": "Our inventory is updated in real-time. If a product shows as available on our website, it's in stock and ready to ship."
+    },
+    {
+      "type": "text",
+      "id": "link_text_2",
+      "label": "Link text"
+    },
+    {
+      "type": "url",
+      "id": "link_url_2",
+      "label": "Link URL"
+    },
+    {
+      "type": "select",
+      "id": "icon_2",
+      "label": "Icon",
+      "options": [
+        {
+          "value": "shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "stock",
+          "label": "Stock"
+        },
+        {
+          "value": "return",
+          "label": "Return"
+        },
+        {
+          "value": "time",
+          "label": "Time"
+        },
+        {
+          "value": "verified",
+          "label": "Verified"
+        },
+        {
+          "value": "warranty",
+          "label": "Warranty"
+        },
+        {
+          "value": "express",
+          "label": "Express"
+        },
+        {
+          "value": "help",
+          "label": "Help"
+        }
+      ],
+      "default": "stock"
+    },
+    {
+      "type": "header",
+      "content": "Question 3"
+    },
+    {
+      "type": "text",
+      "id": "question_3",
+      "label": "Question",
+      "default": "What are your return policies?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_3",
+      "label": "Answer",
+      "default": "We accept returns within 30 days of delivery. Items must be unused and in original packaging. Return shipping is free for defective items."
+    },
+    {
+      "type": "text",
+      "id": "link_text_3",
+      "label": "Link text",
+      "default": "View full return policy"
+    },
+    {
+      "type": "url",
+      "id": "link_url_3",
+      "label": "Link URL"
+    },
+    {
+      "type": "select",
+      "id": "icon_3",
+      "label": "Icon",
+      "options": [
+        {
+          "value": "shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "stock",
+          "label": "Stock"
+        },
+        {
+          "value": "return",
+          "label": "Return"
+        },
+        {
+          "value": "time",
+          "label": "Time"
+        },
+        {
+          "value": "verified",
+          "label": "Verified"
+        },
+        {
+          "value": "warranty",
+          "label": "Warranty"
+        },
+        {
+          "value": "express",
+          "label": "Express"
+        },
+        {
+          "value": "help",
+          "label": "Help"
+        }
+      ],
+      "default": "return"
+    },
+    {
+      "type": "header",
+      "content": "Question 4"
+    },
+    {
+      "type": "text",
+      "id": "question_4",
+      "label": "Question",
+      "default": "When will I receive my order?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_4",
+      "label": "Answer",
+      "default": "Standard shipping takes 3-5 business days. Express shipping is available for 1-2 day delivery. You'll receive tracking information once your order ships."
+    },
+    {
+      "type": "text",
+      "id": "link_text_4",
+      "label": "Link text",
+      "default": "Shipping & Delivery"
+    },
+    {
+      "type": "url",
+      "id": "link_url_4",
+      "label": "Link URL"
+    },
+    {
+      "type": "select",
+      "id": "icon_4",
+      "label": "Icon",
+      "options": [
+        {
+          "value": "shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "stock",
+          "label": "Stock"
+        },
+        {
+          "value": "return",
+          "label": "Return"
+        },
+        {
+          "value": "time",
+          "label": "Time"
+        },
+        {
+          "value": "verified",
+          "label": "Verified"
+        },
+        {
+          "value": "warranty",
+          "label": "Warranty"
+        },
+        {
+          "value": "express",
+          "label": "Express"
+        },
+        {
+          "value": "help",
+          "label": "Help"
+        }
+      ],
+      "default": "time"
+    },
+    {
+      "type": "header",
+      "content": "Question 5"
+    },
+    {
+      "type": "text",
+      "id": "question_5",
+      "label": "Question",
+      "default": "Are you an authorized retailer?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_5",
+      "label": "Answer",
+      "default": "Yes, we are an authorized retailer for all brands we carry. All products come with manufacturer warranties and are 100% authentic."
+    },
+    {
+      "type": "text",
+      "id": "link_text_5",
+      "label": "Link text"
+    },
+    {
+      "type": "url",
+      "id": "link_url_5",
+      "label": "Link URL"
+    },
+    {
+      "type": "select",
+      "id": "icon_5",
+      "label": "Icon",
+      "options": [
+        {
+          "value": "shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "stock",
+          "label": "Stock"
+        },
+        {
+          "value": "return",
+          "label": "Return"
+        },
+        {
+          "value": "time",
+          "label": "Time"
+        },
+        {
+          "value": "verified",
+          "label": "Verified"
+        },
+        {
+          "value": "warranty",
+          "label": "Warranty"
+        },
+        {
+          "value": "express",
+          "label": "Express"
+        },
+        {
+          "value": "help",
+          "label": "Help"
+        }
+      ],
+      "default": "verified"
+    },
+    {
+      "type": "header",
+      "content": "Question 6"
+    },
+    {
+      "type": "text",
+      "id": "question_6",
+      "label": "Question",
+      "default": "What is covered by your warranty?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_6",
+      "label": "Answer",
+      "default": "All products include manufacturer warranties covering defects in materials and workmanship. Warranty periods vary by product and brand."
+    },
+    {
+      "type": "text",
+      "id": "link_text_6",
+      "label": "Link text"
+    },
+    {
+      "type": "url",
+      "id": "link_url_6",
+      "label": "Link URL"
+    },
+    {
+      "type": "select",
+      "id": "icon_6",
+      "label": "Icon",
+      "options": [
+        {
+          "value": "shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "stock",
+          "label": "Stock"
+        },
+        {
+          "value": "return",
+          "label": "Return"
+        },
+        {
+          "value": "time",
+          "label": "Time"
+        },
+        {
+          "value": "verified",
+          "label": "Verified"
+        },
+        {
+          "value": "warranty",
+          "label": "Warranty"
+        },
+        {
+          "value": "express",
+          "label": "Express"
+        },
+        {
+          "value": "help",
+          "label": "Help"
+        }
+      ],
+      "default": "warranty"
+    },
+    {
+      "type": "header",
+      "content": "Question 7"
+    },
+    {
+      "type": "text",
+      "id": "question_7",
+      "label": "Question",
+      "default": "Is express shipping available?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_7",
+      "label": "Answer",
+      "default": "Yes! Express shipping is available at checkout for 1-2 day delivery. Orders placed before 2 PM are shipped the same day."
+    },
+    {
+      "type": "text",
+      "id": "link_text_7",
+      "label": "Link text"
+    },
+    {
+      "type": "url",
+      "id": "link_url_7",
+      "label": "Link URL"
+    },
+    {
+      "type": "select",
+      "id": "icon_7",
+      "label": "Icon",
+      "options": [
+        {
+          "value": "shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "stock",
+          "label": "Stock"
+        },
+        {
+          "value": "return",
+          "label": "Return"
+        },
+        {
+          "value": "time",
+          "label": "Time"
+        },
+        {
+          "value": "verified",
+          "label": "Verified"
+        },
+        {
+          "value": "warranty",
+          "label": "Warranty"
+        },
+        {
+          "value": "express",
+          "label": "Express"
+        },
+        {
+          "value": "help",
+          "label": "Help"
+        }
+      ],
+      "default": "express"
+    },
+    {
+      "type": "header",
+      "content": "Question 8"
+    },
+    {
+      "type": "text",
+      "id": "question_8",
+      "label": "Question",
+      "default": "How do I get service after purchase?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_8",
+      "label": "Answer",
+      "default": "Our customer service team is available via email, phone, or live chat. We're here to help with any questions or concerns about your purchase."
+    },
+    {
+      "type": "text",
+      "id": "link_text_8",
+      "label": "Link text",
+      "default": "Contact us"
+    },
+    {
+      "type": "url",
+      "id": "link_url_8",
+      "label": "Link URL"
+    },
+    {
+      "type": "select",
+      "id": "icon_8",
+      "label": "Icon",
+      "options": [
+        {
+          "value": "shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "stock",
+          "label": "Stock"
+        },
+        {
+          "value": "return",
+          "label": "Return"
+        },
+        {
+          "value": "time",
+          "label": "Time"
+        },
+        {
+          "value": "verified",
+          "label": "Verified"
+        },
+        {
+          "value": "warranty",
+          "label": "Warranty"
+        },
+        {
+          "value": "express",
+          "label": "Express"
+        },
+        {
+          "value": "help",
+          "label": "Help"
+        }
+      ],
+      "default": "help"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 600,
+      "max": 1400,
+      "step": 50,
+      "unit": "px",
+      "default": 900
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "item_padding",
+      "label": "Item padding",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "question_font_size",
+      "label": "Question font size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "answer_font_size",
+      "label": "Answer font size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size",
+      "min": 16,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "toggle_size",
+      "label": "Toggle size",
+      "min": 16,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#f9f9f9"
+    },
+    {
+      "type": "color",
+      "id": "background_text_color",
+      "label": "Background text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "main_title_color",
+      "label": "Main title",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "question_color",
+      "label": "Question",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "answer_color",
+      "label": "Answer",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon",
+      "default": "#101010"
+    },
+    {
+      "type": "color",
+      "id": "toggle_color",
+      "label": "Toggle",
+      "default": "#101010"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider",
+      "default": "#e5e5e5"
+    },
+    {
+      "type": "color",
+      "id": "hover_background_color",
+      "label": "Hover background",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link",
+      "default": "#101010"
+    },
+    {
+      "type": "color",
+      "id": "link_hover_color",
+      "label": "Link hover",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Search colors"
+    },
+    {
+      "type": "color",
+      "id": "search_background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "search_text_color",
+      "label": "Text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "search_placeholder_color",
+      "label": "Placeholder",
+      "default": "#999999"
+    },
+    {
+      "type": "color",
+      "id": "search_border_color",
+      "label": "Border",
+      "default": "#e5e5e5"
+    },
+    {
+      "type": "color",
+      "id": "search_focus_border_color",
+      "label": "Focus border",
+      "default": "#101010"
+    },
+    {
+      "type": "color",
+      "id": "search_icon_color",
+      "label": "Icon",
+      "default": "#999999"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ section"
+    }
+  ]
+}
+{% endschema %}

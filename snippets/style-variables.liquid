@@ -1,0 +1,203 @@
+{%- liquid
+	assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
+	assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
+	assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
+	assign heading_font_bold = settings.type_header_font | font_modify: 'weight', 'bold'
+-%}
+{%- if settings.type_body_font != blank -%}
+	<link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
+{%- endif -%}
+{%- if body_font_bold != blank -%}
+	<link rel="preload" as="font" href="{{ body_font_bold | font_url }}" type="font/woff2" crossorigin>
+{%- endif -%}
+{%- if settings.type_header_font != blank -%}
+	<link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
+{%- endif -%}
+ {%- if heading_font_bold != blank -%}
+	<link rel="preload" as="font" href="{{ heading_font_bold | font_url }}" type="font/woff2" crossorigin>
+{%- endif -%}
+<style>
+{{- settings.type_body_font | font_face: font_display: 'swap' -}}
+{{- settings.type_header_font | font_face: font_display: 'swap' -}}
+{{- body_font_bold | font_face: font_display: 'swap' -}}
+{{- body_font_italic | font_face: font_display: 'swap' -}}
+{{- body_font_bold_italic | font_face: font_display: 'swap' -}}
+{{- heading_font_bold | font_face: font_display: 'swap' -}}
+:root {
+	--font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
+	--font-body-style: {{ settings.type_body_font.style }};
+	--font-body-weight: {{ settings.type_body_font.weight }};
+	--font-body-size: {{ settings.body_font_base | times: '0.1' | append: 'rem' }};
+	--font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
+	--font-heading-style: {{ settings.type_header_font.style }};
+	--font-heading-weight: {{ settings.type_header_font.weight }};
+	--font-heading-size: {{ settings.heading_font_size }};
+	--gutter-base: 1.6rem;
+	--gutter: calc((var(--gutter-base) * var(--times-fold, .5)));
+	--gutter-container: calc(var(--gutter) * var(--times-fold-container, 2.5));
+	{% if settings.show_background_grid_lines %}
+	--pd-sides: 0px;
+	{% endif %}
+	--overlay: {{ settings.overlay_opacity | divided_by: 100.0 }};
+	--type-scale: 1.125;
+  --heading-1: calc(var(--heading-2) * var(--font-heading-size) * var(--type-scale));
+  --heading-2: calc(var(--heading-3) * var(--font-heading-size) * var(--type-scale));
+  --heading-3: calc(var(--heading-4) * var(--font-heading-size) * var(--type-scale));
+  --heading-4: calc(var(--heading-5) * var(--font-heading-size) * var(--type-scale));
+  --heading-5: calc(var(--font-body-size) * var(--font-heading-size) * var(--type-scale));
+  --heading-6: calc(var(--font-body-size) * var(--font-heading-size) * var(--type-scale-sm, 1.067));
+  --form-field-lg: 44px;
+  --form-field-sm: 36px;
+  --timing-function-on: cubic-bezier(.5,0,.1,1);
+  --timing-function-off: cubic-bezier(.9,0,.5,1);
+
+	--font-button-family: var(--font-heading-family);
+	--font-button-style: var(--font-heading-style);
+	--font-button-weight: var(--font-heading-weight);
+	{% if settings.button_font_style == 'body' %}
+	--font-button-family: var(--font-body-family);
+	--font-button-style: var(--font-body-style);
+	--font-button-weight: var(--font-body-weight);
+	{% endif %}
+
+	--font-button-size: calc(var(--font-body-size) * 1.2);
+	{% if settings.button_font_size == 'regular' %}
+	--font-button-size: var(--font-body-size);
+	{% endif %}
+
+	--font-subheading-family: var(--font-heading-family);
+	--font-subheading-style: var(--font-heading-style);
+	--font-subheading-weight: var(--font-heading-weight);
+	{% if settings.subheading_font_style == 'body' %}
+	--font-subheading-family: var(--font-body-family);
+	--font-subheading-style: var(--font-body-style);
+	--font-subheading-weight: var(--font-body-weight);
+	{% endif %}
+
+	--font-menu-item-family: var(--font-heading-family);
+	--font-menu-item-style: var(--font-heading-style);
+	--font-menu-item-weight: var(--font-heading-weight);
+	{% if settings.menu_item_font_style == 'body' %}
+	--font-menu-item-family: var(--font-body-family);
+	--font-menu-item-style: var(--font-body-style);
+	--font-menu-item-weight: var(--font-body-weight);
+	{% endif %}
+
+	--font-menu-item-size: calc(var(--font-body-size) * 1.2);
+	{% if settings.menu_item_font_size == 'regular' %}
+	--font-menu-item-size: var(--font-body-size);
+	{% endif %}
+  --spacing-scale-sm: 8px;
+  --spacing-scale-md: 10px;
+  --spacing-scale-lg: 12px;
+  --spacing: var(--spacing-scale-lg);
+  {% if settings.spacing_scale == 'small' %}
+    --spacing: var(--spacing-scale-sm);
+  {% elsif settings.spacing_scale == 'medium' %}
+    --spacing: var(--spacing-scale-md);
+  {% endif %}
+  	--color-sale-badge-text: {{ settings.color_badge_text }};
+  	--color-sale-badge-bg: {{ settings.color_sale_badge }};
+  	--color-low-stock-badge-text: {{ settings.color_low_stock_badge_text }};
+    --color-low-stock-badge: {{ settings.color_low_stock_badge }};
+
+    --color-success: #10873f;
+    --color-danger: #da3d08;
+    --color-warning: #e38c09;
+}
+{% for scheme in settings.color_schemes -%}
+	{% assign scheme_classes = scheme_classes | append: ', .color-' | append: scheme.id %}
+	{% if forloop.index == 1 -%}
+		:root,
+  	{%- endif %}
+	  .color-{{ scheme.id }} {
+		--color-page-bg: {{ scheme.settings.color_background }};
+		--color-page-bg-rgb: {{ scheme.settings.color_background.red }}, {{ scheme.settings.color_background.green }}, {{ scheme.settings.color_background.blue }};
+		--color-normal-text: {{ scheme.settings.color_body_text }};
+
+		--gradient-background: {{ scheme.settings.color_background }};
+		{% if scheme.settings.background_gradient != blank %}
+			--gradient-background: {{ scheme.settings.background_gradient }};
+		{% endif %}
+
+		--color-normal-text-rgb: {{ scheme.settings.color_body_text.red }}, {{ scheme.settings.color_body_text.green }}, {{ scheme.settings.color_body_text.blue }};
+		--color-btn-bg-rgb: {{ scheme.settings.primary_button_background.red }}, {{ scheme.settings.primary_button_background.green }}, {{ scheme.settings.primary_button_background.blue }};
+
+		--primary_button_background_gradient: {{ scheme.settings.primary_button_background }};
+		{% if scheme.settings.primary_button_background_gradient != blank %}
+			--primary_button_background_gradient: {{ scheme.settings.primary_button_background_gradient }};
+		{% endif %}
+
+		--color-btn-label: {{ scheme.settings.primary_button_color_text }};
+		--color-btn-secondary-bg-rgb: {{ scheme.settings.secondary_button_background.red }}, {{ scheme.settings.secondary_button_background.green }}, {{ scheme.settings.secondary_button_background.blue }};
+
+		--secondary_button_background_gradient: {{ scheme.settings.secondary_button_background }};
+		{% if scheme.settings.secondary_button_background_gradient != blank %}
+			--secondary_button_background_gradient: {{ scheme.settings.secondary_button_background_gradient }};
+		{% endif %}
+
+		--color-light-text: rgba(var(--color-normal-text-rgb), .6);
+		--color-disabled-text: rgba(var(--color-normal-text-rgb), .3);
+		--color-btn-secondary-label: {{ scheme.settings.secondary_button_color_text }};
+
+		--color-badge-text: {{ scheme.settings.badge_text }};
+		--color-badge-background: {{ scheme.settings.badge_background }};
+
+		--color-main-accent-text: {{ scheme.settings.color_accent_text_one }};
+		--color-main-accent-bg: {{ scheme.settings.color_accent_background_one }};
+
+		--color-extra-accent-text: {{ scheme.settings.color_accent_text_two }};
+		--color-extra-accent-bg: {{ scheme.settings.color_accent_background_two }};
+
+		--color-bg-line: rgba(var(--color-normal-text-rgb), .04);
+		--color-divider: rgba(var(--color-normal-text-rgb), .12);
+		--color-border: var(--color-divider);
+	}
+{% endfor %}
+{{ scheme_classes | prepend: 'body' }} {
+	color: rgb(var(--color-normal-text-rgb));
+	background: var(--gradient-background);
+}
+.background {
+	background: var(--gradient-background);
+}
+@media (min-width: 459px) {
+	:root {
+		--times-fold: .75;
+		--times-fold-container: 4;
+		--type-scale: 1.2;
+		--type-scale-sm: 1.125;
+		--spacing-scale-sm: 12px;
+		--spacing-scale-md: 14px;
+		--spacing-scale-lg: 16px;
+	}
+}
+@media (min-width: 769px) {
+	:root {
+		--form-field-lg: 56px;
+		--form-field-sm: 44px;
+    --spacing-scale-sm: 12px;
+    --spacing-scale-md: 16px;
+    --spacing-scale-lg: 20px;
+		{% if settings.show_background_grid_lines %}
+			--pd-sides: 20px;
+		{% endif %}
+	}
+}
+@media (min-width: 1025px) {
+	:root {
+		--times-fold: 1;
+	}
+}
+@media (min-width: 1681px) {
+	:root {
+		--times-fold: 2;
+		--type-scale: 1.25;
+		--type-scale-sm: 1.2;
+    --spacing-scale-sm: 16px;
+    --spacing-scale-md: 20px;
+    --spacing-scale-lg: 24px;
+	}
+}
+
+</style>
