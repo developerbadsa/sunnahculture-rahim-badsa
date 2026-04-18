@@ -30,7 +30,7 @@
         "custom_liquid_8z9THm": {
           "type": "custom_liquid",
           "settings": {
-            "liquid_code": "<div class=\"best-selling\">\n  Best Selling Bags\n</div>"
+            "liquid_code": "<div class=\"best-selling\">\nHot Item\n</div>"
           }
         },
         "title": {

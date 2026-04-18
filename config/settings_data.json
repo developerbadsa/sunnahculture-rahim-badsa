@@ -1023,7 +1023,8 @@
     "custom_css": [
       "@media (min-width: 769px) {.product__media-wrapper {position: sticky; top: 20px; height: fit-content; } .product__media-wrapper .media-wrapper {position: relative; height: 100%; }}",
       "@media (max-width: 768px) {.product__media-wrapper {position: static !important; }}",
-      ".d-block.mb-16.h5 {display: none !important;}"
+      ".d-block.mb-16.h5 {display: none !important;}",
+      ".best-selling {background: #000; color: #ffffff; padding: 12px 20px; font-size: 18px; font-weight: 600; display: inline-block; border-radius: 6px;}"
     ]
   }
 }
