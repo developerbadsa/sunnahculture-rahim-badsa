@@ -31,11 +31,28 @@
 
   function openCartDrawer(opener) {
     var drawer = getCartDrawer();
-    if (!drawer || typeof drawer.openDrawer !== "function") return false;
+    var preferredOpener = opener || getCartOpener() || document.activeElement;
 
-    closeCartNotification();
-    drawer.openDrawer(opener || getCartOpener() || document.activeElement);
-    return true;
+    if (!drawer) return false;
+
+    if (typeof drawer.openDrawer === "function") {
+      closeCartNotification();
+      drawer.openDrawer(preferredOpener);
+      return true;
+    }
+
+    if (window.customElements && typeof window.customElements.whenDefined === "function") {
+      window.customElements.whenDefined("sht-cart-drwr").then(function () {
+        var upgradedDrawer = getCartDrawer();
+        if (upgradedDrawer && typeof upgradedDrawer.openDrawer === "function") {
+          closeCartNotification();
+          upgradedDrawer.openDrawer(preferredOpener);
+        }
+      }).catch(function () {});
+      return true;
+    }
+
+    return false;
   }
 
   function isCartUrl(url) {
@@ -368,9 +385,10 @@
     var link = event.target.closest && event.target.closest("a[href]");
     if (!link || !isCartUrl(link.href)) return;
 
-    event.preventDefault();
-    event.stopPropagation();
-    openCartDrawer(link);
+    if (openCartDrawer(link)) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
   }, true);
 
   if (typeof window.fetch === "function" && !window.fetch.__shtCartDrawerPatched) {
