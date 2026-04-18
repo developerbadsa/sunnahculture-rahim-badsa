@@ -179,9 +179,9 @@
         "disabled": true,
         "settings": {}
       },
-      "12108174171315376258": {
-        "type": "shopify://apps/aov-ai-cart-drawer/blocks/avada-embed/938869e1-3feb-48fa-ab79-27fdfe609836",
-        "disabled": true,
+      "9388344762370057067": {
+        "type": "shopify://apps/essential-slide-cart-drawer/blocks/app-embed/824bb1f9-5f36-4608-a60c-1f2b6a6f8834",
+        "disabled": false,
         "settings": {}
       }
     },
