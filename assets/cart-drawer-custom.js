@@ -8,6 +8,101 @@
     return document.querySelector(".js-header-cart-status-btn") || document.querySelector("#headerCartStatus");
   }
 
+  function bindFallbackDrawerEvents(drawer) {
+    if (!drawer || drawer.__shtDrawerFallbackBound) return;
+
+    var closeDrawer = function (event) {
+      if (event) {
+        event.preventDefault();
+      }
+
+      drawer.removeAttribute("open");
+      drawer.setAttribute("aria-hidden", "true");
+      drawer.classList.remove("active");
+      document.body.classList.remove("o-hidden");
+
+      if (drawer.opener && typeof drawer.opener.setAttribute === "function") {
+        drawer.opener.setAttribute("aria-expanded", "false");
+      }
+    };
+
+    var overlay = drawer.querySelector(".js-drawer-overlay, .js-cart-drawer-overlay");
+    if (overlay) {
+      overlay.addEventListener("click", closeDrawer);
+    }
+
+    drawer.querySelectorAll(".js-drawer-btn-close, .js-cart-drawer-btn-close").forEach(function (button) {
+      button.addEventListener("click", closeDrawer);
+    });
+
+    drawer.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeDrawer(event);
+      }
+    });
+
+    drawer.__shtDrawerFallbackBound = true;
+  }
+
+  function openCartDrawerFallback(drawer, opener) {
+    if (!drawer) return false;
+
+    try {
+      bindFallbackDrawerEvents(drawer);
+      drawer.opener = opener || null;
+      drawer.removeAttribute("hidden");
+      drawer.setAttribute("open", "");
+      drawer.setAttribute("aria-hidden", "false");
+      drawer.classList.add("active");
+      document.body.classList.add("o-hidden");
+
+      if (opener && typeof opener.setAttribute === "function") {
+        opener.setAttribute("aria-expanded", "true");
+      }
+
+      return true;
+    } catch (error) {
+      console.error(error);
+      return false;
+    }
+  }
+
+  function tryOpenCartDrawer(opener) {
+    var drawer = getCartDrawer();
+    if (!drawer) return false;
+
+    var trigger = opener || getCartOpener() || document.activeElement;
+    window.shtCartDrawer = drawer;
+    closeCartNotification();
+
+    if (typeof drawer.openDrawer === "function") {
+      try {
+        drawer.openDrawer(trigger);
+        return true;
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    return openCartDrawerFallback(drawer, trigger);
+  }
+
+  function scheduleCartDrawerRetry(opener) {
+    var attempts = 0;
+    var maxAttempts = 12;
+
+    function retry() {
+      attempts += 1;
+
+      if (tryOpenCartDrawer(opener)) return;
+      if (attempts >= maxAttempts) return;
+
+      window.setTimeout(retry, 120);
+    }
+
+    retry();
+  }
+
   function normalizePath(value) {
     try {
       return new URL(value, window.location.origin).pathname.replace(/\/$/, "");
@@ -29,12 +124,38 @@
   }
 
   function openCartDrawer(opener) {
-    var drawer = getCartDrawer();
-    if (!drawer || typeof drawer.openDrawer !== "function") return false;
+    if (tryOpenCartDrawer(opener)) return true;
 
-    closeCartNotification();
-    drawer.openDrawer(opener || getCartOpener() || document.activeElement);
-    return true;
+    scheduleCartDrawerRetry(opener);
+    return !!getCartDrawer();
+  }
+
+  function shouldOpenDrawerFromUrlFlag() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      return params.get("open-cart") === "1";
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function clearOpenDrawerUrlFlag() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      if (params.get("open-cart") !== "1") return;
+
+      params.delete("open-cart");
+      var queryString = params.toString();
+      var nextUrl = window.location.pathname + (queryString ? "?" + queryString : "") + window.location.hash;
+      window.history.replaceState({}, "", nextUrl);
+    } catch (error) {}
+  }
+
+  function openCartDrawerFromUrlFlag() {
+    if (!shouldOpenDrawerFromUrlFlag()) return;
+
+    openCartDrawer(getCartOpener());
+    clearOpenDrawerUrlFlag();
   }
 
   function isCartUrl(url) {
@@ -329,10 +450,9 @@
     var link = event.target.closest && event.target.closest("a[href]");
     if (!link || !isCartUrl(link.href)) return;
 
-    if (openCartDrawer(link)) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    openCartDrawer(link);
   }, true);
 
   if (typeof window.fetch === "function" && !window.fetch.__shtCartDrawerPatched) {
@@ -352,5 +472,16 @@
     document.addEventListener("click", handleAddToCartClick, true);
     document.addEventListener("submit", handleAddToCartSubmit, true);
     window.__shtCartDrawerSubmitPatched = true;
+  }
+
+  if (!window.__shtCartDrawerUrlFlagHandled) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", openCartDrawerFromUrlFlag, { once: true });
+    } else {
+      openCartDrawerFromUrlFlag();
+    }
+
+    window.addEventListener("load", openCartDrawerFromUrlFlag, { once: true });
+    window.__shtCartDrawerUrlFlagHandled = true;
   }
 })();

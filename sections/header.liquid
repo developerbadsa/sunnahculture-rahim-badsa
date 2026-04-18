@@ -346,7 +346,7 @@
               render 'header-cart-status', cart: cart
             endcapture
           -%}
-          <a role="button" href="{{ routes.cart_url }}" onclick="if (window.shtOpenCartDrawer && window.shtOpenCartDrawer(this)) { event.preventDefault(); }" aria-haspopup="true" aria-expanded="false" aria-controls="shtCartDrawer" class="js-header-cart-status-btn btn btn-plain btn-large btn-icon p-relative" id="headerCartStatus">{{ header_cart_status }}</a>
+          <a role="button" href="{{ routes.cart_url }}" onclick="event.preventDefault(); if (window.shtOpenCartDrawer) { window.shtOpenCartDrawer(this); }" aria-haspopup="true" aria-expanded="false" aria-controls="shtCartDrawer" class="js-header-cart-status-btn btn btn-plain btn-large btn-icon p-relative" id="headerCartStatus">{{ header_cart_status }}</a>
         </div>
       </div>
       <!-- end Header Icons Right -->
