@@ -63,6 +63,155 @@
     }).catch(function () {});
   }
 
+  function uniqueSectionIds(sections) {
+    return sections.reduce(function (ids, section) {
+      var id = section && (section.id || section.section);
+
+      if (id && ids.indexOf(id) === -1) {
+        ids.push(id);
+      }
+
+      return ids;
+    }, []);
+  }
+
+  function getSectionsToRender() {
+    var sections = [];
+    var notification = document.querySelector("sht-cart-noti");
+    var drawer = getCartDrawer();
+
+    if (notification && typeof notification.getSectionsToRender === "function") {
+      sections = sections.concat(notification.getSectionsToRender());
+    }
+
+    if (drawer && typeof drawer.getSectionsToRender === "function") {
+      sections = sections.concat(drawer.getSectionsToRender());
+    }
+
+    return sections;
+  }
+
+  function renderCartSections(cartResponse) {
+    var notification = document.querySelector("sht-cart-noti");
+    var drawerForm = document.querySelector("sht-cart-drwr-frm");
+
+    if (notification && typeof notification.renderContents === "function") {
+      try {
+        notification.renderContents(cartResponse);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    if (drawerForm && typeof drawerForm.renderContents === "function") {
+      try {
+        drawerForm.renderContents(cartResponse);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }
+
+  function toggleSubmitState(form, isLoading) {
+    var submitButton = form.querySelector('[type="submit"][name="add"]') || form.querySelector('[type="submit"]');
+    var spinner = form.querySelector(".js-product-form-spinner, .js-featured-product-form-spinner");
+
+    if (submitButton) {
+      submitButton.classList.toggle("loading", isLoading);
+      submitButton.toggleAttribute("aria-disabled", isLoading);
+      submitButton.toggleAttribute("disabled", isLoading);
+    }
+
+    if (spinner) {
+      spinner.classList.toggle("hidden", !isLoading);
+    }
+  }
+
+  function showFormError(form, message) {
+    var wrapper = form.closest("sht-prd-frm, sht-prd-qck-vw-frm, sht-featured-prd-frm") || form;
+    var errorWrapper = wrapper.querySelector(".js-product-form-error-wrapper, .js-featured-product-form-error-wrapper");
+    var errorMessage = wrapper.querySelector(".js-product-form-error-message, .js-featured-product-form-error-message");
+
+    if (errorWrapper) {
+      errorWrapper.toggleAttribute("hidden", !message);
+    }
+
+    if (errorMessage && message) {
+      errorMessage.textContent = message;
+    }
+  }
+
+  function isAddToCartForm(form) {
+    if (!form || form.tagName !== "FORM") return false;
+
+    var action = form.getAttribute("action") || form.action || "";
+    if (!isCartAddUrl(action)) return false;
+
+    return !!form.querySelector('[name="id"]');
+  }
+
+  function enableVariantInputs(form) {
+    form.querySelectorAll('[name="id"]:disabled').forEach(function (input) {
+      input.disabled = false;
+    });
+  }
+
+  function handleAddToCartSubmit(event) {
+    var form = event.target;
+    var submitter = event.submitter;
+
+    if (!isAddToCartForm(form)) return;
+    if (event.defaultPrevented) return;
+    if (submitter && submitter.name !== "add") return;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+
+    if (form.dataset.shtCartDrawerSubmitting === "true") return;
+
+    form.dataset.shtCartDrawerSubmitting = "true";
+    showFormError(form, "");
+    toggleSubmitState(form, true);
+    enableVariantInputs(form);
+
+    var sections = uniqueSectionIds(getSectionsToRender());
+    var body = new FormData(form);
+
+    if (sections.length) {
+      body.append("sections", sections.join(","));
+      body.append("sections_url", window.location.pathname);
+    }
+
+    fetch(window.routes.cart_add_url, {
+      method: "POST",
+      headers: {
+        "X-Requested-With": "XMLHttpRequest",
+        Accept: "application/javascript"
+      },
+      body: body
+    }).then(function (response) {
+      return response.json();
+    }).then(function (cartResponse) {
+      if (cartResponse && cartResponse.status) {
+        showFormError(form, cartResponse.description || cartResponse.message || "");
+        return;
+      }
+
+      renderCartSections(cartResponse);
+      openCartDrawer(getCartOpener());
+
+      var quickShopDialog = document.querySelector("sht-dialog-quickshop");
+      if (quickShopDialog && typeof quickShopDialog.closeModal === "function") {
+        quickShopDialog.closeModal();
+      }
+    }).catch(function (error) {
+      console.error(error);
+    }).finally(function () {
+      delete form.dataset.shtCartDrawerSubmitting;
+      toggleSubmitState(form, false);
+    });
+  }
+
   window.shtOpenCartDrawer = openCartDrawer;
 
   if (window.SHTHelper) {
@@ -109,5 +258,10 @@
     };
 
     window.fetch.__shtCartDrawerPatched = true;
+  }
+
+  if (!window.__shtCartDrawerSubmitPatched) {
+    document.addEventListener("submit", handleAddToCartSubmit);
+    window.__shtCartDrawerSubmitPatched = true;
   }
 })();
