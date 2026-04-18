@@ -1,4 +1,6 @@
 (function () {
+  var CART_DRAWER_OPEN_FLAG = "shtOpenCartDrawerOnLoad";
+
   function getCartDrawer() {
     return document.querySelector("sht-cart-drwr");
   }
@@ -56,6 +58,8 @@
 
     response.clone().json().then(function (cartResponse) {
       if (cartResponse && !cartResponse.status) {
+        renderCartSections(cartResponse);
+
         window.setTimeout(function () {
           openCartDrawer(getCartOpener());
         }, 80);
@@ -161,7 +165,6 @@
     var submitter = event.submitter;
 
     if (!isAddToCartForm(form)) return;
-    if (event.defaultPrevented) return;
     if (submitter && submitter.name !== "add") return;
 
     event.preventDefault();
@@ -210,6 +213,44 @@
       delete form.dataset.shtCartDrawerSubmitting;
       toggleSubmitState(form, false);
     });
+  }
+
+  function shouldOpenCartDrawerOnLoad() {
+    var searchParams = new URLSearchParams(window.location.search);
+
+    try {
+      if (window.sessionStorage && sessionStorage.getItem(CART_DRAWER_OPEN_FLAG) === "true") {
+        sessionStorage.removeItem(CART_DRAWER_OPEN_FLAG);
+        return true;
+      }
+    } catch (error) {
+      return false;
+    }
+
+    if (searchParams.get("cart") === "open" || searchParams.get("cart_drawer") === "open") {
+      searchParams.delete("cart");
+      searchParams.delete("cart_drawer");
+
+      var query = searchParams.toString();
+      var nextUrl = window.location.pathname + (query ? "?" + query : "") + window.location.hash;
+      window.history.replaceState({}, "", nextUrl);
+      return true;
+    }
+
+    return false;
+  }
+
+  function handleCartPageFallback() {
+    if (!isCartUrl(window.location.href)) return false;
+
+    try {
+      if (window.sessionStorage) {
+        sessionStorage.setItem(CART_DRAWER_OPEN_FLAG, "true");
+      }
+    } catch (error) {}
+
+    window.location.replace((window.routes && window.routes.root_url) || "/");
+    return true;
   }
 
   window.shtOpenCartDrawer = openCartDrawer;
@@ -261,7 +302,15 @@
   }
 
   if (!window.__shtCartDrawerSubmitPatched) {
-    document.addEventListener("submit", handleAddToCartSubmit);
+    document.addEventListener("submit", handleAddToCartSubmit, true);
     window.__shtCartDrawerSubmitPatched = true;
+  }
+
+  if (handleCartPageFallback()) return;
+
+  if (shouldOpenCartDrawerOnLoad()) {
+    window.setTimeout(function () {
+      openCartDrawer(getCartOpener());
+    }, 0);
   }
 })();
