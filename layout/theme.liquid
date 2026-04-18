@@ -7,14 +7,6 @@
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-    {%- if request.page_type == 'cart' -%}
-      <script>
-        try {
-          sessionStorage.setItem('shtOpenCartDrawerOnLoad', 'true');
-        } catch (error) {}
-        window.location.replace({{ routes.root_url | json }});
-      </script>
-    {%- endif -%}
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}

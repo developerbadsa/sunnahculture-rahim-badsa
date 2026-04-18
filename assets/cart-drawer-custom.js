@@ -1,5 +1,4 @@
 (function () {
-  var CART_DRAWER_OPEN_FLAG = "shtOpenCartDrawerOnLoad";
 
   function getCartDrawer() {
     return document.querySelector("sht-cart-drwr");
@@ -31,28 +30,11 @@
 
   function openCartDrawer(opener) {
     var drawer = getCartDrawer();
-    var preferredOpener = opener || getCartOpener() || document.activeElement;
+    if (!drawer || typeof drawer.openDrawer !== "function") return false;
 
-    if (!drawer) return false;
-
-    if (typeof drawer.openDrawer === "function") {
-      closeCartNotification();
-      drawer.openDrawer(preferredOpener);
-      return true;
-    }
-
-    if (window.customElements && typeof window.customElements.whenDefined === "function") {
-      window.customElements.whenDefined("sht-cart-drwr").then(function () {
-        var upgradedDrawer = getCartDrawer();
-        if (upgradedDrawer && typeof upgradedDrawer.openDrawer === "function") {
-          closeCartNotification();
-          upgradedDrawer.openDrawer(preferredOpener);
-        }
-      }).catch(function () {});
-      return true;
-    }
-
-    return false;
+    closeCartNotification();
+    drawer.openDrawer(opener || getCartOpener() || document.activeElement);
+    return true;
   }
 
   function isCartUrl(url) {
@@ -317,44 +299,6 @@
     submitCartForm(form, submitter);
   }
 
-  function shouldOpenCartDrawerOnLoad() {
-    var searchParams = new URLSearchParams(window.location.search);
-
-    try {
-      if (window.sessionStorage && sessionStorage.getItem(CART_DRAWER_OPEN_FLAG) === "true") {
-        sessionStorage.removeItem(CART_DRAWER_OPEN_FLAG);
-        return true;
-      }
-    } catch (error) {
-      return false;
-    }
-
-    if (searchParams.get("cart") === "open" || searchParams.get("cart_drawer") === "open") {
-      searchParams.delete("cart");
-      searchParams.delete("cart_drawer");
-
-      var query = searchParams.toString();
-      var nextUrl = window.location.pathname + (query ? "?" + query : "") + window.location.hash;
-      window.history.replaceState({}, "", nextUrl);
-      return true;
-    }
-
-    return false;
-  }
-
-  function handleCartPageFallback() {
-    if (!isCartUrl(window.location.href)) return false;
-
-    try {
-      if (window.sessionStorage) {
-        sessionStorage.setItem(CART_DRAWER_OPEN_FLAG, "true");
-      }
-    } catch (error) {}
-
-    window.location.replace((window.routes && window.routes.root_url) || "/");
-    return true;
-  }
-
   window.shtOpenCartDrawer = openCartDrawer;
 
   if (window.SHTHelper) {
@@ -408,13 +352,5 @@
     document.addEventListener("click", handleAddToCartClick, true);
     document.addEventListener("submit", handleAddToCartSubmit, true);
     window.__shtCartDrawerSubmitPatched = true;
-  }
-
-  if (handleCartPageFallback()) return;
-
-  if (shouldOpenCartDrawerOnLoad()) {
-    window.setTimeout(function () {
-      openCartDrawer(getCartOpener());
-    }, 0);
   }
 })();
