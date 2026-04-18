@@ -58,18 +58,16 @@
 
     response.clone().json().then(function (cartResponse) {
       if (cartResponse && !cartResponse.status) {
-        renderCartSections(cartResponse);
-
-        window.setTimeout(function () {
+        renderCartSections(cartResponse).finally(function () {
           openCartDrawer(getCartOpener());
-        }, 80);
+        });
       }
     }).catch(function () {});
   }
 
   function uniqueSectionIds(sections) {
     return sections.reduce(function (ids, section) {
-      var id = section && (section.id || section.section);
+      var id = section && (section.section || section.id);
 
       if (id && ids.indexOf(id) === -1) {
         ids.push(id);
@@ -83,6 +81,7 @@
     var sections = [];
     var notification = document.querySelector("sht-cart-noti");
     var drawer = getCartDrawer();
+    var drawerForm = document.querySelector("sht-cart-drwr-frm");
 
     if (notification && typeof notification.getSectionsToRender === "function") {
       sections = sections.concat(notification.getSectionsToRender());
@@ -92,38 +91,104 @@
       sections = sections.concat(drawer.getSectionsToRender());
     }
 
+    if (drawerForm && typeof drawerForm.getSectionsToRender === "function") {
+      sections = sections.concat(drawerForm.getSectionsToRender());
+    }
+
     return sections;
   }
 
-  function renderCartSections(cartResponse) {
-    var notification = document.querySelector("sht-cart-noti");
-    var drawerForm = document.querySelector("sht-cart-drwr-frm");
+  function getSectionInnerHTML(html, selector) {
+    if (!html) return "";
 
-    if (notification && typeof notification.renderContents === "function") {
-      try {
-        notification.renderContents(cartResponse);
-      } catch (error) {
-        console.error(error);
+    var element = new DOMParser().parseFromString(html, "text/html").querySelector(selector);
+    return element ? element.innerHTML : "";
+  }
+
+  function fetchCartSections(cartResponse) {
+    var sections = uniqueSectionIds(getSectionsToRender());
+
+    if (!sections.length || cartResponse && cartResponse.sections && cartResponse.sections["cart-drawer"]) {
+      return Promise.resolve(cartResponse);
+    }
+
+    var query = sections.map(function (section) {
+      return encodeURIComponent(section);
+    }).join(",");
+
+    return fetch(window.location.pathname + "?sections=" + query, {
+      credentials: "same-origin"
+    }).then(function (response) {
+      return response.json();
+    }).then(function (renderedSections) {
+      cartResponse.sections = Object.assign({}, cartResponse.sections || {}, renderedSections);
+      return cartResponse;
+    }).catch(function () {
+      return cartResponse;
+    });
+  }
+
+  function renderFallbackSections(cartResponse) {
+    if (!cartResponse || !cartResponse.sections) return;
+
+    var drawerContainer = document.getElementById("cartDrawer");
+    var drawerHtml = cartResponse.sections["cart-drawer"];
+    var headerStatus = document.querySelector("#headerCartStatus");
+    var headerHtml = cartResponse.sections["header-cart-status"];
+
+    if (drawerContainer && drawerHtml) {
+      var drawerInner = getSectionInnerHTML(drawerHtml, ".js-cart-drawer-wrapper");
+      var drawerWrapper = drawerContainer.querySelector(".js-cart-drawer-wrapper");
+
+      if (drawerInner && drawerWrapper) {
+        drawerWrapper.innerHTML = drawerInner;
+        drawerWrapper.classList.remove("is-empty");
       }
     }
 
-    if (drawerForm && typeof drawerForm.renderContents === "function") {
-      try {
-        drawerForm.renderContents(cartResponse);
-      } catch (error) {
-        console.error(error);
+    if (headerStatus && headerHtml) {
+      var headerInner = getSectionInnerHTML(headerHtml, "#headerCartStatus");
+
+      if (headerInner) {
+        headerStatus.innerHTML = headerInner;
+        headerStatus.classList.add("header-cart-status--animate");
       }
     }
   }
 
-  function toggleSubmitState(form, isLoading) {
-    var submitButton = form.querySelector('[type="submit"][name="add"]') || form.querySelector('[type="submit"]');
+  function renderCartSections(cartResponse) {
+    return fetchCartSections(cartResponse).then(function (responseWithSections) {
+      var notification = document.querySelector("sht-cart-noti");
+      var drawerForm = document.querySelector("sht-cart-drwr-frm");
+
+      if (notification && typeof notification.renderContents === "function") {
+        try {
+          notification.renderContents(responseWithSections);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      if (drawerForm && typeof drawerForm.renderContents === "function") {
+        try {
+          drawerForm.renderContents(responseWithSections);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      renderFallbackSections(responseWithSections);
+      return responseWithSections;
+    });
+  }
+
+  function toggleSubmitState(form, submitter, isLoading) {
+    var submitButton = submitter || form.querySelector('[type="submit"][name="add"]') || form.querySelector('[type="submit"]');
     var spinner = form.querySelector(".js-product-form-spinner, .js-featured-product-form-spinner");
 
     if (submitButton) {
       submitButton.classList.toggle("loading", isLoading);
       submitButton.toggleAttribute("aria-disabled", isLoading);
-      submitButton.toggleAttribute("disabled", isLoading);
     }
 
     if (spinner) {
@@ -160,21 +225,14 @@
     });
   }
 
-  function handleAddToCartSubmit(event) {
-    var form = event.target;
-    var submitter = event.submitter;
-
+  function submitCartForm(form, submitter) {
     if (!isAddToCartForm(form)) return;
     if (submitter && submitter.name !== "add") return;
-
-    event.preventDefault();
-    event.stopImmediatePropagation();
-
     if (form.dataset.shtCartDrawerSubmitting === "true") return;
 
     form.dataset.shtCartDrawerSubmitting = "true";
     showFormError(form, "");
-    toggleSubmitState(form, true);
+    toggleSubmitState(form, submitter, true);
     enableVariantInputs(form);
 
     var sections = uniqueSectionIds(getSectionsToRender());
@@ -191,7 +249,8 @@
         "X-Requested-With": "XMLHttpRequest",
         Accept: "application/javascript"
       },
-      body: body
+      body: body,
+      credentials: "same-origin"
     }).then(function (response) {
       return response.json();
     }).then(function (cartResponse) {
@@ -200,19 +259,45 @@
         return;
       }
 
-      renderCartSections(cartResponse);
-      openCartDrawer(getCartOpener());
+      return renderCartSections(cartResponse).finally(function () {
+        openCartDrawer(getCartOpener());
 
-      var quickShopDialog = document.querySelector("sht-dialog-quickshop");
-      if (quickShopDialog && typeof quickShopDialog.closeModal === "function") {
-        quickShopDialog.closeModal();
-      }
+        var quickShopDialog = document.querySelector("sht-dialog-quickshop");
+        if (quickShopDialog && typeof quickShopDialog.closeModal === "function") {
+          quickShopDialog.closeModal();
+        }
+      });
     }).catch(function (error) {
       console.error(error);
+      showFormError(form, "Cart update failed. Please try again.");
     }).finally(function () {
       delete form.dataset.shtCartDrawerSubmitting;
-      toggleSubmitState(form, false);
+      toggleSubmitState(form, submitter, false);
     });
+  }
+
+  function handleAddToCartSubmit(event) {
+    var form = event.target;
+    var submitter = event.submitter;
+
+    if (!isAddToCartForm(form)) return;
+    if (submitter && submitter.name !== "add") return;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    submitCartForm(form, submitter || form.querySelector('[type="submit"][name="add"]'));
+  }
+
+  function handleAddToCartClick(event) {
+    var submitter = event.target.closest && event.target.closest('button[type="submit"], input[type="submit"]');
+    if (!submitter || submitter.name !== "add") return;
+
+    var form = submitter.form || submitter.closest("form");
+    if (!isAddToCartForm(form)) return;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    submitCartForm(form, submitter);
   }
 
   function shouldOpenCartDrawerOnLoad() {
@@ -302,6 +387,7 @@
   }
 
   if (!window.__shtCartDrawerSubmitPatched) {
+    document.addEventListener("click", handleAddToCartClick, true);
     document.addEventListener("submit", handleAddToCartSubmit, true);
     window.__shtCartDrawerSubmitPatched = true;
   }
