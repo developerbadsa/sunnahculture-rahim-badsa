@@ -1,7 +1,7 @@
 {%- liquid
   assign media = 'image' | placeholder_svg_tag: 'placeholder w-100 h-100 of-cover js-image-lazy'
 -%}
-<sht-cart-drwr id="shtCartDrawer" class="drawer drawer--left cart__drawer js-cart-drawer no-focus-visible" aria-hidden="true" hidden tabindex="-1">
+<sht-cart-drwr id="shtCartDrawer" class="drawer cart__drawer js-cart-drawer no-focus-visible" aria-hidden="true" hidden tabindex="-1">
   <div class="cart-drawer" id="cartDrawer">
     <div class="drawer__overlay js-cart-drawer-overlay js-drawer-overlay"></div>
     <div class="drawer__wrapper cart-drawer__wrapper js-cart-drawer-wrapper js-drawer-wrapper p-absolute" role="dialog" aria-label="{{ 'sections.cart.title' | t }}" aria-modal="true">
