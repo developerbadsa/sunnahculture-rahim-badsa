@@ -272,6 +272,9 @@
       "block_order": [
         "ai_gen_block_1cf7024_iq3pa6"
       ],
+      "custom_css": [
+        "{margin-top: 10px; margin-bottom: 10px;}"
+      ],
       "settings": {}
     },
     "1774721797954c1ddb": {
