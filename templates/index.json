@@ -235,12 +235,12 @@
           "type": "ai_gen_block_1cf7024",
           "settings": {
             "collection_1": "abaya",
-            "collection_2": "children",
-            "collection_3": "female-accessories",
+            "collection_2": "male",
+            "collection_3": "children",
             "collection_4": "",
             "collection_5": "",
-            "collection_6": "perfumes",
-            "collection_7": "male",
+            "collection_6": "peel-off-nail-polish",
+            "collection_7": "perfumes",
             "collection_8": "",
             "desktop_width_percent": 100,
             "cards_per_row": 4,
@@ -670,6 +670,24 @@
     "17079187031fbd0c9b": {
       "type": "apps",
       "blocks": {
+        "instafeed_app_block_NeNYc6": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "Follow us on Instagram!",
+            "title_color": "",
+            "title_size_v2": 0,
+            "alignment": "center",
+            "instafeed_margin_top": 20,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "center",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        },
         "google_reviews_plus_app_block_k7WnbW": {
           "type": "shopify://apps/google-reviews-rocket/blocks/app-block/d11c8893-a181-4aff-a280-7446d42cec3b",
           "settings": {
@@ -678,6 +696,7 @@
         }
       },
       "block_order": [
+        "instafeed_app_block_NeNYc6",
         "google_reviews_plus_app_block_k7WnbW"
       ],
       "custom_css": [
