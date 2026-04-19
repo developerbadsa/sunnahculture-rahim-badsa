@@ -92,7 +92,7 @@
       "popup": {
         "type": "popup",
         "settings": {
-          "show_popup": true,
+          "show_popup": false,
           "color_scheme": "schema-2",
           "subheading": "",
           "heading": "WhatsApp",
