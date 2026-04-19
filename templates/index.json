@@ -264,7 +264,7 @@
             "arrow_hover_bg_color": "#f4f4f4",
             "arrow_color": "#000000",
             "enable_autoplay": true,
-            "autoplay_speed": 3000
+            "autoplay_speed": 2000
           },
           "blocks": {}
         }
@@ -677,9 +677,9 @@
             "title_color": "",
             "title_size_v2": 0,
             "alignment": "center",
-            "instafeed_margin_top": 20,
-            "instafeed_margin_bottom": 0,
-            "instafeed_margin_sides": 0,
+            "instafeed_margin_top": 10,
+            "instafeed_margin_bottom": 15,
+            "instafeed_margin_sides": 10,
             "show_instagram_link": false,
             "link_alignment": "center",
             "link_color": "#000000",
@@ -806,8 +806,8 @@
           "type": "ai_gen_block_f1d5d12",
           "settings": {
             "background_text": "Have a question?",
-            "background_text_size": 24,
-            "main_title": "Our common questions",
+            "background_text_size": 26,
+            "main_title": "Frequently Asked Questions",
             "main_title_size": 36,
             "text_alignment": "center",
             "enable_search": false,

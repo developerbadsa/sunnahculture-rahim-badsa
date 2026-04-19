@@ -33,11 +33,10 @@
         "message-1",
         "message_3xwzia"
       ],
-      "disabled": true,
       "settings": {
-        "color_scheme": "color-accent-2",
+        "color_scheme": "schema-1",
         "enable_autoplay": true,
-        "duration": 5,
+        "duration": 3,
         "open_external_link": false
       }
     },
