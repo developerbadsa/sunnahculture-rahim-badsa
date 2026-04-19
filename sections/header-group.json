@@ -1,1 +1,206 @@
-{"type":"header","name":"Header Group","sections":{"announcement-bar":{"type":"announcement-bar","blocks":{"message-1":{"type":"message","settings":{"message_text":"Free shipping across UK on all orders over £55","message_link":"shopify:\/\/collections"}},"message_3xwzia":{"type":"message","settings":{"message_text":"10% off Ihram - use code umrah10","message_link":"shopify:\/\/products\/ihram-al-othaiman-1100g-adult-ihram"}}},"block_order":["message-1","message_3xwzia"],"disabled":true,"settings":{"color_scheme":"color-accent-2","enable_autoplay":true,"duration":5,"open_external_link":false}},"header":{"type":"header","blocks":{"mega-menu-1":{"type":"mega_menu","settings":{"menu_item_name":"","primary_heading":"Heading","primary_link":"","image_overlay_opacity_first":30,"secondary_heading":"Heading","secondary_link":"","image_overlay_opacity_second":0}},"mega-menu-0":{"type":"mega_menu","settings":{"menu_item_name":"","primary_heading":"Heading","primary_link":"","image_overlay_opacity_first":30,"secondary_heading":"Heading","secondary_link":"","image_overlay_opacity_second":30}}},"block_order":["mega-menu-1","mega-menu-0"],"disabled":true,"settings":{"color_scheme":"","enable_drawer":true,"enable_sticky_header":false,"logo_position":"top-center","logo":"shopify:\/\/shop_images\/Logo.jpg","logo_width":100,"logo_width_mobile":80,"menu":"main-menu","open_external_link":false,"show_currency_selector":true,"show_language_selector":true,"enable_contact":true,"enable_social":true,"enable_transparent":false,"logo_transparent":"shopify:\/\/shop_images\/Logo.jpg","transparent_text_color":"#ffffff"}},"17747175164c90f153":{"type":"_blocks","blocks":{"ai_gen_block_6a58012_JVfRg3":{"type":"ai_gen_block_6a58012","settings":{"logo":"shopify:\/\/shop_images\/Logo.webp","logo_width":90,"logo_height":75,"logo_width_mobile":50,"logo_height_mobile":50,"logo_bg_color":"#ffffff","logo_icon_color":"#101010","logo_border_radius":8,"search_placeholder":"Search","search_bg_color":"#f8f8f8","search_border_color":"#e0e0e0","search_border_radius":24,"show_support":true,"support_label":"Customer support","phone_number":"+44 794 718 5879","show_account":true,"show_wishlist":true,"wishlist_count":3,"menu":"main-menu","secondary_link_1_text":"All sales","secondary_link_1_url":"","secondary_link_2_text":"Shipping & Delivery","secondary_link_2_url":"","background_color":"#ffffff","text_color":"#101010","label_color":"#666666","placeholder_color":"#999999","icon_color":"#101010","badge_bg_color":"#ff4444","badge_text_color":"#ffffff","nav_bg_color":"#fafafa","nav_border_color":"#e5e5e5","nav_text_color":"#101010","nav_hover_color":"#0066cc","nav_badge_bg":"#ff4444","nav_badge_text":"#ffffff","desktop_width_percent":100},"blocks":{}},"ai_gen_block_6a7237d_CbkmJy":{"type":"ai_gen_block_6a7237d","disabled":true,"settings":{"logo":"shopify:\/\/shop_images\/Logo.webp","logo_width":90,"search_placeholder":"Search products...","search_border_radius":24,"show_support":false,"support_label":"Customer support","phone_number":"1-800-123-45-67","show_wishlist":true,"wishlist_count":0,"cart_label":"Shopping cart","menu_item_1":"Home","menu_link_1":"https:\/\/www.sunnahculture.com\/","menu_item_2":"Male","menu_link_2":"https:\/\/www.sunnahculture.com\/collections\/male","menu_2_badge":"Sale","menu_item_3":"Female","menu_link_3":"shopify:\/\/collections\/abaya","menu_item_4":"Children","menu_link_4":"https:\/\/www.sunnahculture.com\/collections\/children","menu_4_badge":"Trending","menu_item_5":"Gift","menu_link_5":"https:\/\/www.sunnahculture.com\/collections\/gifts","menu_item_6":"Perfumes","menu_link_6":"https:\/\/www.sunnahculture.com\/collections\/perfumes","secondary_link_1_text":"All sales","secondary_link_1_url":"shopify:\/\/collections\/all","secondary_link_2_text":"Shipping & Delivery","secondary_link_2_url":"","max_width":1400,"header_padding":16,"background_color":"#ffffff","text_color":"#101010","icon_color":"#101010","search_background":"#f8f8f8","search_border_color":"#e0e0e0","placeholder_color":"#999999","badge_color":"#ff4444","badge_text_color":"#ffffff","nav_background":"#ffffff","nav_border_color":"#e0e0e0","nav_text_color":"#101010","nav_hover_color":"#4643d1","menu_badge_bg":"#ff4444","menu_badge_text":"#ffffff"},"blocks":{}}},"block_order":["ai_gen_block_6a58012_JVfRg3","ai_gen_block_6a7237d_CbkmJy"],"settings":{}}},"order":["announcement-bar","header","17747175164c90f153"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header Group",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "message-1": {
+          "type": "message",
+          "settings": {
+            "message_text": "Free shipping across UK on all orders over £55",
+            "message_link": "shopify://collections"
+          }
+        },
+        "message_3xwzia": {
+          "type": "message",
+          "settings": {
+            "message_text": "10% off Ihram - use code umrah10",
+            "message_link": "shopify://products/ihram-al-othaiman-1100g-adult-ihram"
+          }
+        }
+      },
+      "block_order": [
+        "message-1",
+        "message_3xwzia"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "color-accent-2",
+        "enable_autoplay": true,
+        "duration": 5,
+        "open_external_link": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "mega-menu-1": {
+          "type": "mega_menu",
+          "settings": {
+            "menu_item_name": "",
+            "primary_heading": "Heading",
+            "primary_link": "",
+            "image_overlay_opacity_first": 30,
+            "secondary_heading": "Heading",
+            "secondary_link": "",
+            "image_overlay_opacity_second": 0
+          }
+        },
+        "mega-menu-0": {
+          "type": "mega_menu",
+          "settings": {
+            "menu_item_name": "",
+            "primary_heading": "Heading",
+            "primary_link": "",
+            "image_overlay_opacity_first": 30,
+            "secondary_heading": "Heading",
+            "secondary_link": "",
+            "image_overlay_opacity_second": 30
+          }
+        }
+      },
+      "block_order": [
+        "mega-menu-1",
+        "mega-menu-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "enable_drawer": true,
+        "enable_sticky_header": false,
+        "logo_position": "top-center",
+        "logo": "shopify://shop_images/Logo.jpg",
+        "logo_width": 100,
+        "logo_width_mobile": 80,
+        "menu": "main-menu",
+        "open_external_link": false,
+        "show_currency_selector": true,
+        "show_language_selector": true,
+        "enable_contact": true,
+        "enable_social": true,
+        "enable_transparent": false,
+        "logo_transparent": "shopify://shop_images/Logo.jpg",
+        "transparent_text_color": "#ffffff"
+      }
+    },
+    "17747175164c90f153": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_6a58012_JVfRg3": {
+          "type": "ai_gen_block_6a58012",
+          "settings": {
+            "logo": "shopify://shop_images/Logo.webp",
+            "logo_width": 90,
+            "logo_height": 75,
+            "logo_width_mobile": 50,
+            "logo_height_mobile": 50,
+            "logo_bg_color": "#ffffff",
+            "logo_icon_color": "#101010",
+            "logo_border_radius": 8,
+            "search_placeholder": "Search",
+            "search_bg_color": "#f8f8f8",
+            "search_border_color": "#e0e0e0",
+            "search_border_radius": 24,
+            "show_support": true,
+            "support_label": "Customer support",
+            "phone_number": "+44 794 718 5879",
+            "show_account": true,
+            "show_wishlist": true,
+            "wishlist_count": 3,
+            "menu": "main-menu",
+            "secondary_link_1_text": "",
+            "secondary_link_1_url": "",
+            "secondary_link_2_text": "",
+            "secondary_link_2_url": "",
+            "background_color": "#ffffff",
+            "text_color": "#101010",
+            "label_color": "#666666",
+            "placeholder_color": "#999999",
+            "icon_color": "#101010",
+            "badge_bg_color": "#ff4444",
+            "badge_text_color": "#ffffff",
+            "nav_bg_color": "#fafafa",
+            "nav_border_color": "#e5e5e5",
+            "nav_text_color": "#101010",
+            "nav_hover_color": "#0066cc",
+            "nav_badge_bg": "#ff4444",
+            "nav_badge_text": "#ffffff",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_6a7237d_CbkmJy": {
+          "type": "ai_gen_block_6a7237d",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/Logo.webp",
+            "logo_width": 90,
+            "search_placeholder": "Search products...",
+            "search_border_radius": 24,
+            "show_support": false,
+            "support_label": "Customer support",
+            "phone_number": "1-800-123-45-67",
+            "show_wishlist": true,
+            "wishlist_count": 0,
+            "cart_label": "Shopping cart",
+            "menu_item_1": "Home",
+            "menu_link_1": "https://www.sunnahculture.com/",
+            "menu_item_2": "Male",
+            "menu_link_2": "https://www.sunnahculture.com/collections/male",
+            "menu_2_badge": "Sale",
+            "menu_item_3": "Female",
+            "menu_link_3": "shopify://collections/abaya",
+            "menu_item_4": "Children",
+            "menu_link_4": "https://www.sunnahculture.com/collections/children",
+            "menu_4_badge": "Trending",
+            "menu_item_5": "Gift",
+            "menu_link_5": "https://www.sunnahculture.com/collections/gifts",
+            "menu_item_6": "Perfumes",
+            "menu_link_6": "https://www.sunnahculture.com/collections/perfumes",
+            "secondary_link_1_text": "All sales",
+            "secondary_link_1_url": "shopify://collections/all",
+            "secondary_link_2_text": "Shipping & Delivery",
+            "secondary_link_2_url": "",
+            "max_width": 1400,
+            "header_padding": 16,
+            "background_color": "#ffffff",
+            "text_color": "#101010",
+            "icon_color": "#101010",
+            "search_background": "#f8f8f8",
+            "search_border_color": "#e0e0e0",
+            "placeholder_color": "#999999",
+            "badge_color": "#ff4444",
+            "badge_text_color": "#ffffff",
+            "nav_background": "#ffffff",
+            "nav_border_color": "#e0e0e0",
+            "nav_text_color": "#101010",
+            "nav_hover_color": "#4643d1",
+            "menu_badge_bg": "#ff4444",
+            "menu_badge_text": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_6a58012_JVfRg3",
+        "ai_gen_block_6a7237d_CbkmJy"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header",
+    "17747175164c90f153"
+  ]
+}
