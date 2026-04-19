@@ -1025,7 +1025,8 @@
       "@media (max-width: 768px) {.product__media-wrapper {position: static !important; }}",
       ".d-block.mb-16.h5 {display: none !important;}",
       ".best-selling {background: #ff0000; color: #ffffff; padding: 12px 20px; font-size: 18px; font-weight: 600; display: inline-block; border-radius: 6px;}",
-      ".ai-header-search-icon-anlnkcelrtmhydwl2baigenblock6a58012jvfrg3 {display: none !important;}"
+      ".ai-header-search-icon-anlnkcelrtmhydwl2baigenblock6a58012jvfrg3 {display: none !important;}",
+      ".vs__item.clr-swh__type.js-variant-swatch-item {display: none !important;}"
     ]
   }
 }
