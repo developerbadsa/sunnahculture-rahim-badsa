@@ -267,7 +267,7 @@
             "arrow_hover_bg_color": "#f4f4f4",
             "arrow_color": "#000000",
             "enable_autoplay": true,
-            "autoplay_speed": 2000
+            "autoplay_speed": 1500
           },
           "blocks": {}
         }
