@@ -99,17 +99,17 @@
           "type": "ai_gen_block_6a58012",
           "settings": {
             "logo": "shopify://shop_images/Logo.webp",
-            "logo_width": 105,
+            "logo_width": 135,
             "logo_height": 60,
-            "logo_width_mobile": 50,
-            "logo_height_mobile": 50,
+            "logo_width_mobile": 100,
+            "logo_height_mobile": 55,
             "logo_bg_color": "#ffffff",
             "logo_icon_color": "#101010",
             "logo_border_radius": 0,
             "search_placeholder": "Search",
             "search_bg_color": "#f8f8f8",
             "search_border_color": "#e0e0e0",
-            "search_border_radius": 20,
+            "search_border_radius": 0,
             "show_support": true,
             "support_label": "Customer support",
             "phone_number": "+44 7482175252",
@@ -134,7 +134,7 @@
             "nav_hover_color": "#0066cc",
             "nav_badge_bg": "#ff4444",
             "nav_badge_text": "#ffffff",
-            "desktop_width_percent": 100
+            "desktop_width_percent": 65
           },
           "blocks": {}
         },

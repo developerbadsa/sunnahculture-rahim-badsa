@@ -15,8 +15,8 @@
         "ai_gen_block_d43e3cc_xaDXp6": {
           "type": "ai_gen_block_d43e3cc",
           "settings": {
-            "desktop_height": 450,
-            "mobile_height": 500,
+            "desktop_height": 500,
+            "mobile_height": 550,
             "enable_autoplay": true,
             "autoplay_speed": 5,
             "transition_speed": 0.6,
