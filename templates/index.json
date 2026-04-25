@@ -15,7 +15,7 @@
         "ai_gen_block_d43e3cc_xaDXp6": {
           "type": "ai_gen_block_d43e3cc",
           "settings": {
-            "desktop_height": 600,
+            "desktop_height": 450,
             "mobile_height": 500,
             "enable_autoplay": true,
             "autoplay_speed": 5,
@@ -139,7 +139,7 @@
             "title_size": 36,
             "title_color": "#101010",
             "divider_thickness": 1,
-            "divider_color": "#e0e0e0",
+            "divider_color": "#d8c5a6",
             "header_spacing": 40,
             "collection_1": "male",
             "collection_2": "abaya",
