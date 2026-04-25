@@ -129,6 +129,27 @@
       ],
       "settings": {}
     },
+    "running_text_HNkzUW": {
+      "type": "running-text",
+      "custom_css": [
+        "div div sht-marquee {height: 50px; padding: 0px;}",
+        "div div {padding: 0px; height: 50px;}",
+        "div {padding: 0px;}"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "accent_scheme": "color-accent-1",
+        "speed": "20",
+        "enable_play": false,
+        "text": "New Look - New Experience",
+        "font_style": "marquee-font--heading",
+        "text_size": "h3",
+        "link": "",
+        "slope_style": "none",
+        "remove_padding_top": true,
+        "remove_padding_bottom": true
+      }
+    },
     "177471951554a31d06": {
       "type": "_blocks",
       "blocks": {
@@ -160,7 +181,7 @@
             "columns_desktop": 4,
             "columns_mobile": "2",
             "grid_gap": 20,
-            "section_padding": 60,
+            "section_padding": 20,
             "desktop_width_percent": 100
           },
           "blocks": {}
@@ -191,9 +212,9 @@
               "white-saudi-thobe-with-embroidered-collar"
             ],
             "desktop_width_percent": 100,
-            "products_per_row": 4,
+            "products_per_row": 3,
             "card_gap": 20,
-            "section_padding": 0,
+            "section_padding": 10,
             "show_brand": true,
             "show_rating": false,
             "show_color_swatches": true,
@@ -229,55 +250,7 @@
       "block_order": [
         "ai_gen_block_60ce943_46zGcV"
       ],
-      "settings": {}
-    },
-    "177472132015f6406e": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_1cf7024_iq3pa6": {
-          "type": "ai_gen_block_1cf7024",
-          "settings": {
-            "collection_1": "children",
-            "collection_2": "male",
-            "collection_3": "abaya",
-            "collection_4": "peel-off-nail-polish",
-            "collection_5": "ihram-belt",
-            "collection_6": "perfumes",
-            "collection_7": "female-accessories",
-            "collection_8": "",
-            "desktop_width_percent": 100,
-            "cards_per_row": 4,
-            "card_gap": 20,
-            "card_height": 400,
-            "mobile_card_height": 300,
-            "section_padding": 40,
-            "border_radius": 16,
-            "overlay_opacity": 0.5,
-            "content_padding": 25,
-            "shadow_x": 0,
-            "shadow_y": 4,
-            "shadow_blur": 20,
-            "shadow_opacity": 0.1,
-            "hover_scale": 3,
-            "title_color": "#ffffff",
-            "title_size": 24,
-            "title_weight": 700,
-            "arrow_size": 50,
-            "arrow_bg_color": "#ffffff",
-            "arrow_hover_bg_color": "#f4f4f4",
-            "arrow_color": "#000000",
-            "enable_autoplay": true,
-            "autoplay_speed": 1500
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_1cf7024_iq3pa6"
-      ],
-      "custom_css": [
-        "{margin-top: 15px; margin-bottom: 15px;}"
-      ],
+      "name": "Featured products",
       "settings": {}
     },
     "1774721797954c1ddb": {
@@ -330,174 +303,20 @@
             "hotspot_6_product": "black-saudi-thobe-copy"
           },
           "blocks": {}
-        },
-        "ai_gen_block_ff4d5db_DnQ6B9": {
-          "type": "ai_gen_block_ff4d5db",
-          "disabled": true,
-          "settings": {
-            "main_image": "shopify://shop_images/open_abaya_with_lace_and_embroidery_and_glass_beads.png",
-            "desktop_width_percent": 100,
-            "image_border_radius": 12,
-            "hotspot_size": 30,
-            "hotspot_number_size": 12,
-            "hotspot_bg_color": "#ffffff",
-            "hotspot_border_color": "#101010",
-            "hotspot_text_color": "#101010",
-            "popup_position": "top",
-            "popup_width": 280,
-            "popup_border_radius": 12,
-            "popup_bg_color": "#e5e5e5",
-            "popup_text_color": "#101010",
-            "button_text": "View product",
-            "button_bg_color": "#101010",
-            "button_hover_bg_color": "#333333",
-            "button_text_color": "#ffffff",
-            "button_border_radius": 6,
-            "hotspot_1_enabled": true,
-            "hotspot_1_x": 45,
-            "hotspot_1_y": 55,
-            "hotspot_1_product": "navy-open-abaya-with-embroidery",
-            "hotspot_2_enabled": true,
-            "hotspot_2_x": 75,
-            "hotspot_2_y": 50,
-            "hotspot_2_product": "grey-open-abaya",
-            "hotspot_3_enabled": false,
-            "hotspot_3_x": 75,
-            "hotspot_3_y": 35,
-            "hotspot_3_product": "stone-beige-saudi-thobe",
-            "hotspot_4_enabled": false,
-            "hotspot_4_x": 20,
-            "hotspot_4_y": 70,
-            "hotspot_4_product": "white-and-gold-saudi-thobe",
-            "hotspot_5_enabled": false,
-            "hotspot_5_x": 30,
-            "hotspot_5_y": 80,
-            "hotspot_5_product": "",
-            "hotspot_6_enabled": false,
-            "hotspot_6_x": 85,
-            "hotspot_6_y": 65,
-            "hotspot_6_product": "black-saudi-thobe-copy"
-          },
-          "blocks": {}
-        },
-        "ai_gen_block_f2bfdd1_bwkcmY": {
-          "type": "ai_gen_block_f2bfdd1",
-          "disabled": true,
-          "settings": {
-            "main_image": "shopify://shop_images/img.png",
-            "desktop_width_percent": 100,
-            "image_height_type": "fixed",
-            "image_height": 750,
-            "mobile_image_height": 400,
-            "image_fit": "cover",
-            "image_border_radius": 0,
-            "enable_zoom_effect": true,
-            "hotspot_style": "numbered",
-            "hotspot_size": 40,
-            "hotspot_color": "#ffffff",
-            "hotspot_border_color": "#000000",
-            "hotspot_text_color": "#000000",
-            "enable_pulse_animation": true,
-            "popup_position": "top",
-            "popup_width": 280,
-            "popup_border_radius": 12,
-            "popup_bg_color": "#ffffff",
-            "popup_text_color": "#000000",
-            "button_text": "View product",
-            "button_bg_color": "#000000",
-            "button_hover_bg_color": "#333333",
-            "button_text_color": "#ffffff",
-            "button_border_radius": 6,
-            "hotspot_1_enabled": true,
-            "hotspot_1_x": 30,
-            "hotspot_1_y": 40,
-            "hotspot_1_product": "stone-beige-saudi-thobe-copy",
-            "hotspot_2_enabled": true,
-            "hotspot_2_x": 50,
-            "hotspot_2_y": 50,
-            "hotspot_2_product": "stone-beige-saudi-thobe",
-            "hotspot_3_enabled": true,
-            "hotspot_3_x": 70,
-            "hotspot_3_y": 60,
-            "hotspot_3_product": "white-and-gold-saudi-thobe",
-            "hotspot_4_enabled": false,
-            "hotspot_4_x": 25,
-            "hotspot_4_y": 70,
-            "hotspot_4_product": "",
-            "hotspot_5_enabled": false,
-            "hotspot_5_x": 60,
-            "hotspot_5_y": 30,
-            "hotspot_5_product": "",
-            "hotspot_6_enabled": false,
-            "hotspot_6_x": 80,
-            "hotspot_6_y": 35,
-            "hotspot_6_product": ""
-          },
-          "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_ff4d5db_qNadzT",
-        "ai_gen_block_ff4d5db_DnQ6B9",
-        "ai_gen_block_f2bfdd1_bwkcmY"
+        "ai_gen_block_ff4d5db_qNadzT"
       ],
       "custom_css": [
         ".ai-shoppable-popup-awu1kms9hqutsak94qaigenblockff4d5dbqnadzt.active {min-width: 200px;}"
       ],
+      "name": "Saudi Embroided thobes",
       "settings": {}
     },
     "blocks_VnRxYD": {
       "type": "_blocks",
       "blocks": {
-        "ai_gen_block_ff4d5db_ELtqWq": {
-          "type": "ai_gen_block_ff4d5db",
-          "disabled": true,
-          "settings": {
-            "main_image": "shopify://shop_images/best_saudi_embroidered_thobes_collection_very_cheap.png",
-            "desktop_width_percent": 100,
-            "image_border_radius": 12,
-            "hotspot_size": 30,
-            "hotspot_number_size": 12,
-            "hotspot_bg_color": "#ffffff",
-            "hotspot_border_color": "#101010",
-            "hotspot_text_color": "#101010",
-            "popup_position": "top",
-            "popup_width": 280,
-            "popup_border_radius": 12,
-            "popup_bg_color": "#e5e5e5",
-            "popup_text_color": "#101010",
-            "button_text": "View product",
-            "button_bg_color": "#101010",
-            "button_hover_bg_color": "#333333",
-            "button_text_color": "#ffffff",
-            "button_border_radius": 6,
-            "hotspot_1_enabled": true,
-            "hotspot_1_x": 20,
-            "hotspot_1_y": 75,
-            "hotspot_1_product": "white-and-gold-saudi-thobe",
-            "hotspot_2_enabled": true,
-            "hotspot_2_x": 35,
-            "hotspot_2_y": 57,
-            "hotspot_2_product": "stone-beige-saudi-thobe-copy",
-            "hotspot_3_enabled": true,
-            "hotspot_3_x": 55,
-            "hotspot_3_y": 40,
-            "hotspot_3_product": "dark-green-saudi-thobe",
-            "hotspot_4_enabled": true,
-            "hotspot_4_x": 70,
-            "hotspot_4_y": 65,
-            "hotspot_4_product": "stone-beige-saudi-thobe",
-            "hotspot_5_enabled": true,
-            "hotspot_5_x": 85,
-            "hotspot_5_y": 58,
-            "hotspot_5_product": "black-saudi-thobe-copy",
-            "hotspot_6_enabled": false,
-            "hotspot_6_x": 85,
-            "hotspot_6_y": 58,
-            "hotspot_6_product": "black-saudi-thobe-copy"
-          },
-          "blocks": {}
-        },
         "ai_gen_block_ff4d5db_wEUaEQ": {
           "type": "ai_gen_block_ff4d5db",
           "settings": {
@@ -545,131 +364,66 @@
             "hotspot_6_product": "black-saudi-thobe-copy"
           },
           "blocks": {}
-        },
-        "ai_gen_block_f2bfdd1_iGefc4": {
-          "type": "ai_gen_block_f2bfdd1",
-          "disabled": true,
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ff4d5db_wEUaEQ"
+      ],
+      "custom_css": [
+        ".ai-shoppable-popup-awu1kms9hqutsak94qaigenblockff4d5dbqnadzt.active {min-width: 200px;}"
+      ],
+      "name": "Abaya collection",
+      "settings": {}
+    },
+    "177472132015f6406e": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_1cf7024_iq3pa6": {
+          "type": "ai_gen_block_1cf7024",
           "settings": {
-            "main_image": "shopify://shop_images/img.png",
+            "collection_1": "children",
+            "collection_2": "male",
+            "collection_3": "abaya",
+            "collection_4": "peel-off-nail-polish",
+            "collection_5": "ihram-belt",
+            "collection_6": "perfumes",
+            "collection_7": "female-accessories",
+            "collection_8": "",
             "desktop_width_percent": 100,
-            "image_height_type": "fixed",
-            "image_height": 750,
-            "mobile_image_height": 400,
-            "image_fit": "cover",
-            "image_border_radius": 0,
-            "enable_zoom_effect": true,
-            "hotspot_style": "numbered",
-            "hotspot_size": 40,
-            "hotspot_color": "#ffffff",
-            "hotspot_border_color": "#000000",
-            "hotspot_text_color": "#000000",
-            "enable_pulse_animation": true,
-            "popup_position": "top",
-            "popup_width": 280,
-            "popup_border_radius": 12,
-            "popup_bg_color": "#ffffff",
-            "popup_text_color": "#000000",
-            "button_text": "View product",
-            "button_bg_color": "#000000",
-            "button_hover_bg_color": "#333333",
-            "button_text_color": "#ffffff",
-            "button_border_radius": 6,
-            "hotspot_1_enabled": true,
-            "hotspot_1_x": 30,
-            "hotspot_1_y": 40,
-            "hotspot_1_product": "stone-beige-saudi-thobe-copy",
-            "hotspot_2_enabled": true,
-            "hotspot_2_x": 50,
-            "hotspot_2_y": 50,
-            "hotspot_2_product": "stone-beige-saudi-thobe",
-            "hotspot_3_enabled": true,
-            "hotspot_3_x": 70,
-            "hotspot_3_y": 60,
-            "hotspot_3_product": "white-and-gold-saudi-thobe",
-            "hotspot_4_enabled": false,
-            "hotspot_4_x": 25,
-            "hotspot_4_y": 70,
-            "hotspot_4_product": "",
-            "hotspot_5_enabled": false,
-            "hotspot_5_x": 60,
-            "hotspot_5_y": 30,
-            "hotspot_5_product": "",
-            "hotspot_6_enabled": false,
-            "hotspot_6_x": 80,
-            "hotspot_6_y": 35,
-            "hotspot_6_product": ""
+            "cards_per_row": 4,
+            "card_gap": 20,
+            "card_height": 400,
+            "mobile_card_height": 300,
+            "section_padding": 40,
+            "border_radius": 16,
+            "overlay_opacity": 0.5,
+            "content_padding": 25,
+            "shadow_x": 0,
+            "shadow_y": 4,
+            "shadow_blur": 20,
+            "shadow_opacity": 0.1,
+            "hover_scale": 3,
+            "title_color": "#ffffff",
+            "title_size": 24,
+            "title_weight": 700,
+            "arrow_size": 50,
+            "arrow_bg_color": "#ffffff",
+            "arrow_hover_bg_color": "#f4f4f4",
+            "arrow_color": "#000000",
+            "enable_autoplay": true,
+            "autoplay_speed": 1500
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_ff4d5db_ELtqWq",
-        "ai_gen_block_ff4d5db_wEUaEQ",
-        "ai_gen_block_f2bfdd1_iGefc4"
+        "ai_gen_block_1cf7024_iq3pa6"
       ],
       "custom_css": [
-        ".ai-shoppable-popup-awu1kms9hqutsak94qaigenblockff4d5dbqnadzt.active {min-width: 200px;}"
+        "{margin-top: 15px; margin-bottom: 15px;}"
       ],
+      "name": "Our collections",
       "settings": {}
-    },
-    "video_banner_TKmqCT": {
-      "type": "video-banner",
-      "blocks": {
-        "content_HGjzAM": {
-          "type": "content",
-          "settings": {
-            "content_position": "center-xs top-xs ta-left",
-            "subheading": "",
-            "heading": "Sunnah Culture",
-            "description": "<h4>“Verily, Allah Almighty loves to see the traces of blessings on his servant.” — Al-Mu’jam al-Kabīr 5167 (Sahih)</h4>",
-            "primary_button_label": "",
-            "primary_button_link": "shopify://collections",
-            "secondary_button_label": "",
-            "secondary_button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "content_HGjzAM"
-      ],
-      "disabled": true,
-      "settings": {
-        "enable_large_heading": true,
-        "color_scheme": "",
-        "image_overlay_opacity": 33,
-        "section_mask_overlay_color": "#000000",
-        "section_content_overlay_color": "#ffffff",
-        "height_desktop": "100",
-        "height_mobile": "70",
-        "video_url": "",
-        "video_hosted": "shopify://files/videos/front-banner-Video.Guru_20240201_155249110.mp4",
-        "badge_text": "",
-        "badge_color": "color-accent-1",
-        "badge_position": "p-badge--top-right",
-        "badge_shape": "badge--star"
-      }
-    },
-    "running_text_HNkzUW": {
-      "type": "running-text",
-      "disabled": true,
-      "custom_css": [
-        "div div sht-marquee {height: 150px; padding: 0px;}",
-        "div div {padding: 0px; height: 150px;}",
-        "div {padding: 0px;}"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "accent_scheme": "color-accent-1",
-        "speed": "20",
-        "enable_play": false,
-        "text": "New Look - New Experience",
-        "font_style": "marquee-font--heading",
-        "text_size": "h3",
-        "link": "",
-        "slope_style": "none",
-        "remove_padding_top": true,
-        "remove_padding_bottom": true
-      }
     },
     "content_collage_zqDNgm": {
       "type": "content-collage",
@@ -733,6 +487,56 @@
         "badge_position": "p-badge--bottom-right",
         "badge_shape": "badge--star"
       }
+    },
+    "text_9mRQVT": {
+      "type": "text",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "content_alignment": "ta-center m-auto",
+        "remove_padding_top": false,
+        "remove_padding_bottom": true,
+        "subheading": "Send us pictures of you wearing our clothes and be featured on our Instagram page!",
+        "heading": "",
+        "heading_size": "h3",
+        "description": "",
+        "button_main_text": "",
+        "button_main_link": "",
+        "button_sub_text": "",
+        "button_sub_link": "",
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--bottom-right",
+        "badge_shape": "badge--star"
+      }
+    },
+    "1707917646ee5c84f8": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_7rNY68": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "Follow our journey on Instagram!",
+            "title_color": "#000000",
+            "title_size_v2": 0,
+            "alignment": "center",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_7rNY68"
+      ],
+      "disabled": true,
+      "settings": {}
     },
     "featured_collections_pmctYe": {
       "type": "featured-collections",
@@ -814,56 +618,6 @@
         "badge_shape": "badge--star"
       }
     },
-    "text_9mRQVT": {
-      "type": "text",
-      "disabled": true,
-      "settings": {
-        "color_scheme": "",
-        "content_alignment": "ta-center m-auto",
-        "remove_padding_top": false,
-        "remove_padding_bottom": true,
-        "subheading": "Send us pictures of you wearing our clothes and be featured on our Instagram page!",
-        "heading": "",
-        "heading_size": "h3",
-        "description": "",
-        "button_main_text": "",
-        "button_main_link": "",
-        "button_sub_text": "",
-        "button_sub_link": "",
-        "badge_text": "",
-        "badge_color": "color-accent-1",
-        "badge_position": "p-badge--bottom-right",
-        "badge_shape": "badge--star"
-      }
-    },
-    "1707917646ee5c84f8": {
-      "type": "apps",
-      "blocks": {
-        "instafeed_app_block_7rNY68": {
-          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
-          "settings": {
-            "title": "Follow our journey on Instagram!",
-            "title_color": "#000000",
-            "title_size_v2": 0,
-            "alignment": "center",
-            "instafeed_margin_top": 0,
-            "instafeed_margin_bottom": 0,
-            "instafeed_margin_sides": 0,
-            "show_instagram_link": false,
-            "link_alignment": "left",
-            "link_color": "#000000",
-            "background_color": "",
-            "feed_id": "",
-            "html_area": ""
-          }
-        }
-      },
-      "block_order": [
-        "instafeed_app_block_7rNY68"
-      ],
-      "disabled": true,
-      "settings": {}
-    },
     "text_EjBam3": {
       "type": "text",
       "disabled": true,
@@ -886,10 +640,47 @@
         "badge_shape": "badge--star"
       }
     },
-    "17079187031fbd0c9b": {
+    "video_banner_TKmqCT": {
+      "type": "video-banner",
+      "blocks": {
+        "content_HGjzAM": {
+          "type": "content",
+          "settings": {
+            "content_position": "center-xs top-xs ta-left",
+            "subheading": "",
+            "heading": "Sunnah Culture",
+            "description": "<h4>“Verily, Allah Almighty loves to see the traces of blessings on his servant.” — Al-Mu’jam al-Kabīr 5167 (Sahih)</h4>",
+            "primary_button_label": "",
+            "primary_button_link": "shopify://collections",
+            "secondary_button_label": "",
+            "secondary_button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_HGjzAM"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_large_heading": true,
+        "color_scheme": "",
+        "image_overlay_opacity": 33,
+        "section_mask_overlay_color": "#000000",
+        "section_content_overlay_color": "#ffffff",
+        "height_desktop": "100",
+        "height_mobile": "70",
+        "video_url": "",
+        "video_hosted": "shopify://files/videos/front-banner-Video.Guru_20240201_155249110.mp4",
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--top-right",
+        "badge_shape": "badge--star"
+      }
+    },
+    "apps_rWm4Fm": {
       "type": "apps",
       "blocks": {
-        "instafeed_app_block_NeNYc6": {
+        "instafeed_app_block_6EDeq4": {
           "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
           "settings": {
             "title": "Follow us on Instagram!",
@@ -907,7 +698,7 @@
             "html_area": ""
           }
         },
-        "google_reviews_plus_app_block_k7WnbW": {
+        "google_reviews_rocket_app_block_yLYEWM": {
           "type": "shopify://apps/google-reviews-rocket/blocks/app-block/d11c8893-a181-4aff-a280-7446d42cec3b",
           "settings": {
             "widget_layout": "badge-I"
@@ -915,8 +706,8 @@
         }
       },
       "block_order": [
-        "instafeed_app_block_NeNYc6",
-        "google_reviews_plus_app_block_k7WnbW"
+        "instafeed_app_block_6EDeq4",
+        "google_reviews_rocket_app_block_yLYEWM"
       ],
       "custom_css": [
         "body {background-color: #ffffff !important; color: #000000 !important;}"
@@ -1114,19 +905,19 @@
   },
   "order": [
     "1774718413eb8e34ef",
+    "running_text_HNkzUW",
     "177471951554a31d06",
     "17747200710fcc4fdc",
-    "177472132015f6406e",
     "1774721797954c1ddb",
     "blocks_VnRxYD",
-    "video_banner_TKmqCT",
-    "running_text_HNkzUW",
+    "177472132015f6406e",
     "content_collage_zqDNgm",
-    "featured_collections_pmctYe",
     "text_9mRQVT",
     "1707917646ee5c84f8",
+    "featured_collections_pmctYe",
     "text_EjBam3",
-    "17079187031fbd0c9b",
+    "video_banner_TKmqCT",
+    "apps_rWm4Fm",
     "blog_post_list_gcC9gG",
     "1774723794a3d94d5a",
     "1774724411e852953c"
