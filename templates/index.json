@@ -251,6 +251,9 @@
       "block_order": [
         "ai_gen_block_60ce943_46zGcV"
       ],
+      "custom_css": [
+        "{padding-left: 10px; padding-right: 10px; margin: 20px;}"
+      ],
       "name": "Featured products",
       "settings": {}
     },
