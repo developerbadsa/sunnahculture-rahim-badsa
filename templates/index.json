@@ -196,7 +196,7 @@
         "ai_gen_block_1cf7024_iq3pa6"
       ],
       "custom_css": [
-        "{margin-top: 15px; }"
+        "{margin-top: 15px;}"
       ],
       "name": "Our collections",
       "settings": {}
@@ -300,9 +300,7 @@
       "block_order": [
         "ai_gen_block_c10322f_7kdF4T"
       ],
-      "custom_css": [
-        "{padding-left: 10px; padding-right: 10px; margin: 20px;}"
-      ],
+      "custom_css": [],
       "name": "Featured products",
       "settings": {}
     },
