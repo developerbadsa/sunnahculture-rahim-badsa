@@ -553,25 +553,9 @@
         window.addEventListener('resize', () => this.handleResize());
       }
 
-      
+      navigate(direction) {
 
-        navigate(direction) {
-  const cardWidth = this.slider.children[0].offsetWidth;
-  const gap = {{ block.settings.card_gap }};
-  const moveAmount = (cardWidth + gap) * this.productsPerView;
-
-  const maxScroll = this.slider.scrollWidth - this.slider.parentElement.offsetWidth;
-  let currentScroll = Math.abs(this.currentTranslate || 0);
-
-  if (direction === 'next') {
-    currentScroll = Math.min(maxScroll, currentScroll + moveAmount);
-  } else {
-    currentScroll = Math.max(0, currentScroll - moveAmount);
-  }
-
-  this.currentTranslate = -currentScroll;
-  this.slider.style.transform = `translateX(${this.currentTranslate}px)`;
-}
+        
         const maxIndex = Math.max(0, this.totalCards - this.productsPerView);
 
         if (direction === 'prev') {
