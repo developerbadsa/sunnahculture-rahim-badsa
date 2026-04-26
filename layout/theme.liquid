@@ -145,5 +145,18 @@
       <span class="clm h-100" style="--w-xs:12;--w-sm: 6;--w-md:3;"></span>
     </span>
   {% endif %}
+
+
+<script>
+document.querySelectorAll('.header__inline-menu li').forEach(function(menuItem) {
+  menuItem.addEventListener('click', function(e) {
+    let submenu = this.querySelector('.list-menu--disclosure');
+    if (submenu) {
+      e.preventDefault();
+      submenu.classList.toggle('active');
+    }
+  });
+});
+</script>
   </body>
 </html>
