@@ -137,62 +137,10 @@
             "desktop_width_percent": 65
           },
           "blocks": {}
-        },
-        "ai_gen_block_6a7237d_CbkmJy": {
-          "type": "ai_gen_block_6a7237d",
-          "disabled": true,
-          "settings": {
-            "logo": "shopify://shop_images/Logo.webp",
-            "logo_width": 90,
-            "search_placeholder": "Search products...",
-            "search_border_radius": 24,
-            "show_support": false,
-            "support_label": "Customer support",
-            "phone_number": "1-800-123-45-67",
-            "show_wishlist": true,
-            "wishlist_count": 0,
-            "cart_label": "Shopping cart",
-            "menu_item_1": "Home",
-            "menu_link_1": "https://www.sunnahculture.com/",
-            "menu_item_2": "Male",
-            "menu_link_2": "https://www.sunnahculture.com/collections/male",
-            "menu_2_badge": "Sale",
-            "menu_item_3": "Female",
-            "menu_link_3": "shopify://collections/abaya",
-            "menu_item_4": "Children",
-            "menu_link_4": "https://www.sunnahculture.com/collections/children",
-            "menu_4_badge": "Trending",
-            "menu_item_5": "Gift",
-            "menu_link_5": "https://www.sunnahculture.com/collections/gifts",
-            "menu_item_6": "Perfumes",
-            "menu_link_6": "https://www.sunnahculture.com/collections/perfumes",
-            "secondary_link_1_text": "All sales",
-            "secondary_link_1_url": "shopify://collections/all",
-            "secondary_link_2_text": "Shipping & Delivery",
-            "secondary_link_2_url": "",
-            "max_width": 1400,
-            "header_padding": 16,
-            "background_color": "#ffffff",
-            "text_color": "#101010",
-            "icon_color": "#101010",
-            "search_background": "#f8f8f8",
-            "search_border_color": "#e0e0e0",
-            "placeholder_color": "#999999",
-            "badge_color": "#ff4444",
-            "badge_text_color": "#ffffff",
-            "nav_background": "#ffffff",
-            "nav_border_color": "#e0e0e0",
-            "nav_text_color": "#101010",
-            "nav_hover_color": "#4643d1",
-            "menu_badge_bg": "#ff4444",
-            "menu_badge_text": "#ffffff"
-          },
-          "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_6a58012_JVfRg3",
-        "ai_gen_block_6a7237d_CbkmJy"
+        "ai_gen_block_6a58012_JVfRg3"
       ],
       "settings": {}
     }
