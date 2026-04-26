@@ -52,6 +52,19 @@
 
 {% style %}
 
+
+@media (max-width: 768px) {
+  .ai-submenu {
+    display: none;
+    position: static;
+    box-shadow: none;
+  }
+
+  .ai-submenu.active {
+    display: block;
+  }
+}
+
 /* Dropdown style */
 .ai-header-nav-item-{{ ai_gen_id }} {
   position: relative;
