@@ -15,7 +15,7 @@
         "ai_gen_block_d43e3cc_xaDXp6": {
           "type": "ai_gen_block_d43e3cc",
           "settings": {
-            "desktop_height": 700,
+            "desktop_height": 550,
             "mobile_height": 500,
             "enable_autoplay": true,
             "autoplay_speed": 3,
@@ -284,7 +284,7 @@
             "review_count": 120,
             "vendor_color": "#888888",
             "product_title_color": "#101010",
-            "star_color": "#FFA800",
+            "star_color": "#ffa800",
             "review_count_color": "#888888",
             "badge_background": "#b8796d",
             "badge_text_color": "#ffffff",
