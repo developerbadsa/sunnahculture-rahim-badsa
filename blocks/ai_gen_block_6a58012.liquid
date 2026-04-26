@@ -694,28 +694,28 @@
     {% if block.settings.menu != blank %}
       {% assign main_menu = linklists[block.settings.menu] %}
       <ul class="ai-header-mobile-nav-{{ ai_gen_id }}">
-        {% for link in main_menu.links %}
-          <li class="ai-header-mobile-nav-item-{{ ai_gen_id }}">
-            <a href="{{ link.url }}" class="ai-header-mobile-nav-link-{{ ai_gen_id }}">
-              {{ link.title }}
-            </a>
-          </li>
-        {% endfor %}
-        {% if block.settings.secondary_link_1_text != blank %}
-          <li class="ai-header-mobile-nav-item-{{ ai_gen_id }}">
-            <a href="{{ block.settings.secondary_link_1_url }}" class="ai-header-mobile-nav-link-{{ ai_gen_id }}">
-              {{ block.settings.secondary_link_1_text }}
-            </a>
-          </li>
-        {% endif %}
-        {% if block.settings.secondary_link_2_text != blank %}
-          <li class="ai-header-mobile-nav-item-{{ ai_gen_id }}">
-            <a href="{{ block.settings.secondary_link_2_url }}" class="ai-header-mobile-nav-link-{{ ai_gen_id }}">
-              {{ block.settings.secondary_link_2_text }}
-            </a>
-          </li>
-        {% endif %}
-      </ul>
+  {% for link in main_menu.links %}
+    
+    <li class="ai-header-mobile-nav-item-{{ ai_gen_id }}">
+      
+      <a href="{{ link.url }}" class="ai-header-mobile-nav-link-{{ ai_gen_id }} mobile-toggle">
+        {{ link.title }}
+      </a>
+
+      {% if link.links != blank %}
+        <ul class="ai-mobile-submenu">
+          {% for childlink in link.links %}
+            <li>
+              <a href="{{ childlink.url }}">{{ childlink.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+    </li>
+
+  {% endfor %}
+</ul>
     {% endif %}
 
     {% if block.settings.show_support %}
