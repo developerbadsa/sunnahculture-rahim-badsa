@@ -247,8 +247,60 @@
     "17747200710fcc4fdc": {
       "type": "_blocks",
       "blocks": {
+        "ai_gen_block_5e59301_DNLn8W": {
+          "type": "ai_gen_block_5e59301",
+          "settings": {
+            "section_title": "<strong>Best Sale</strong>",
+            "section_padding": 40,
+            "desktop_width_percent": 100,
+            "product_list": [
+              "white-and-gold-saudi-thobe",
+              "navy-open-abaya-with-embroidery",
+              "stone-beige-saudi-thobe",
+              "black-saudi-thobe-with-embroidered-collar",
+              "brown-embroidered-omani-thobe",
+              "cuffed-sleeve-maroon-abaya",
+              "dark-green-saudi-thobe"
+            ],
+            "products_per_row": 3,
+            "slide_by": 1,
+            "card_gap": 20,
+            "show_vendor": true,
+            "show_rating": false,
+            "default_review_count": 120,
+            "show_color_swatches": true,
+            "card_border_radius": 8,
+            "title_size": 28,
+            "product_title_size": 16,
+            "price_size": 18,
+            "title_color": "#101010",
+            "divider_color": "#e0e0e0",
+            "card_bg_color": "#ffffff",
+            "card_border_color": "#f0f0f0",
+            "product_title_color": "#101010",
+            "vendor_color": "#666666",
+            "star_color": "#ffa800",
+            "review_count_color": "#999999",
+            "current_price_color": "#101010",
+            "original_price_color": "#999999",
+            "badge_bg_color": "#b8796d",
+            "badge_text_color": "#ffffff",
+            "discount_badge_bg": "#b8796d",
+            "discount_badge_text": "#ffffff",
+            "arrow_size": 45,
+            "arrow_offset": 20,
+            "nav_bg_color": "#ffffff",
+            "nav_border_color": "#e0e0e0",
+            "nav_icon_color": "#101010",
+            "nav_hover_bg_color": "#101010",
+            "nav_hover_border_color": "#101010",
+            "nav_hover_icon_color": "#ffffff"
+          },
+          "blocks": {}
+        },
         "ai_gen_block_60ce943_46zGcV": {
           "type": "ai_gen_block_60ce943",
+          "disabled": true,
           "settings": {
             "section_title": "Best Selling",
             "product_list": [
@@ -300,6 +352,7 @@
         }
       },
       "block_order": [
+        "ai_gen_block_5e59301_DNLn8W",
         "ai_gen_block_60ce943_46zGcV"
       ],
       "custom_css": [
