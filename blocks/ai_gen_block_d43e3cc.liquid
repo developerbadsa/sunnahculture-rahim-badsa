@@ -162,14 +162,16 @@
   }
 
   @media screen and (max-width: 749px) {
-  .ai-hero-slider__label-{{ ai_gen_id }} {
-    font-size: {{ block.settings.label_font_size | times: 0.8 }}px;
-    padding: 6px 10px;
-    margin-bottom: 15px;
+  .ai-hero-slider__content-{{ ai_gen_id }} {
+    width: auto !important;
   }
 
-  .ai-hero-slider__content-{{ ai_gen_id }} {
-    bottom: 30px;
+  .ai-hero-slider__button-{{ ai_gen_id }} {
+    display: inline-block !important;
+    width: auto !important;
+    max-width: fit-content !important;
+    padding: 8px 16px !important;
+    margin: 0 auto;
   }
 }
   }
