@@ -363,6 +363,21 @@
 
   {% if block.settings.product_list != blank %}
     <div class="ai-featured-products__slider-container-{{ ai_gen_id }}">
+
+
+
+  <!-- ✅ MOVE ARROWS HERE -->
+  <div class="ai-featured-products__nav-{{ ai_gen_id }}">
+    <button class="ai-featured-products__nav-button-{{ ai_gen_id }} ai-featured-products__nav-prev-{{ ai_gen_id }}">
+      ‹
+    </button>
+    <button class="ai-featured-products__nav-button-{{ ai_gen_id }} ai-featured-products__nav-next-{{ ai_gen_id }}">
+      ›
+    </button>
+  </div>
+
+  <div class="ai-featured-products__slider-{{ ai_gen_id }}">
+
       <div class="ai-featured-products__slider-{{ ai_gen_id }}">
         {% for product in block.settings.product_list %}
           <div class="ai-featured-products__card-{{ ai_gen_id }}">
