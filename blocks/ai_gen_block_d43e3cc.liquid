@@ -162,14 +162,16 @@
   }
 
   @media screen and (max-width: 749px) {
-    .ai-hero-slider__label-{{ ai_gen_id }} {
-      font-size: {{ block.settings.label_font_size | times: 0.8 }}px;
-      padding: 6px 16px;
-      margin-bottom: 15px;
-      .ai-hero-slider__content-{{ ai_gen_id }} {
-  bottom: 30px;
+  .ai-hero-slider__label-{{ ai_gen_id }} {
+    font-size: {{ block.settings.label_font_size | times: 0.8 }}px;
+    padding: 6px 16px;
+    margin-bottom: 15px;
+  }
+
+  .ai-hero-slider__content-{{ ai_gen_id }} {
+    bottom: 30px;
+  }
 }
-    }
   }
 
   .ai-hero-slider__heading-{{ ai_gen_id }} {
