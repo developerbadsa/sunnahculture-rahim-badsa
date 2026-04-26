@@ -53,16 +53,21 @@
 {% style %}
 
 
-@media (max-width: 768px) {
-  .ai-submenu {
-    display: none;
-    position: static;
-    box-shadow: none;
-  }
+/* MOBILE SUBMENU */
+.ai-mobile-submenu {
+  display: none;
+  padding-left: 15px;
+}
 
-  .ai-submenu.active {
-    display: block;
-  }
+.ai-mobile-submenu li a {
+  display: block;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+/* ACTIVE */
+.ai-mobile-submenu.active {
+  display: block;
 }
 
 /* Dropdown style */
