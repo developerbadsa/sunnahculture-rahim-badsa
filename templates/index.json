@@ -41,7 +41,7 @@
             "slide_1_label": "",
             "slide_1_heading": "",
             "slide_1_text": "",
-            "slide_1_button_text": "Shop now!",
+            "slide_1_button_text": "",
             "slide_1_button_link": "shopify://collections/ihram-belt",
             "slide_2_enabled": true,
             "slide_2_image_desktop": "shopify://shop_images/ChatGPT_Image_Apr_25_2026_10_11_17_PM.png",
@@ -49,7 +49,7 @@
             "slide_2_label": "",
             "slide_2_heading": "",
             "slide_2_text": "",
-            "slide_2_button_text": "Abayas!",
+            "slide_2_button_text": "All abayas!",
             "slide_2_button_link": "shopify://collections/abaya",
             "slide_3_enabled": true,
             "slide_3_image_desktop": "shopify://shop_images/Best_perfumes_strong_long_lasting_white_musk_long_lasting_strong_perfume_uni_sex_for_men_and_women_50ml_cheap_ombre_nomad.png",
@@ -57,7 +57,7 @@
             "slide_3_label": "",
             "slide_3_heading": "",
             "slide_3_text": "",
-            "slide_3_button_text": "I want it!",
+            "slide_3_button_text": "",
             "slide_3_button_link": "shopify://collections/perfumes"
           },
           "blocks": {}
