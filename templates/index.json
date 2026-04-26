@@ -250,13 +250,13 @@
         "ai_gen_block_c10322f_7kdF4T": {
           "type": "ai_gen_block_c10322f",
           "settings": {
-            "section_title": "Featured products",
+            "section_title": "Best Sale",
             "product_list": [
-              "2-sides-ring",
-              "beaded-sleeve-closed-abaya",
-              "beige-linen-closed-abaya",
+              "white-and-gold-saudi-thobe",
+              "navy-open-abaya-with-embroidery",
+              "stone-beige-saudi-thobe",
               "black-chiffon-over-coat-with-lace-stonework",
-              "black-embossed-velvet-over-coat"
+              "stone-beige-saudi-thobe-copy"
             ],
             "section_padding_top": 50,
             "section_padding_bottom": 50,
@@ -279,7 +279,7 @@
             "card_border_radius": 8,
             "image_background": "#f9f9f9",
             "show_vendor": true,
-            "show_rating": true,
+            "show_rating": false,
             "show_color_swatches": true,
             "review_count": 120,
             "vendor_color": "#888888",
@@ -298,6 +298,7 @@
         },
         "ai_gen_block_5e59301_DNLn8W": {
           "type": "ai_gen_block_5e59301",
+          "disabled": true,
           "settings": {
             "section_title": "<strong>Best Sale</strong>",
             "section_padding": 40,
