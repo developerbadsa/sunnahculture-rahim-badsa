@@ -51,6 +51,49 @@
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
+
+/* Dropdown style */
+.ai-header-nav-item-{{ ai_gen_id }} {
+  position: relative;
+}
+
+.ai-submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 200px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 10px 0;
+  z-index: 999;
+}
+
+.ai-submenu li {
+  list-style: none;
+}
+
+.ai-submenu li a {
+  display: block;
+  padding: 10px 15px;
+  color: #000;
+  text-decoration: none;
+}
+
+.ai-submenu li a:hover {
+  background: #f5f5f5;
+}
+
+/* SHOW DROPDOWN */
+.ai-header-nav-item-{{ ai_gen_id }}:hover .ai-submenu {
+  display: block;
+}
+
+
+
+
+
+
   .ai-header-{{ ai_gen_id }} {
     display: block;
     width: 100%;
