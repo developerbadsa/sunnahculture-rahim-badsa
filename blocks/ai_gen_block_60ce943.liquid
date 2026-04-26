@@ -559,7 +559,7 @@
         const maxIndex = Math.max(0, this.totalCards - this.productsPerView);
 
         if (direction === 'prev') {
-          this.currentIndex = Math.max(0, this.currentIndex - 1);
+          this.currentIndex = Math.max(0, this.currentIndex - this.productsPerView);
         } else {
           if (direction === 'prev') {
   this.currentIndex = Math.max(0, this.currentIndex - this.productsPerView);
