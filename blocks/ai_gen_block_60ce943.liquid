@@ -542,7 +542,11 @@
         if (direction === 'prev') {
           this.currentIndex = Math.max(0, this.currentIndex - 1);
         } else {
-          this.currentIndex = Math.min(maxIndex, this.currentIndex + 1);
+          if (direction === 'prev') {
+  this.currentIndex = Math.max(0, this.currentIndex - this.productsPerView);
+} else {
+  this.currentIndex = Math.min(maxIndex, this.currentIndex + this.productsPerView);
+}
         }
 
         this.updateSliderPosition();
