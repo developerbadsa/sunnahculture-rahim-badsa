@@ -247,6 +247,55 @@
     "17747200710fcc4fdc": {
       "type": "_blocks",
       "blocks": {
+        "ai_gen_block_c10322f_7kdF4T": {
+          "type": "ai_gen_block_c10322f",
+          "settings": {
+            "section_title": "Featured products",
+            "product_list": [
+              "2-sides-ring",
+              "beaded-sleeve-closed-abaya",
+              "beige-linen-closed-abaya",
+              "black-chiffon-over-coat-with-lace-stonework",
+              "black-embossed-velvet-over-coat"
+            ],
+            "section_padding_top": 50,
+            "section_padding_bottom": 50,
+            "background_color": "#ffffff",
+            "products_per_row_desktop": 3,
+            "product_gap": 20,
+            "title_size": 32,
+            "title_color": "#101010",
+            "divider_color": "#e0e0e0",
+            "arrow_size": 50,
+            "arrow_background": "#ffffff",
+            "arrow_color": "#101010",
+            "arrow_border_color": "#e0e0e0",
+            "arrow_hover_background": "#101010",
+            "arrow_hover_color": "#ffffff",
+            "scroll_dot_color": "#101010",
+            "scroll_dot_active_color": "#101010",
+            "card_background": "#ffffff",
+            "card_border_color": "#f0f0f0",
+            "card_border_radius": 8,
+            "image_background": "#f9f9f9",
+            "show_vendor": true,
+            "show_rating": true,
+            "show_color_swatches": true,
+            "review_count": 120,
+            "vendor_color": "#888888",
+            "product_title_color": "#101010",
+            "star_color": "#FFA800",
+            "review_count_color": "#888888",
+            "badge_background": "#b8796d",
+            "badge_text_color": "#ffffff",
+            "original_price_color": "#999999",
+            "current_price_color": "#101010",
+            "discount_badge_background": "#b8796d",
+            "discount_badge_text": "#ffffff",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        },
         "ai_gen_block_5e59301_DNLn8W": {
           "type": "ai_gen_block_5e59301",
           "settings": {
@@ -352,6 +401,7 @@
         }
       },
       "block_order": [
+        "ai_gen_block_c10322f_7kdF4T",
         "ai_gen_block_5e59301_DNLn8W",
         "ai_gen_block_60ce943_46zGcV"
       ],
