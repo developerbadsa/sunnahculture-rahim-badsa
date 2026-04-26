@@ -599,9 +599,9 @@
   {% for link in main_menu.links %}
     <li class="ai-header-nav-item-{{ ai_gen_id }}">
       
-      <a href="{{ link.url }}" class="ai-header-nav-link-{{ ai_gen_id }}">
-        {{ link.title }}
-      </a>
+      <a href="{{ link.url }}" class="ai-header-nav-link-{{ ai_gen_id }} has-submenu">
+  {{ link.title }}
+</a>
 
       {% if link.links != blank %}
         <ul class="ai-submenu">
