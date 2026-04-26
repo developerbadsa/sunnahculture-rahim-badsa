@@ -561,7 +561,7 @@
       }
 
       updateButtons() {
-        const maxIndex = Math.max(0, this.totalCards - this.productsPerView);
+        const maxIndex = Math.ceil(this.totalCards / this.productsPerView) * this.productsPerView - this.productsPerView;
         this.prevButton.disabled = this.currentIndex === 0;
         this.nextButton.disabled = this.currentIndex >= maxIndex;
       }
