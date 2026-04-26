@@ -1032,7 +1032,7 @@
       ".best-selling {background: #ff0000; color: #ffffff; padding: 12px 20px; font-size: 18px; font-weight: 600; display: inline-block; border-radius: 6px;}",
       ".ai-header-search-icon-anlnkcelrtmhydwl2baigenblock6a58012jvfrg3 {display: none !important;}",
       ".vs__item.clr-swh__type.js-variant-swatch-item {display: none !important;}",
-      " /* Show dropdown menu on hover */"
+      " /* Show dropdown menu on hover */.ai-featured-products__nav-prev-abw5vsjnnr3prew5jtaigenblock60ce94346zgcv,.ai-featured-products__nav-next-abw5vsjnnr3prew5jtaigenblock60ce94346zgcv {display: none !important;}"
     ]
   }
 }
