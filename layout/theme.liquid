@@ -148,17 +148,17 @@
 
 
 <script>
-document.querySelectorAll('.has-submenu').forEach(function(item) {
-  item.addEventListener('click', function(e) {
-    if (window.innerWidth < 768) {
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('.mobile-toggle').forEach(function(item) {
+    item.addEventListener('click', function(e) {
       let parent = this.closest('li');
-      let submenu = parent.querySelector('.ai-submenu');
+      let submenu = parent.querySelector('.ai-mobile-submenu');
 
       if (submenu) {
         e.preventDefault();
         submenu.classList.toggle('active');
       }
-    }
+    });
   });
 });
 </script>
