@@ -62,6 +62,35 @@
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
+
+.ai-featured-products__slider-container-{{ ai_gen_id }} {
+  position: relative;
+}
+
+.ai-featured-products__nav-{{ ai_gen_id }} {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.ai-featured-products__nav-button-{{ ai_gen_id }} {
+  pointer-events: all;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+
   .ai-featured-products-{{ ai_gen_id }} {
     width: {{ block.settings.desktop_width_percent }}%;
     max-width: 100%;
