@@ -20,7 +20,7 @@
             "enable_autoplay": true,
             "autoplay_speed": 3,
             "transition_speed": 0.6,
-            "show_arrows": false,
+            "show_arrows": true,
             "show_dots": false,
             "overlay_opacity": 0,
             "label_bg_color": "#ffffff",
