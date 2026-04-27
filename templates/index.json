@@ -183,8 +183,8 @@
             "title_size": 28,
             "title_weight": 700,
             "arrow_size": 40,
-            "arrow_bg_color": "#ffffff",
-            "arrow_hover_bg_color": "#f4f4f4",
+            "arrow_bg_color": "#999999",
+            "arrow_hover_bg_color": "#e0e0e0",
             "arrow_color": "#000000",
             "enable_autoplay": true,
             "autoplay_speed": 1500
@@ -260,7 +260,7 @@
             ],
             "section_padding_top": 30,
             "section_padding_bottom": 35,
-            "background_color": "#ffffff",
+            "background_color": "#d8c5a6",
             "products_per_row_desktop": 4,
             "product_gap": 20,
             "title_size": 40,
@@ -694,7 +694,7 @@
             "show_instagram_link": false,
             "link_alignment": "center",
             "link_color": "#000000",
-            "background_color": "",
+            "background_color": "#e0e0e0",
             "feed_id": "",
             "html_area": ""
           }
