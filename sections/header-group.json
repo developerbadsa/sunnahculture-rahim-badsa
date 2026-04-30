@@ -97,6 +97,7 @@
       "blocks": {
         "ai_gen_block_54575b1_AQ9KNg": {
           "type": "ai_gen_block_54575b1",
+          "disabled": true,
           "settings": {
             "logo_width": 150,
             "mobile_logo_width": 120,
