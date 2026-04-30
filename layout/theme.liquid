@@ -165,7 +165,7 @@
     <ul hidden><li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li><li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li></ul>
     <script id="sht-cart-drawer-critical-js">
       (function () {
-        window.__shtCartDrawerInlineFixVersion = "2026-05-01-3";
+        window.__shtCartDrawerInlineFixVersion = "2026-05-01-4";
 
         function isCartLink(link) {
           if (!link || !window.routes || !window.routes.cart_url) return false;
@@ -229,10 +229,45 @@
           if (!closeButton || !closeButton.closest("sht-cart-drwr")) return;
 
           var drawer = closeButton.closest("sht-cart-drwr");
+          var wrapper = drawer.querySelector(".js-drawer-wrapper, .js-cart-drawer-wrapper");
+
+          [
+            "display",
+            "visibility",
+            "opacity",
+            "pointer-events",
+            "z-index"
+          ].forEach(function (property) {
+            drawer.style.removeProperty(property);
+          });
+
+          if (wrapper) {
+            [
+              "position",
+              "top",
+              "right",
+              "bottom",
+              "left",
+              "display",
+              "width",
+              "max-width",
+              "height",
+              "transform",
+              "z-index"
+            ].forEach(function (property) {
+              wrapper.style.removeProperty(property);
+            });
+          }
+
           drawer.removeAttribute("open");
           drawer.setAttribute("aria-hidden", "true");
           drawer.classList.remove("active");
           document.body.classList.remove("o-hidden");
+
+          if (event) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+          }
         }
 
         document.addEventListener("click", function (event) {
