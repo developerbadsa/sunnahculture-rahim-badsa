@@ -11,11 +11,36 @@
   function bindFallbackDrawerEvents(drawer) {
     if (!drawer || drawer.__shtDrawerFallbackBound) return;
 
+    var clearForcedDrawerState = function () {
+      drawer.classList.remove("cart-drawer--force-visible");
+      drawer.style.removeProperty("display");
+      drawer.style.removeProperty("visibility");
+      drawer.style.removeProperty("opacity");
+      drawer.style.removeProperty("z-index");
+      drawer.style.removeProperty("pointer-events");
+
+      var wrapper = drawer.querySelector(".js-drawer-wrapper, .js-cart-drawer-wrapper");
+      if (wrapper) {
+        wrapper.style.removeProperty("position");
+        wrapper.style.removeProperty("top");
+        wrapper.style.removeProperty("right");
+        wrapper.style.removeProperty("bottom");
+        wrapper.style.removeProperty("left");
+        wrapper.style.removeProperty("height");
+        wrapper.style.removeProperty("width");
+        wrapper.style.removeProperty("max-width");
+        wrapper.style.removeProperty("transform");
+        wrapper.style.removeProperty("z-index");
+        wrapper.style.removeProperty("display");
+      }
+    };
+
     var closeDrawer = function (event) {
       if (event) {
         event.preventDefault();
       }
 
+      clearForcedDrawerState();
       drawer.removeAttribute("open");
       drawer.setAttribute("aria-hidden", "true");
       drawer.classList.remove("active");
@@ -41,7 +66,78 @@
       }
     });
 
+    drawer.addEventListener("closed", clearForcedDrawerState);
+
     drawer.__shtDrawerFallbackBound = true;
+  }
+
+  function forceCartDrawerVisible(drawer) {
+    if (!drawer) return false;
+
+    var wrapper = drawer.querySelector(".js-drawer-wrapper, .js-cart-drawer-wrapper");
+    if (!wrapper) return false;
+
+    drawer.classList.add("cart-drawer--force-visible", "active");
+    drawer.removeAttribute("hidden");
+    drawer.setAttribute("open", "");
+    drawer.setAttribute("aria-hidden", "false");
+    drawer.style.setProperty("display", "flex", "important");
+    drawer.style.setProperty("visibility", "visible", "important");
+    drawer.style.setProperty("opacity", "1", "important");
+    drawer.style.setProperty("z-index", "2147483000", "important");
+    drawer.style.setProperty("pointer-events", "auto", "important");
+
+    wrapper.style.setProperty("position", "fixed", "important");
+    wrapper.style.setProperty("top", "0", "important");
+    wrapper.style.setProperty("right", "0", "important");
+    wrapper.style.setProperty("bottom", "0", "important");
+    wrapper.style.setProperty("left", "auto", "important");
+    wrapper.style.setProperty("height", "100vh", "important");
+    wrapper.style.setProperty("width", "min(100vw, 480px)", "important");
+    wrapper.style.setProperty("max-width", "480px", "important");
+    wrapper.style.setProperty("transform", "translate3d(0, 0, 0)", "important");
+    wrapper.style.setProperty("z-index", "2147483001", "important");
+    wrapper.style.setProperty("display", "flex", "important");
+
+    document.body.classList.add("o-hidden");
+    return true;
+  }
+
+  function isCartDrawerVisiblyOpen(drawer) {
+    if (!drawer || drawer.hasAttribute("hidden") || drawer.getAttribute("aria-hidden") === "true") return false;
+
+    var wrapper = drawer.querySelector(".js-drawer-wrapper, .js-cart-drawer-wrapper");
+    if (!wrapper) return false;
+
+    var drawerStyles = window.getComputedStyle(drawer);
+    var wrapperStyles = window.getComputedStyle(wrapper);
+    var rect = wrapper.getBoundingClientRect();
+
+    return drawerStyles.display !== "none" &&
+      drawerStyles.visibility !== "hidden" &&
+      Number(drawerStyles.opacity) > 0 &&
+      wrapperStyles.display !== "none" &&
+      wrapperStyles.visibility !== "hidden" &&
+      rect.width > 0 &&
+      rect.height > 0 &&
+      rect.right > 0 &&
+      rect.left < window.innerWidth;
+  }
+
+  function ensureCartDrawerVisible(drawer) {
+    if (!drawer) return;
+
+    window.setTimeout(function () {
+      if (drawer.hasAttribute("open") && !isCartDrawerVisiblyOpen(drawer)) {
+        forceCartDrawerVisible(drawer);
+      }
+    }, 80);
+
+    window.setTimeout(function () {
+      if (drawer.hasAttribute("open") && !isCartDrawerVisiblyOpen(drawer)) {
+        forceCartDrawerVisible(drawer);
+      }
+    }, 360);
   }
 
   function openCartDrawerFallback(drawer, opener) {
@@ -55,6 +151,7 @@
       drawer.setAttribute("aria-hidden", "false");
       drawer.classList.add("active");
       document.body.classList.add("o-hidden");
+      forceCartDrawerVisible(drawer);
 
       if (opener && typeof opener.setAttribute === "function") {
         opener.setAttribute("aria-expanded", "true");
@@ -73,11 +170,14 @@
 
     var trigger = opener || getCartOpener() || document.activeElement;
     window.shtCartDrawer = drawer;
+    bindFallbackDrawerEvents(drawer);
     closeCartNotification();
 
     if (typeof drawer.openDrawer === "function") {
       try {
         drawer.openDrawer(trigger);
+        forceCartDrawerVisible(drawer);
+        ensureCartDrawerVisible(drawer);
         return true;
       } catch (error) {
         console.error(error);
