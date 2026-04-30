@@ -17,7 +17,7 @@
         {% endif %}
         <div class="js-cart-notification-panel-content cart-notification-panel-content d-grid top-xs mt-16 mb-24 gap-16 "></div>
         <div class="cart-notification__links">
-          <a href="{{ routes.cart_url }}" role="button" onclick="event.preventDefault(); if (window.shtOpenCartDrawer) { window.shtOpenCartDrawer(this); }" aria-haspopup="true" aria-expanded="false" aria-controls="shtCartDrawer" class="btn btn-large btn-secondary w-100 mb-16">
+          <a href="{{ routes.cart_url }}" role="button" data-cart-drawer-trigger="true" aria-haspopup="true" aria-expanded="false" aria-controls="shtCartDrawer" class="btn btn-large btn-secondary w-100 mb-16">
             {{ "general.cart.view" | t }} (<span class="js-cart-notification-panel-item-count-content"></span>)
           </a>
           <form action="{{ routes.cart_url }}" method="post" id="cart-notification-form">

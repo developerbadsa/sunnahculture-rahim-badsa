@@ -450,6 +450,8 @@
     var link = event.target.closest && event.target.closest("a[href]");
     if (!link || !isCartUrl(link.href)) return;
 
+    if (!getCartDrawer()) return;
+
     event.preventDefault();
     event.stopImmediatePropagation();
     openCartDrawer(link);
