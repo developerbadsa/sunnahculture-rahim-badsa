@@ -95,51 +95,6 @@
     "17747175164c90f153": {
       "type": "_blocks",
       "blocks": {
-        "ai_gen_block_54575b1_AQ9KNg": {
-          "type": "ai_gen_block_54575b1",
-          "disabled": true,
-          "settings": {
-            "logo_width": 150,
-            "mobile_logo_width": 120,
-            "search_placeholder": "Search",
-            "show_support": true,
-            "support_label": "Support",
-            "support_phone": "1-800-123-45-67",
-            "show_account": true,
-            "show_wishlist": true,
-            "wishlist_count": 0,
-            "icon_spacing": 20,
-            "menu": "main-menu",
-            "badge_1_text": "",
-            "badge_1_label": "Sale",
-            "badge_2_text": "",
-            "badge_2_label": "Trending",
-            "secondary_link_1_text": "All sales",
-            "secondary_link_1_url": "",
-            "secondary_link_2_text": "Shipping & Delivery",
-            "secondary_link_2_url": "",
-            "max_width": 1400,
-            "header_padding": 20,
-            "header_horizontal_padding": 30,
-            "header_background": "#ffffff",
-            "nav_background": "#ffffff",
-            "text_color": "#101010",
-            "secondary_text_color": "#666666",
-            "icon_color": "#101010",
-            "nav_text_color": "#101010",
-            "nav_hover_color": "#4643D1",
-            "divider_color": "#e5e5e5",
-            "search_background": "#f5f5f5",
-            "search_border_color": "#e5e5e5",
-            "placeholder_color": "#999999",
-            "badge_background": "#b8796d",
-            "badge_text_color": "#ffffff",
-            "nav_badge_background": "#b8796d",
-            "nav_badge_text": "#ffffff",
-            "search_border_radius": 24
-          },
-          "blocks": {}
-        },
         "ai_gen_block_6a58012_JVfRg3": {
           "type": "ai_gen_block_6a58012",
           "settings": {
@@ -185,7 +140,6 @@
         }
       },
       "block_order": [
-        "ai_gen_block_54575b1_AQ9KNg",
         "ai_gen_block_6a58012_JVfRg3"
       ],
       "settings": {}
