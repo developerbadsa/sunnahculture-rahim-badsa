@@ -1,4 +1,5 @@
 (function () {
+  window.__shtCartDrawerHardFixVersion = "2026-05-01-2";
 
   function getCartDrawer() {
     return document.querySelector("sht-cart-drwr");

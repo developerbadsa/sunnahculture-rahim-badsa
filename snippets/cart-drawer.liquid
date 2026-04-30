@@ -8,7 +8,7 @@
       {%- if cart == empty -%}
         <div class="drawer__header d-flex between-xs">
           <h2 class="drawer__heading h5">{{ 'general.cart.label' | t }}</h2>
-          <button class="js-cart-drawer-btn-close js-drawer-btn-close btn btn-plain btn-icon" onclick="window.shtCartDrawer.closeDrawer();" type="button" aria-label="{{ 'accessibility.close' | t }}">
+          <button class="js-cart-drawer-btn-close js-drawer-btn-close btn btn-plain btn-icon" onclick="if (window.shtCartDrawer && typeof window.shtCartDrawer.closeDrawer === 'function') { window.shtCartDrawer.closeDrawer(); }" type="button" aria-label="{{ 'accessibility.close' | t }}">
             {% render 'icon-close' %}
           </button>
         </div>
@@ -23,7 +23,7 @@
       {%- else -%}
         <div class="drawer__header d-flex middle-xs between-xs">
           <h2 class="drawer__heading h5 m-zero">{{ 'general.cart.cart_draw_title' | t: item_count: cart.item_count }}</h2>
-          <button class="js-cart-drawer-btn-close js-drawer-btn-close btn btn-small btn-icon btn-plain" onclick="window.shtCartDrawer.closeDrawer();" type="button" aria-label="{{ 'accessibility.close' | t }}">
+          <button class="js-cart-drawer-btn-close js-drawer-btn-close btn btn-small btn-icon btn-plain" onclick="if (window.shtCartDrawer && typeof window.shtCartDrawer.closeDrawer === 'function') { window.shtCartDrawer.closeDrawer(); }" type="button" aria-label="{{ 'accessibility.close' | t }}">
             {% render 'icon-close' %}
           </button>
         </div>

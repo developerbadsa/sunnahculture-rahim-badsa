@@ -1,3 +1,34 @@
 <style type="text/css">
 /* Add custom styles to your entire online store */
+
+/* Cart drawer hard safety: if JS opens/locks the page, the drawer must be visible. */
+sht-cart-drwr.cart__drawer[open],
+sht-cart-drwr.cart__drawer.active {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  z-index: 2147483000 !important;
+}
+
+sht-cart-drwr.cart__drawer[open] .cart-drawer__wrapper,
+sht-cart-drwr.cart__drawer.active .cart-drawer__wrapper {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: auto !important;
+  display: flex !important;
+  width: min(100vw, 480px) !important;
+  max-width: 480px !important;
+  height: 100vh !important;
+  transform: translate3d(0, 0, 0) !important;
+  z-index: 2147483001 !important;
+}
+
+sht-cart-drwr.cart__drawer[open] .drawer__overlay,
+sht-cart-drwr.cart__drawer.active .drawer__overlay {
+  display: block !important;
+  pointer-events: auto !important;
+}
 </style>
