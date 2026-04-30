@@ -171,7 +171,7 @@
       },
       "9388344762370057067": {
         "type": "shopify://apps/essential-slide-cart-drawer/blocks/app-embed/824bb1f9-5f36-4608-a60c-1f2b6a6f8834",
-        "disabled": false,
+        "disabled": true,
         "settings": {}
       },
       "15683396631634586217": {
