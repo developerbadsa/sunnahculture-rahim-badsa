@@ -106,6 +106,31 @@
       });
     </script>
     {%- render 'custom-css' -%}
+    <style id="sht-cart-drawer-critical-fix">
+      sht-cart-drwr.cart__drawer[open],
+      sht-cart-drwr.cart__drawer.active {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        z-index: 2147483000 !important;
+      }
+
+      sht-cart-drwr.cart__drawer[open] .cart-drawer__wrapper,
+      sht-cart-drwr.cart__drawer.active .cart-drawer__wrapper {
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: auto !important;
+        display: flex !important;
+        width: min(100vw, 480px) !important;
+        max-width: 480px !important;
+        height: 100vh !important;
+        transform: translate3d(0, 0, 0) !important;
+        z-index: 2147483001 !important;
+      }
+    </style>
   </head>
 
   <body
@@ -138,6 +163,91 @@
       render 'quickshop'
     -%}
     <ul hidden><li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li><li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li></ul>
+    <script id="sht-cart-drawer-critical-js">
+      (function () {
+        window.__shtCartDrawerInlineFixVersion = "2026-05-01-3";
+
+        function isCartLink(link) {
+          if (!link || !window.routes || !window.routes.cart_url) return false;
+
+          try {
+            return new URL(link.href, window.location.origin).pathname.replace(/\/$/, "") ===
+              new URL(window.routes.cart_url, window.location.origin).pathname.replace(/\/$/, "");
+          } catch (error) {
+            return false;
+          }
+        }
+
+        function forceOpenCartDrawer(opener) {
+          var drawer = document.querySelector("sht-cart-drwr");
+          if (!drawer) return false;
+
+          var wrapper = drawer.querySelector(".js-drawer-wrapper, .js-cart-drawer-wrapper");
+          if (!wrapper) return false;
+
+          window.shtCartDrawer = drawer;
+
+          if (typeof drawer.openDrawer === "function") {
+            try {
+              drawer.openDrawer(opener || document.activeElement);
+            } catch (error) {}
+          }
+
+          drawer.removeAttribute("hidden");
+          drawer.setAttribute("open", "");
+          drawer.setAttribute("aria-hidden", "false");
+          drawer.classList.add("active");
+          drawer.style.setProperty("display", "flex", "important");
+          drawer.style.setProperty("visibility", "visible", "important");
+          drawer.style.setProperty("opacity", "1", "important");
+          drawer.style.setProperty("pointer-events", "auto", "important");
+          drawer.style.setProperty("z-index", "2147483000", "important");
+
+          wrapper.style.setProperty("position", "fixed", "important");
+          wrapper.style.setProperty("top", "0", "important");
+          wrapper.style.setProperty("right", "0", "important");
+          wrapper.style.setProperty("bottom", "0", "important");
+          wrapper.style.setProperty("left", "auto", "important");
+          wrapper.style.setProperty("display", "flex", "important");
+          wrapper.style.setProperty("width", "min(100vw, 480px)", "important");
+          wrapper.style.setProperty("max-width", "480px", "important");
+          wrapper.style.setProperty("height", "100vh", "important");
+          wrapper.style.setProperty("transform", "translate3d(0, 0, 0)", "important");
+          wrapper.style.setProperty("z-index", "2147483001", "important");
+
+          document.body.classList.add("o-hidden");
+
+          if (opener && typeof opener.setAttribute === "function") {
+            opener.setAttribute("aria-expanded", "true");
+          }
+
+          return true;
+        }
+
+        function closeCartDrawer(event) {
+          var closeButton = event.target.closest && event.target.closest(".js-cart-drawer-btn-close, .js-drawer-btn-close, .js-cart-drawer-overlay, .js-drawer-overlay");
+          if (!closeButton || !closeButton.closest("sht-cart-drwr")) return;
+
+          var drawer = closeButton.closest("sht-cart-drwr");
+          drawer.removeAttribute("open");
+          drawer.setAttribute("aria-hidden", "true");
+          drawer.classList.remove("active");
+          document.body.classList.remove("o-hidden");
+        }
+
+        document.addEventListener("click", function (event) {
+          var link = event.target.closest && event.target.closest("a[href]");
+          if (!isCartLink(link)) return;
+
+          if (forceOpenCartDrawer(link)) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+          }
+        }, true);
+
+        document.addEventListener("click", closeCartDrawer, true);
+      })();
+    </script>
     <script id="theme-file-js" src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
     <script id="cart-drawer-custom-js" src="{{ 'cart-drawer-custom.js' | asset_url }}" defer="defer"></script>
     {%- if request.design_mode -%}
