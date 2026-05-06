@@ -19,7 +19,7 @@
             "mobile_height": 550,
             "enable_autoplay": true,
             "autoplay_speed": 3,
-            "transition_speed": 0.6,
+            "transition_speed": 0.5,
             "show_arrows": true,
             "show_dots": false,
             "overlay_opacity": 0,
