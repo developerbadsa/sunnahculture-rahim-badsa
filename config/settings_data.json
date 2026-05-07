@@ -92,11 +92,11 @@
       "popup": {
         "type": "popup",
         "settings": {
-          "show_popup": false,
+          "show_popup": true,
           "color_scheme": "schema-2",
           "subheading": "",
-          "heading": "WhatsApp",
-          "text": "",
+          "heading": "Notice",
+          "text": "<p>📍 Please contact us before visiting, as we operate strictly by appointment only, including weekends (24/7 availability).<br/><br/>📲 Orders can also be placed conveniently via Instagram DM. Simply screenshot the item you’re interested in and send it to us — our team will assist you with any questions or purchases directly through Instagram.</p>",
           "trigger": "reaching-to-footer",
           "show_only_on_index": true,
           "show_only_for_visitors": false
