@@ -197,6 +197,11 @@
         "type": "shopify://apps/seolab-seo-optimizer/blocks/app_embed/faf700f6-3b71-45c3-86d4-83ea9f7d9216",
         "disabled": false,
         "settings": {}
+      },
+      "6889761305161619242": {
+        "type": "shopify://apps/zb-exit-intent-pop-up-window/blocks/zotabox_embed/931156d7-6f52-452c-b65a-2311e860fb3c",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
