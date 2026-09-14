@@ -93,14 +93,14 @@
       "popup": {
         "type": "popup",
         "settings": {
-          "show_popup": true,
+          "show_popup": false,
           "color_scheme": "schema-2",
           "subheading": "Please read",
           "heading": "Notice",
           "text": "<p>📍 Please contact us before visiting, as we operate strictly by appointment only, including weekends (24/7 availability).<br/><br/>📲 Orders can also be placed conveniently via Instagram DM. Simply screenshot the item you’re interested in and send it to us — our team will assist you with any questions or purchases directly through Instagram.</p>",
           "trigger": "reaching-to-footer",
-          "show_only_on_index": true,
-          "show_only_for_visitors": true
+          "show_only_on_index": false,
+          "show_only_for_visitors": false
         }
       },
       "footer": {
@@ -194,6 +194,11 @@
       },
       "8419966592507824873": {
         "type": "shopify://apps/seolab-seo-optimizer/blocks/app_embed/faf700f6-3b71-45c3-86d4-83ea9f7d9216",
+        "disabled": false,
+        "settings": {}
+      },
+      "13070091535480640111": {
+        "type": "shopify://apps/attrac/blocks/app-embed/b783956d-47a9-4434-91ad-4ec960bd74b0",
         "disabled": false,
         "settings": {}
       }
