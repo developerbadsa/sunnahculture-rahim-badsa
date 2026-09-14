@@ -343,7 +343,7 @@
   </sht-coll-prd-drwer>
 {% endif %}
 {%- liquid
-  render 'js-loader', files: "component-product-filter.js" | split: ', '
+  render 'js-loader', files: "component-product-filter.js", split: ', '
 -%}
 {% schema %}
 {
@@ -517,3 +517,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: 'render ''js-loader'', files: "component-product-filter.js" | split: '', '''
+  to: 'render ''js-loader'', files: "component-product-filter.js", split: '', '''
+  position: 22765..22834
+{% endcomment %}

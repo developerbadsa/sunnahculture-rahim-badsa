@@ -595,7 +595,7 @@
   {{ 'vendors.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
 {%- liquid
-  render 'js-loader', files: "component-add-to-cart.js" | split: ', '
+  render 'js-loader', files: "component-add-to-cart.js", split: ', '
   render 'product-google-snippet', product: product
 -%}
 {% schema %}
@@ -3591,4 +3591,13 @@
     }
   ]
 }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: 'render ''js-loader'', files: "component-add-to-cart.js" | split: '', '''
+  to: 'render ''js-loader'', files: "component-add-to-cart.js", split: '', '''
+  position: 46398..46464
+{%- endcomment -%}

@@ -322,7 +322,7 @@
   </div>
 </sht-srch-drwer>
 {%- liquid
-  render 'js-loader', files: "component-search-filter.js" | split: ', '
+  render 'js-loader', files: "component-search-filter.js", split: ', '
 -%}
 <script>
   function SHTGetQueryByName(name) {
@@ -502,3 +502,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: 'render ''js-loader'', files: "component-search-filter.js" | split: '', '''
+  to: 'render ''js-loader'', files: "component-search-filter.js", split: '', '''
+  position: 18683..18751
+{% endcomment %}
