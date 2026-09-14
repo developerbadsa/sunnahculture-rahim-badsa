@@ -12,6 +12,7 @@
     "type_body_font": "neue_haas_unica_n4",
     "type_header_font": "sabon_next_n4",
     "show_background_grid_lines": false,
+    "subheading_style": "badge badge--para",
     "cart_type": "drawer",
     "cart_enable_dynamic_checkout_button": true,
     "show_cart_tax_info": false,
@@ -94,12 +95,12 @@
         "settings": {
           "show_popup": true,
           "color_scheme": "schema-2",
-          "subheading": "",
+          "subheading": "Please read",
           "heading": "Notice",
           "text": "<p>📍 Please contact us before visiting, as we operate strictly by appointment only, including weekends (24/7 availability).<br/><br/>📲 Orders can also be placed conveniently via Instagram DM. Simply screenshot the item you’re interested in and send it to us — our team will assist you with any questions or purchases directly through Instagram.</p>",
           "trigger": "reaching-to-footer",
           "show_only_on_index": true,
-          "show_only_for_visitors": false
+          "show_only_for_visitors": true
         }
       },
       "footer": {
@@ -178,14 +179,12 @@
         "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
         "disabled": false,
         "settings": {
+          "greeting_message": "",
           "button_color": "#101010",
-          "secondary_color": "#ffffff",
-          "ternary_color": "#6a6a6a",
           "button_icon": "chat_bubble",
           "button_text": "no_text",
           "button_horizontal_position": "bottom_left",
-          "button_vertical_position": "lowest",
-          "greeting_message": ""
+          "button_vertical_position": "lowest"
         }
       },
       "8683727044650331206": {
@@ -195,11 +194,6 @@
       },
       "8419966592507824873": {
         "type": "shopify://apps/seolab-seo-optimizer/blocks/app_embed/faf700f6-3b71-45c3-86d4-83ea9f7d9216",
-        "disabled": false,
-        "settings": {}
-      },
-      "6889761305161619242": {
-        "type": "shopify://apps/zb-exit-intent-pop-up-window/blocks/zotabox_embed/931156d7-6f52-452c-b65a-2311e860fb3c",
         "disabled": false,
         "settings": {}
       }
