@@ -22,6 +22,8 @@
     "color_badge_text": "#ffffff",
     "color_sale_badge": "#b8796d",
     "color_low_stock_badge": "#c6973e",
+    "product_card_image_ratio": "auto",
+    "enable_fit_image_to_container": true,
     "enable_quick_buy": true,
     "collection_image_ratio": "2/3",
     "overlay_opacity": 60,
