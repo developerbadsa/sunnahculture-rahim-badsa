@@ -11,6 +11,11 @@
   "current": {
     "type_body_font": "neue_haas_unica_n4",
     "type_header_font": "sabon_next_n4",
+    "button_font_style": "body",
+    "button_font_size": "regular",
+    "subheading_font_style": "heading",
+    "menu_item_font_style": "body",
+    "menu_item_font_size": "regular",
     "show_background_grid_lines": false,
     "subheading_style": "badge badge--para",
     "cart_type": "drawer",
