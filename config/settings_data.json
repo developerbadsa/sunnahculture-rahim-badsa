@@ -1038,9 +1038,9 @@
   "platform_customizations": {
     "custom_css": [
       "/* ========================= PRODUCT PAGE - STICKY IMAGES Desktop only ========================= */@media (min-width: 769px) {.product__media-wrapper {position: sticky; top: 20px; height: fit-content; } .product__media-wrapper .media-wrapper {position: relative; height: 100%; }}",
-      "/* ========================= MOBILE - NORMAL SCROLLING ========================= */@media (max-width: 768px) {.product__media-wrapper {position: static !important; }}",
-      "/* ========================= BEST SELLING BADGE ========================= */.best-selling {background: #ff0000; color: #ffffff; padding: 12px 20px; font-size: 18px; font-weight: 600; display: inline-block; border-radius: 6px;}",
-      "/* ========================= PRODUCT IMAGE VIEWER KEEP ABOVE WEBSITE HEADER ========================= */.product-media-modal,.media-modal {z-index: 999999 !important;}",
+      " /* ========================= MOBILE - NORMAL SCROLLING ========================= */@media (max-width: 768px) {.product__media-wrapper {position: static !important; }}",
+      " /* ========================= BEST SELLING BADGE ========================= */.best-selling {background: #ff0000; color: #ffffff; padding: 12px 20px; font-size: 18px; font-weight: 600; display: inline-block; border-radius: 6px;}",
+      " /* ========================= PRODUCT IMAGE VIEWER KEEP ABOVE WEBSITE HEADER ========================= */.product-media-modal,.media-modal {z-index: 999999 !important;}",
       ".product-media-modal__dialog,.product-media-modal__content {z-index: 999999 !important;}"
     ]
   }
