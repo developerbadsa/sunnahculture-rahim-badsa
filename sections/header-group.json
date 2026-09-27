@@ -113,7 +113,7 @@
             "show_support": true,
             "support_label": "Customer support",
             "phone_number": "+44 7482175252",
-            "show_account": true,
+            "show_account": false,
             "show_wishlist": false,
             "wishlist_count": 0,
             "menu": "main-menu",
