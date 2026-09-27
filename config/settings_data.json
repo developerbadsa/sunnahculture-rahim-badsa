@@ -26,6 +26,7 @@
     "cart_minimum_order_price_for_free_shipping": "55",
     "search_result_type": "product,page",
     "product_information_low_stock_threshold": 3,
+    "variant_swatches_option": "colour",
     "color_badge_text": "#ffffff",
     "color_sale_badge": "#b8796d",
     "color_low_stock_badge": "#c6973e",
