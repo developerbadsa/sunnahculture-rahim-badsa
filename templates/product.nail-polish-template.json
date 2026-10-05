@@ -32,20 +32,6 @@
           "type": "basic_description",
           "settings": {}
         },
-        "custom_liquid_R7t9Am": {
-          "type": "custom_liquid",
-          "settings": {
-            "liquid_code": "<style>\n.dtc-benefits {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 30px;\n  max-width: 900px;\n  margin: 20px auto;\n  text-align: center;\n}\n\n.dtc-item {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n\n.dtc-icon {\n  font-size: 26px;\n  margin-bottom: 10px;\n}\n\n.dtc-item h4 {\n  font-size: 18px;\n  margin: 5px 0;\n}\n\n.dtc-item p {\n  font-size: 14px;\n  color: #555;\n  margin: 0;\n  max-width: 220px;\n}\n\n/* Mobile */\n@media (max-width: 768px) {\n  .dtc-benefits {\n    grid-template-columns: 1fr;\n  }\n}\n</style>\n\n<div class=\"dtc-benefits\">\n  \n  <div class=\"dtc-item\">\n    <div class=\"dtc-icon\">🔒</div>\n    <h4>Secure Checkout</h4>\n    <p>Your payment is safe and protected with trusted methods.</p>\n  </div>\n\n  <div class=\"dtc-item\">\n    <div class=\"dtc-icon\">🚚</div>\n    <h4>Fast Delivery</h4>\n    <p>Quick shipping with tracking for peace of mind.</p>\n  </div>\n\n  <div class=\"dtc-item\">\n    <div class=\"dtc-icon\">💎</div>\n    <h4>Damage Protection</h4>\n    <p>Receive a damaged item? Send a photo within 24 hours for a quick replacement.</p>\n  </div>\n\n</div>"
-          }
-        },
-        "variants": {
-          "type": "variants",
-          "settings": {
-            "show_stock_number": true,
-            "variant_picker_type": "button",
-            "enable_variant_swatches": true
-          }
-        },
         "price": {
           "type": "price",
           "settings": {
@@ -53,11 +39,10 @@
             "show_tax_and_shipping_policy": false
           }
         },
-        "pickup_availability": {
-          "type": "pickup_availability",
+        "custom_liquid_R7t9Am": {
+          "type": "custom_liquid",
           "settings": {
-            "color_scheme": "color-accent-1",
-            "show_expected_pickup_time": true
+            "liquid_code": "<style>\n.dtc-benefits {\n  display: grid;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 20px;\n  max-width: 900px;\n  margin: 18px auto;\n  padding: 0 12px;\n  text-align: center;\n}\n\n.dtc-item {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n\n.dtc-icon {\n  font-size: 26px;\n  line-height: 1;\n  margin-bottom: 8px;\n}\n\n.dtc-item h4 {\n  font-size: 16px;\n  margin: 4px 0 6px;\n}\n\n.dtc-item p {\n  font-size: 13px;\n  line-height: 1.4;\n  color: #555;\n  margin: 0;\n  max-width: 220px;\n}\n\n/* Mobile */\n@media (max-width: 768px) {\n  .dtc-benefits {\n    grid-template-columns: repeat(3, minmax(0, 1fr));\n    gap: 10px;\n    padding: 0 8px;\n  }\n\n  .dtc-icon {\n    font-size: 22px;\n  }\n\n  .dtc-item h4 {\n    font-size: 13px;\n  }\n\n  .dtc-item p {\n    font-size: 11px;\n    line-height: 1.3;\n  }\n}\n</style>\n\n<div class=\"dtc-benefits\">\n\n  <div class=\"dtc-item\">\n    <div class=\"dtc-icon\">🔒</div>\n    <h4>Secure Checkout</h4>\n    <p>Safe payment with trusted methods.</p>\n  </div>\n\n  <div class=\"dtc-item\">\n    <div class=\"dtc-icon\">🚚</div>\n    <h4>Tracked Delivery</h4>\n    <p>Tracked shipping for peace of mind.</p>\n  </div>\n\n  <div class=\"dtc-item\">\n    <div class=\"dtc-icon\">🔁</div>\n    <h4>Size Exchange</h4>\n    <p>Exchange your size within 7 days.</p>\n  </div>\n\n</div>"
           }
         },
         "purchasing": {
@@ -66,6 +51,13 @@
             "show_quantity_selector": "add-to-cart",
             "show_dynamic_checkout_buttons": true,
             "show_gift_card_recipient": false
+          }
+        },
+        "pickup_availability": {
+          "type": "pickup_availability",
+          "settings": {
+            "color_scheme": "color-accent-1",
+            "show_expected_pickup_time": true
           }
         },
         "custom_liquid_AL7xcN": {
@@ -88,7 +80,7 @@
             "secondary_options_icon": "question-mark",
             "html_code_2": "",
             "secondary_heading": "Can I return or exchange my item?",
-            "secondary_content": "<p>Yes, we offer easy returns and exchanges within 30 days.</p>",
+            "secondary_content": "<p>Unfortunatley not for Nail polish.</p>",
             "icon_source_3": "theme_library",
             "tertiary_options_icon": "question-mark",
             "html_code_3": "",
@@ -106,20 +98,19 @@
         "vendor",
         "title",
         "basic_description",
-        "custom_liquid_R7t9Am",
-        "variants",
         "price",
-        "pickup_availability",
+        "custom_liquid_R7t9Am",
         "purchasing",
+        "pickup_availability",
         "custom_liquid_AL7xcN",
         "extra_information_BheKtr"
       ],
       "settings": {
         "color_scheme": "",
         "remove_padding_top": true,
-        "remove_padding_bottom": false,
-        "media_ratio": "1/1",
-        "thumbnails_ratio": "1/1",
+        "remove_padding_bottom": true,
+        "media_ratio": "auto",
+        "thumbnails_ratio": "2/3",
         "desktop_media_layout": "single_with_thumbnails",
         "width_on_large_screen": "product__media-wrapper--full",
         "enable_pagination_mobile": true,
