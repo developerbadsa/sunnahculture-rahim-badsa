@@ -99,7 +99,7 @@
           "settings": {
             "icon_source": "custom_img",
             "options_icon": "subscription",
-            "custom_img": "shopify://shop_images/file_00000000aff08210b2ba6febbfdecf90.png",
+            "custom_img": "shopify://shop_images/Awrah_shorts_-_complete_cover.png",
             "html_code": "",
             "heading": "Navel-to-Knee Coverage",
             "description": "<p>Integrated compression designed for secure modest coverage.</p>"
@@ -110,7 +110,7 @@
           "settings": {
             "icon_source": "custom_img",
             "options_icon": "global",
-            "custom_img": "shopify://shop_images/5482445.png",
+            "custom_img": "shopify://shop_images/Awrah_shorts_-_4_way_strech.png",
             "html_code": "",
             "heading": "4-Way Stretch",
             "description": "<p>Flexible fabric made to move comfortably with you.</p>"
@@ -121,7 +121,7 @@
           "settings": {
             "icon_source": "custom_img",
             "options_icon": "support",
-            "custom_img": "shopify://shop_images/file_0000000056a88210b8c6bfb6a60d0c03.png",
+            "custom_img": "shopify://shop_images/Awrah_shorts_-_high_compression.png",
             "html_code": "",
             "heading": "Stay-Put Waistband",
             "description": "<p>Extended waist coverage designed to stay secure during movement.</p>"
@@ -132,7 +132,7 @@
           "settings": {
             "icon_source": "custom_img",
             "options_icon": "gift",
-            "custom_img": "shopify://shop_images/file_000000004cc082109ef8e47bf6a6433f.png",
+            "custom_img": "shopify://shop_images/Awrah_shorts_-_zip.png",
             "html_code": "",
             "heading": "Secure Zip Pockets",
             "description": "<p>Keep your phone and essentials secure while training.</p>"
@@ -145,24 +145,25 @@
         "item_G6xgBc",
         "item_wdEii6"
       ],
+      "custom_css": [],
       "name": "t:sections.icon_with_text.name",
       "settings": {
         "color_scheme": "",
         "subheading": "",
         "heading": "Built for Modest Performance",
         "description": "",
-        "icon_color": "color-accent-bg-2",
+        "icon_color": "none",
         "items_per_row_on_desktop": "4",
-        "items_per_row_on_tablet": "3",
+        "items_per_row_on_tablet": "2",
         "content_align": "ta-center",
         "enable_carousel": false,
         "show_navigation": false,
-        "remove_padding_top": false,
-        "remove_padding_bottom": false,
+        "remove_padding_top": true,
+        "remove_padding_bottom": true,
         "button_main_text": "",
         "button_main_link": "",
         "badge_text": "",
-        "badge_color": "color-accent-1",
+        "badge_color": "color-accent-2",
         "badge_position": "p-badge--bottom-right",
         "badge_shape": "badge--star"
       }
