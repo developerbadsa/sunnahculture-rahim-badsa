@@ -15,13 +15,13 @@
         "ai_gen_block_d43e3cc_xaDXp6": {
           "type": "ai_gen_block_d43e3cc",
           "settings": {
-            "desktop_height": 650,
-            "mobile_height": 550,
+            "desktop_height": 600,
+            "mobile_height": 600,
             "enable_autoplay": true,
-            "autoplay_speed": 3,
+            "autoplay_speed": 5,
             "transition_speed": 0.5,
-            "show_arrows": true,
-            "show_dots": false,
+            "show_arrows": false,
+            "show_dots": true,
             "overlay_opacity": 0,
             "label_bg_color": "#ffffff",
             "label_text_color": "#000000",
