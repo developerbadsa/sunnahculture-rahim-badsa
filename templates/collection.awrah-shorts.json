@@ -167,6 +167,31 @@
         "badge_position": "p-badge--bottom-right",
         "badge_shape": "badge--star"
       }
+    },
+    "image_with_text_iez8aK": {
+      "type": "image-with-text",
+      "disabled": true,
+      "name": "t:sections.image_with_text.name",
+      "settings": {
+        "color_scheme": "",
+        "enable_large_heading": false,
+        "content_alignment": "ta-left",
+        "remove_padding_top": true,
+        "remove_padding_bottom": true,
+        "primary_image_ratio": "square",
+        "secondary_image_ratio": "portrait",
+        "subheading": "AWRAH PERFORMANCE",
+        "heading": "Designed for Coverage",
+        "description": "",
+        "button_main_text": "",
+        "button_main_link": "",
+        "button_sub_text": "",
+        "button_sub_link": "",
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--bottom-right",
+        "badge_shape": "badge--star"
+      }
     }
   },
   "order": [
@@ -174,6 +199,7 @@
     "177661874497da0cfc",
     "header",
     "main",
-    "icon_with_text_qffAQC"
+    "icon_with_text_qffAQC",
+    "image_with_text_iez8aK"
   ]
 }
