@@ -85,9 +85,9 @@
         "item_per_page": "24",
         "remove_padding_top": false,
         "remove_padding_bottom": false,
-        "enable_filtering": true,
+        "enable_filtering": false,
         "expand_all_filter": false,
-        "enable_sort": true,
+        "enable_sort": false,
         "desktop_filter_and_sort_layout": "horizontal"
       }
     },
