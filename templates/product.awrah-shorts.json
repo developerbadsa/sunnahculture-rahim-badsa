@@ -28,6 +28,21 @@
             "enable_share": true
           }
         },
+        "custom_text_RWJgtr": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Designed for Muslim men who want modesty without compromising performance. Lightweight 4-way stretch outer shorts with integrated navel-to-knee compression, extended waist coverage and secure zip pockets Built for gym, football, running, swimming and everyday movement.",
+            "text_style": "body"
+          }
+        },
+        "variants": {
+          "type": "variants",
+          "settings": {
+            "show_stock_number": true,
+            "variant_picker_type": "button",
+            "enable_variant_swatches": true
+          }
+        },
         "size_guide_DHNKLy": {
           "type": "size_guide",
           "settings": {
@@ -38,14 +53,6 @@
             "icon_source_size_guide": "theme_library",
             "size_options_icon": "ruler",
             "html_code_size_guide": ""
-          }
-        },
-        "variants": {
-          "type": "variants",
-          "settings": {
-            "show_stock_number": true,
-            "variant_picker_type": "button",
-            "enable_variant_swatches": true
           }
         },
         "price": {
@@ -117,8 +124,9 @@
       "block_order": [
         "vendor",
         "title",
-        "size_guide_DHNKLy",
+        "custom_text_RWJgtr",
         "variants",
+        "size_guide_DHNKLy",
         "price",
         "purchasing",
         "custom_liquid_dwJHVw",
