@@ -33,19 +33,6 @@
           "type": "basic_description",
           "settings": {}
         },
-        "custom_liquid_pFT8pY": {
-          "type": "custom_liquid",
-          "settings": {
-            "liquid_code": "<style>\n.dtc-benefits {\n  display: grid;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 20px;\n  max-width: 900px;\n  margin: 18px auto;\n  padding: 0 12px;\n  text-align: center;\n}\n\n.dtc-item {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n\n.dtc-icon {\n  font-size: 26px;\n  line-height: 1;\n  margin-bottom: 8px;\n}\n\n.dtc-item h4 {\n  font-size: 16px;\n  margin: 4px 0 6px;\n}\n\n.dtc-item p {\n  font-size: 13px;\n  line-height: 1.4;\n  color: #555;\n  margin: 0;\n  max-width: 220px;\n}\n\n/* Mobile */\n@media (max-width: 768px) {\n  .dtc-benefits {\n    grid-template-columns: repeat(3, minmax(0, 1fr));\n    gap: 10px;\n    padding: 0 8px;\n  }\n\n  .dtc-icon {\n    font-size: 22px;\n  }\n\n  .dtc-item h4 {\n    font-size: 13px;\n  }\n\n  .dtc-item p {\n    font-size: 11px;\n    line-height: 1.3;\n  }\n}\n</style>\n\n<div class=\"dtc-benefits\">\n\n  <div class=\"dtc-item\">\n    <div class=\"dtc-icon\">🔒</div>\n    <h4>Secure Checkout</h4>\n    <p>Safe payment with trusted methods.</p>\n  </div>\n\n  <div class=\"dtc-item\">\n    <div class=\"dtc-icon\">🚚</div>\n    <h4>Tracked Delivery</h4>\n    <p>Tracked shipping for peace of mind.</p>\n  </div>\n\n  <div class=\"dtc-item\">\n    <div class=\"dtc-icon\">🔁</div>\n    <h4>Size Exchange</h4>\n    <p>Exchange your size within 7 days.</p>\n  </div>\n\n</div>"
-          }
-        },
-        "price": {
-          "type": "price",
-          "settings": {
-            "show_sale_badge": true,
-            "show_tax_and_shipping_policy": true
-          }
-        },
         "variants": {
           "type": "variants",
           "settings": {
@@ -54,11 +41,11 @@
             "enable_variant_swatches": false
           }
         },
-        "pickup_availability_9zH6eL": {
-          "type": "pickup_availability",
+        "price": {
+          "type": "price",
           "settings": {
-            "color_scheme": "color-accent-1",
-            "show_expected_pickup_time": true
+            "show_sale_badge": true,
+            "show_tax_and_shipping_policy": true
           }
         },
         "purchasing": {
@@ -73,6 +60,19 @@
           "type": "custom_liquid",
           "settings": {
             "liquid_code": "<style>\n.icon-list-custom {\n  display: flex;\n  flex-wrap: wrap;\n  list-style: none;\n  justify-content: center;\n  margin: 0;\n  gap: 8px;\n  padding: 0;\n  margin-top: -1rem;\n}\n</style>\n\n<ul class=\"icon-list-custom\" role=\"list\">\n{% assign enabled_payment_types = 'visa,master,american_express,paypal,apple_pay,google_pay,klarna' | remove: ' ' | split: ',' %}\n{% for type in enabled_payment_types %}\n  <li>{{ type | payment_type_svg_tag: class: 'icon-svg' }}</li>\n{%- endfor -%}\n</ul>"
+          }
+        },
+        "custom_liquid_pFT8pY": {
+          "type": "custom_liquid",
+          "settings": {
+            "liquid_code": "<style>\n.dtc-benefits {\n  display: grid;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 20px;\n  max-width: 900px;\n  margin: 18px auto;\n  padding: 0 12px;\n  text-align: center;\n}\n\n.dtc-item {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n\n.dtc-icon {\n  font-size: 26px;\n  line-height: 1;\n  margin-bottom: 8px;\n}\n\n.dtc-item h4 {\n  font-size: 16px;\n  margin: 4px 0 6px;\n}\n\n.dtc-item p {\n  font-size: 13px;\n  line-height: 1.4;\n  color: #555;\n  margin: 0;\n  max-width: 220px;\n}\n\n/* Mobile */\n@media (max-width: 768px) {\n  .dtc-benefits {\n    grid-template-columns: repeat(3, minmax(0, 1fr));\n    gap: 10px;\n    padding: 0 8px;\n  }\n\n  .dtc-icon {\n    font-size: 22px;\n  }\n\n  .dtc-item h4 {\n    font-size: 13px;\n  }\n\n  .dtc-item p {\n    font-size: 11px;\n    line-height: 1.3;\n  }\n}\n</style>\n\n<div class=\"dtc-benefits\">\n\n  <div class=\"dtc-item\">\n    <div class=\"dtc-icon\">🔒</div>\n    <h4>Secure Checkout</h4>\n    <p>Safe payment with trusted methods.</p>\n  </div>\n\n  <div class=\"dtc-item\">\n    <div class=\"dtc-icon\">🚚</div>\n    <h4>Tracked Delivery</h4>\n    <p>Tracked shipping for peace of mind.</p>\n  </div>\n\n  <div class=\"dtc-item\">\n    <div class=\"dtc-icon\">🔁</div>\n    <h4>Size Exchange</h4>\n    <p>Exchange your size within 7 days.</p>\n  </div>\n\n</div>"
+          }
+        },
+        "pickup_availability_9zH6eL": {
+          "type": "pickup_availability",
+          "settings": {
+            "color_scheme": "color-accent-1",
+            "show_expected_pickup_time": true
           }
         },
         "extra_information_cXzcXk": {
@@ -107,12 +107,12 @@
         "vendor",
         "title",
         "basic_description",
-        "custom_liquid_pFT8pY",
-        "price",
         "variants",
-        "pickup_availability_9zH6eL",
+        "price",
         "purchasing",
         "custom_liquid_tzQP8K",
+        "custom_liquid_pFT8pY",
+        "pickup_availability_9zH6eL",
         "extra_information_cXzcXk"
       ],
       "settings": {
