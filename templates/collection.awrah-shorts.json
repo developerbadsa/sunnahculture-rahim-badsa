@@ -97,8 +97,9 @@
         "item_QWDg9c": {
           "type": "item",
           "settings": {
-            "icon_source": "theme_library",
+            "icon_source": "custom_img",
             "options_icon": "subscription",
+            "custom_img": "shopify://shop_images/file_00000000aff08210b2ba6febbfdecf90.png",
             "html_code": "",
             "heading": "Navel-to-Knee Coverage",
             "description": "<p>Integrated compression designed for secure modest coverage.</p>"
@@ -107,8 +108,9 @@
         "item_r7Rgmj": {
           "type": "item",
           "settings": {
-            "icon_source": "theme_library",
+            "icon_source": "custom_img",
             "options_icon": "global",
+            "custom_img": "shopify://shop_images/5482445.png",
             "html_code": "",
             "heading": "4-Way Stretch",
             "description": "<p>Flexible fabric made to move comfortably with you.</p>"
@@ -117,8 +119,9 @@
         "item_G6xgBc": {
           "type": "item",
           "settings": {
-            "icon_source": "theme_library",
+            "icon_source": "custom_img",
             "options_icon": "support",
+            "custom_img": "shopify://shop_images/file_0000000056a88210b8c6bfb6a60d0c03.png",
             "html_code": "",
             "heading": "Stay-Put Waistband",
             "description": "<p>Extended waist coverage designed to stay secure during movement.</p>"
@@ -127,8 +130,9 @@
         "item_wdEii6": {
           "type": "item",
           "settings": {
-            "icon_source": "theme_library",
+            "icon_source": "custom_img",
             "options_icon": "gift",
+            "custom_img": "shopify://shop_images/file_000000004cc082109ef8e47bf6a6433f.png",
             "html_code": "",
             "heading": "Secure Zip Pockets",
             "description": "<p>Keep your phone and essentials secure while training.</p>"
@@ -147,7 +151,7 @@
         "subheading": "",
         "heading": "Built for Modest Performance",
         "description": "",
-        "icon_color": "color-accent-bg-1",
+        "icon_color": "color-accent-bg-2",
         "items_per_row_on_desktop": "4",
         "items_per_row_on_tablet": "3",
         "content_align": "ta-center",
