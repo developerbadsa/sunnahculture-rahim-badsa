@@ -35,6 +35,8 @@
     "product_card_image_ratio": "auto",
     "enable_fit_image_to_container": true,
     "show_product_rating": false,
+    "show_color_swatches": false,
+    "show_sale_badge": true,
     "enable_quick_buy": true,
     "collection_image_ratio": "auto",
     "overlay_opacity": 50,
