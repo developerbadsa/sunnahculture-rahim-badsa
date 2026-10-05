@@ -118,6 +118,7 @@
         },
         "basic_description": {
           "type": "basic_description",
+          "disabled": true,
           "settings": {}
         }
       },

@@ -74,7 +74,7 @@
       ],
       "settings": {
         "color_scheme": "",
-        "enable_drawer": true,
+        "enable_drawer": false,
         "enable_sticky_header": false,
         "logo_position": "top-center",
         "logo": "shopify://shop_images/Logo.jpg",
@@ -90,15 +90,10 @@
         "logo_transparent": "shopify://shop_images/Logo.jpg",
         "transparent_text_color": "#ffffff"
       }
-    },
-    "17747175164c90f153": {
-      "type": "_blocks",
-      "settings": {}
     }
   },
   "order": [
     "announcement-bar",
-    "header",
-    "17747175164c90f153"
+    "header"
   ]
 }
