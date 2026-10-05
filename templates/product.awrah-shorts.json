@@ -141,7 +141,7 @@
         "remove_padding_top": true,
         "remove_padding_bottom": false,
         "media_ratio": "auto",
-        "thumbnails_ratio": "1/1",
+        "thumbnails_ratio": "2/3",
         "desktop_media_layout": "single_with_thumbnails",
         "width_on_large_screen": "product__media-wrapper--full",
         "enable_pagination_mobile": true,
