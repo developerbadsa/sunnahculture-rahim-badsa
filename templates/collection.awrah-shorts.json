@@ -90,12 +90,85 @@
         "enable_sort": true,
         "desktop_filter_and_sort_layout": "horizontal"
       }
+    },
+    "icon_with_text_qffAQC": {
+      "type": "icon-with-text",
+      "blocks": {
+        "item_QWDg9c": {
+          "type": "item",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "subscription",
+            "html_code": "",
+            "heading": "Item heading",
+            "description": "<p>Share information about your products, policies or services. </p>"
+          }
+        },
+        "item_r7Rgmj": {
+          "type": "item",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "global",
+            "html_code": "",
+            "heading": "Item heading",
+            "description": "<p>Share information about your products, policies or services. </p>"
+          }
+        },
+        "item_G6xgBc": {
+          "type": "item",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "support",
+            "html_code": "",
+            "heading": "Item heading",
+            "description": "<p>Share information about your products, policies or services. </p>"
+          }
+        },
+        "item_wdEii6": {
+          "type": "item",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "gift",
+            "html_code": "",
+            "heading": "Item heading",
+            "description": "<p>Share information about your products, policies or services. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_QWDg9c",
+        "item_r7Rgmj",
+        "item_G6xgBc",
+        "item_wdEii6"
+      ],
+      "name": "t:sections.icon_with_text.name",
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "Icon with text",
+        "description": "",
+        "icon_color": "color-accent-bg-1",
+        "items_per_row_on_desktop": "4",
+        "items_per_row_on_tablet": "3",
+        "content_align": "ta-center",
+        "enable_carousel": false,
+        "show_navigation": false,
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "button_main_text": "",
+        "button_main_link": "",
+        "badge_text": "Your title",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--bottom-right",
+        "badge_shape": "badge--star"
+      }
     }
   },
   "order": [
     "breadcrumb",
     "177661874497da0cfc",
     "header",
-    "main"
+    "main",
+    "icon_with_text_qffAQC"
   ]
 }
