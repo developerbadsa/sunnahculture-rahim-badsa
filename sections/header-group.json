@@ -72,7 +72,6 @@
         "mega-menu-1",
         "mega-menu-0"
       ],
-      "disabled": true,
       "settings": {
         "color_scheme": "",
         "enable_drawer": true,
@@ -94,54 +93,6 @@
     },
     "17747175164c90f153": {
       "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_6a58012_JVfRg3": {
-          "type": "ai_gen_block_6a58012",
-          "settings": {
-            "logo": "shopify://shop_images/Logo.webp",
-            "logo_width": 135,
-            "logo_height": 60,
-            "logo_width_mobile": 60,
-            "logo_height_mobile": 55,
-            "logo_bg_color": "#ffffff",
-            "logo_icon_color": "#101010",
-            "logo_border_radius": 0,
-            "search_placeholder": "Search",
-            "search_bg_color": "#f8f8f8",
-            "search_border_color": "#e0e0e0",
-            "search_border_radius": 6,
-            "show_support": true,
-            "support_label": "Customer support",
-            "phone_number": "+44 7482175252",
-            "show_account": false,
-            "show_wishlist": false,
-            "wishlist_count": 0,
-            "menu": "main-menu",
-            "secondary_link_1_text": "",
-            "secondary_link_1_url": "",
-            "secondary_link_2_text": "",
-            "secondary_link_2_url": "",
-            "background_color": "#ffffff",
-            "text_color": "#101010",
-            "label_color": "#666666",
-            "placeholder_color": "#999999",
-            "icon_color": "#101010",
-            "badge_bg_color": "#ff4444",
-            "badge_text_color": "#ffffff",
-            "nav_bg_color": "#fafafa",
-            "nav_border_color": "#e5e5e5",
-            "nav_text_color": "#101010",
-            "nav_hover_color": "#0066cc",
-            "nav_badge_bg": "#ff4444",
-            "nav_badge_text": "#ffffff",
-            "desktop_width_percent": 65
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_6a58012_JVfRg3"
-      ],
       "settings": {}
     }
   },
