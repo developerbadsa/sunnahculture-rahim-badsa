@@ -17,7 +17,7 @@
     "menu_item_font_style": "body",
     "menu_item_font_size": "regular",
     "show_background_grid_lines": false,
-    "subheading_style": "subheading-type--text",
+    "subheading_style": "badge badge--para",
     "cart_type": "drawer",
     "enable_cart_product_vendor": false,
     "enable_cart_order_notes": false,

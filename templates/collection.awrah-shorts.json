@@ -100,8 +100,8 @@
             "icon_source": "theme_library",
             "options_icon": "subscription",
             "html_code": "",
-            "heading": "Item heading",
-            "description": "<p>Share information about your products, policies or services. </p>"
+            "heading": "Navel-to-Knee Coverage",
+            "description": "<p>Integrated compression designed for secure modest coverage.</p>"
           }
         },
         "item_r7Rgmj": {
@@ -110,8 +110,8 @@
             "icon_source": "theme_library",
             "options_icon": "global",
             "html_code": "",
-            "heading": "Item heading",
-            "description": "<p>Share information about your products, policies or services. </p>"
+            "heading": "4-Way Stretch",
+            "description": "<p>Flexible fabric made to move comfortably with you.</p>"
           }
         },
         "item_G6xgBc": {
@@ -120,8 +120,8 @@
             "icon_source": "theme_library",
             "options_icon": "support",
             "html_code": "",
-            "heading": "Item heading",
-            "description": "<p>Share information about your products, policies or services. </p>"
+            "heading": "Stay-Put Waistband",
+            "description": "<p>Extended waist coverage designed to stay secure during movement.</p>"
           }
         },
         "item_wdEii6": {
@@ -130,8 +130,8 @@
             "icon_source": "theme_library",
             "options_icon": "gift",
             "html_code": "",
-            "heading": "Item heading",
-            "description": "<p>Share information about your products, policies or services. </p>"
+            "heading": "Secure Zip Pockets",
+            "description": "<p>Keep your phone and essentials secure while training.</p>"
           }
         }
       },
@@ -145,7 +145,7 @@
       "settings": {
         "color_scheme": "",
         "subheading": "",
-        "heading": "Icon with text",
+        "heading": "Built for Modest Performance",
         "description": "",
         "icon_color": "color-accent-bg-1",
         "items_per_row_on_desktop": "4",
@@ -157,7 +157,7 @@
         "remove_padding_bottom": false,
         "button_main_text": "",
         "button_main_link": "",
-        "badge_text": "Your title",
+        "badge_text": "",
         "badge_color": "color-accent-1",
         "badge_position": "p-badge--bottom-right",
         "badge_shape": "badge--star"
