@@ -15,7 +15,7 @@
         "ai_gen_block_d43e3cc_xaDXp6": {
           "type": "ai_gen_block_d43e3cc",
           "settings": {
-            "desktop_height": 600,
+            "desktop_height": 650,
             "mobile_height": 600,
             "enable_autoplay": true,
             "autoplay_speed": 5,
@@ -43,7 +43,7 @@
             "slide_1_text": "",
             "slide_1_button_text": "Abayas",
             "slide_1_button_link": "shopify://collections/abaya",
-            "slide_2_enabled": true,
+            "slide_2_enabled": false,
             "slide_2_image_desktop": "shopify://shop_images/Ihraam_and_belt_for_cheap_bargin._Vest_quality_white_hidden_zip_pocket_3_pockets_01a75e95-7f70-43fe-9409-7c2356dcabbc.png",
             "slide_2_image_mobile": "shopify://shop_images/Ihraam_and_belt_for_cheap_bargin._Vest_quality_white_hidden_zip_pocket_3_pockets_best_quality.png",
             "slide_2_label": "",
@@ -57,8 +57,8 @@
             "slide_3_label": "",
             "slide_3_heading": "",
             "slide_3_text": "",
-            "slide_3_button_text": "Our perfumes",
-            "slide_3_button_link": "shopify://collections/perfumes"
+            "slide_3_button_text": "Shop Ihraam and Belt",
+            "slide_3_button_link": "shopify://collections/ihram-belt"
           },
           "blocks": {}
         }
