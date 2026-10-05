@@ -73,7 +73,7 @@
         "custom_liquid_dwJHVw": {
           "type": "custom_liquid",
           "settings": {
-            "liquid_code": "<style>\n.icon-list-custom {\n  display: flex;\n  flex-wrap: wrap;\n  list-style: none;\n  justify-content: center;\n  margin: 0;\n  gap: 8px;\n  padding: 0;\n  margin-top: -1rem;\n}\n</style>\n\n<ul class=\"icon-list-custom\" role=\"list\">\n{% assign enabled_payment_types = 'visa,master,american_express,paypal,apple_pay,google_pay' | remove: ' ' | split: ',' %}\n{% for type in enabled_payment_types %}\n  <li>{{ type | payment_type_svg_tag: class: 'icon-svg' }}</li>\n{%- endfor -%}\n</ul>"
+            "liquid_code": "<style>\n.icon-list-custom {\n  display: flex;\n  flex-wrap: wrap;\n  list-style: none;\n  justify-content: center;\n  margin: 0;\n  gap: 8px;\n  padding: 0;\n  margin-top: -1rem;\n}\n</style>\n\n<ul class=\"icon-list-custom\" role=\"list\">\n{% assign enabled_payment_types = 'visa,master,american_express,paypal,apple_pay,google_pay,klarna' | remove: ' ' | split: ',' %}\n{% for type in enabled_payment_types %}\n  <li>{{ type | payment_type_svg_tag: class: 'icon-svg' }}</li>\n{%- endfor -%}\n</ul>"
           }
         },
         "pickup_availability": {
