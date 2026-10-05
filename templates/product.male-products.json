@@ -33,17 +33,23 @@
           "type": "basic_description",
           "settings": {}
         },
-        "custom_liquid_FHk9Kb": {
-          "type": "custom_liquid",
-          "settings": {
-            "liquid_code": "<style>\n.dtc-benefits {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 30px;\n  max-width: 900px;\n  margin: 20px auto;\n  text-align: center;\n}\n\n.dtc-item {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n\n.dtc-icon {\n  font-size: 26px;\n  margin-bottom: 10px;\n}\n\n.dtc-item h4 {\n  font-size: 18px;\n  margin: 5px 0;\n}\n\n.dtc-item p {\n  font-size: 14px;\n  color: #555;\n  margin: 0;\n  max-width: 220px;\n}\n\n/* Mobile */\n@media (max-width: 768px) {\n  .dtc-benefits {\n    grid-template-columns: 1fr;\n  }\n}\n</style>\n\n<div class=\"dtc-benefits\">\n  \n  <div class=\"dtc-item\">\n    <div class=\"dtc-icon\">🔒</div>\n    <h4>Secure Checkout</h4>\n    <p>Your payment is safe and protected with trusted methods.</p>\n  </div>\n\n  <div class=\"dtc-item\">\n    <div class=\"dtc-icon\">🚚</div>\n    <h4>Fast Delivery</h4>\n    <p>Quick shipping with tracking for peace of mind.</p>\n  </div>\n\n  <div class=\"dtc-item\">\n    <div class=\"dtc-icon\">🔁</div>\n    <h4>Easy Exchange</h4>\n    <p>Exchange available within 7 days if your size isn’t the perfect fit.</p>\n  </div>\n\n</div>"
-          }
-        },
         "price": {
           "type": "price",
           "settings": {
             "show_sale_badge": true,
             "show_tax_and_shipping_policy": true
+          }
+        },
+        "size_guide_wae87G": {
+          "type": "size_guide",
+          "settings": {
+            "heading": "Size guide",
+            "content_source": "static-page",
+            "static_page": "mens-thobe-size-guide",
+            "product_metafield_name": "",
+            "icon_source_size_guide": "theme_library",
+            "size_options_icon": "ruler",
+            "html_code_size_guide": ""
           }
         },
         "variants": {
@@ -52,6 +58,12 @@
             "show_stock_number": false,
             "variant_picker_type": "dropdown",
             "enable_variant_swatches": false
+          }
+        },
+        "custom_liquid_FHk9Kb": {
+          "type": "custom_liquid",
+          "settings": {
+            "liquid_code": "<style>\n.dtc-benefits {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 30px;\n  max-width: 900px;\n  margin: 20px auto;\n  text-align: center;\n}\n\n.dtc-item {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n\n.dtc-icon {\n  font-size: 26px;\n  margin-bottom: 10px;\n}\n\n.dtc-item h4 {\n  font-size: 18px;\n  margin: 5px 0;\n}\n\n.dtc-item p {\n  font-size: 14px;\n  color: #555;\n  margin: 0;\n  max-width: 220px;\n}\n\n/* Mobile */\n@media (max-width: 768px) {\n  .dtc-benefits {\n    grid-template-columns: 1fr;\n  }\n}\n</style>\n\n<div class=\"dtc-benefits\">\n  \n  <div class=\"dtc-item\">\n    <div class=\"dtc-icon\">🔒</div>\n    <h4>Secure Checkout</h4>\n    <p>Your payment is safe and protected with trusted methods.</p>\n  </div>\n\n  <div class=\"dtc-item\">\n    <div class=\"dtc-icon\">🚚</div>\n    <h4>Fast Delivery</h4>\n    <p>Quick shipping with tracking for peace of mind.</p>\n  </div>\n\n  <div class=\"dtc-item\">\n    <div class=\"dtc-icon\">🔁</div>\n    <h4>Easy Exchange</h4>\n    <p>Exchange available within 7 days if your size isn’t the perfect fit.</p>\n  </div>\n\n</div>"
           }
         },
         "pickup_availability_9zH6eL": {
@@ -83,29 +95,29 @@
             "icon_source_1": "theme_library",
             "primary_options_icon": "question-mark",
             "html_code_1": "",
-            "primary_heading": "What payment methods do you accept?",
-            "primary_content": "<p>We accept Visa, Mastercard, PayPal, Apple Pay, and Google Pay</p>",
+            "primary_heading": "How do I choose the right thobe size?",
+            "primary_content": "<p>Use our thobe size guide and choose mainly based on your height and preferred length. For the most accurate fit, measure from the top of your shoulder down to just above your ankle.</p>",
             "icon_source_2": "theme_library",
             "secondary_options_icon": "question-mark",
             "html_code_2": "",
-            "secondary_heading": "Can I return or exchange my item?",
-            "secondary_content": "<p>Yes, we offer easy returns and exchanges within 30 days.</p>",
+            "secondary_heading": "What is the fit like?",
+            "secondary_content": "<p>Our thobes are designed for a comfortable, modest fit. Fit may vary slightly depending on the style, so check the product description and size guide before ordering.</p>",
             "icon_source_3": "theme_library",
             "tertiary_options_icon": "question-mark",
             "html_code_3": "",
-            "tertiary_heading": "Will the color fade after washing?",
-            "tertiary_content": "<p>No, the fabric is made to maintain its color with proper care</p>",
+            "tertiary_heading": "How should I wash my thobe?",
+            "tertiary_content": "<p>For best results, follow the care instructions on the garment label. We generally recommend washing on a gentle cycle and avoiding excessive heat to help maintain the fabric and finish.</p>",
             "icon_source_4": "theme_library",
-            "quaternary_options_icon": "check",
+            "quaternary_options_icon": "question-mark",
             "html_code_4": "",
-            "quaternary_heading": "",
-            "quaternary_content": ""
+            "quaternary_heading": "Can I exchange my thobe if the size is wrong?",
+            "quaternary_content": "<p>Yes, eligible unworn and unwashed items can be exchanged in line with our returns and exchange policy.</p>"
           }
         },
         "product_cross_sell_x4tjkP": {
           "type": "product_cross_sell",
           "settings": {
-            "heading": "Complete your Circadian Set",
+            "heading": "Finish your outfit with one of our signature fragrances.",
             "product_list": [
               "white-musk",
               "khalifa-inspired-by-ombre-nomade"
@@ -117,9 +129,10 @@
         "vendor",
         "title",
         "basic_description",
-        "custom_liquid_FHk9Kb",
         "price",
+        "size_guide_wae87G",
         "variants",
+        "custom_liquid_FHk9Kb",
         "pickup_availability_9zH6eL",
         "purchasing",
         "custom_liquid_cmqyWX",
@@ -129,9 +142,9 @@
       "settings": {
         "color_scheme": "",
         "remove_padding_top": true,
-        "remove_padding_bottom": false,
-        "media_ratio": "1/1",
-        "thumbnails_ratio": "1/1",
+        "remove_padding_bottom": true,
+        "media_ratio": "auto",
+        "thumbnails_ratio": "2/3",
         "desktop_media_layout": "single_with_thumbnails",
         "width_on_large_screen": "product__media-wrapper--full",
         "enable_pagination_mobile": true,
