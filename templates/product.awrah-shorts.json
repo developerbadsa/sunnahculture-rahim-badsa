@@ -48,7 +48,7 @@
           "settings": {
             "heading": "Size guide",
             "content_source": "static-page",
-            "static_page": "",
+            "static_page": "awrah-shorts-size-guide",
             "product_metafield_name": "",
             "icon_source_size_guide": "theme_library",
             "size_options_icon": "ruler",
