@@ -38,6 +38,18 @@
             "liquid_code": "<style>\n.dtc-benefits {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 30px;\n  max-width: 900px;\n  margin: 20px auto;\n  text-align: center;\n}\n\n.dtc-item {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n\n.dtc-icon {\n  font-size: 26px;\n  margin-bottom: 10px;\n}\n\n.dtc-item h4 {\n  font-size: 18px;\n  margin: 5px 0;\n}\n\n.dtc-item p {\n  font-size: 14px;\n  color: #555;\n  margin: 0;\n  max-width: 220px;\n}\n\n/* Mobile */\n@media (max-width: 768px) {\n  .dtc-benefits {\n    grid-template-columns: 1fr;\n  }\n}\n</style>\n\n<div class=\"dtc-benefits\">\n  \n  <div class=\"dtc-item\">\n    <div class=\"dtc-icon\">🔒</div>\n    <h4>Secure Checkout</h4>\n    <p>Your payment is safe and protected with trusted methods.</p>\n  </div>\n\n  <div class=\"dtc-item\">\n    <div class=\"dtc-icon\">🚚</div>\n    <h4>Fast Delivery</h4>\n    <p>Quick shipping with tracking for peace of mind.</p>\n  </div>\n\n  <div class=\"dtc-item\">\n    <div class=\"dtc-icon\">💎</div>\n    <h4>Damage Protection</h4>\n    <p>Receive a damaged item? Send a photo within 24 hours for a quick replacement.</p>\n  </div>\n\n</div>"
           }
         },
+        "size_guide_gnyEKj": {
+          "type": "size_guide",
+          "settings": {
+            "heading": "Size guide",
+            "content_source": "static-page",
+            "static_page": "girls-thobe-size-guide",
+            "product_metafield_name": "",
+            "icon_source_size_guide": "theme_library",
+            "size_options_icon": "ruler",
+            "html_code_size_guide": ""
+          }
+        },
         "variants": {
           "type": "variants",
           "settings": {
@@ -82,23 +94,23 @@
             "icon_source_1": "theme_library",
             "primary_options_icon": "question-mark",
             "html_code_1": "",
-            "primary_heading": "What payment methods do you accept?",
-            "primary_content": "<p>We accept Visa, Mastercard, PayPal, Apple Pay, and Google Pay</p>",
+            "primary_heading": "What sizes are available in girls’ abayas?",
+            "primary_content": "<p>Our girls’ abayas are available in sizes <strong>34–50</strong>. We recommend choosing mainly based on your child’s height and checking our Girls’ Abaya Size Guide before ordering.</p>",
             "icon_source_2": "theme_library",
             "secondary_options_icon": "question-mark",
             "html_code_2": "",
-            "secondary_heading": "Can I return or exchange my item?",
-            "secondary_content": "<p>Unfortunately we do not refund or return, however, if you do wish to exchange it for another ‘size’ this can be possible if it is still available. Exchange has to be made within 7 days of purchase. It should be un-tampered in the original condition with all tags attached, unworn and unwashed.<br/><br/></p>",
+            "secondary_heading": "How should a girls’ abaya fit?",
+            "secondary_content": "<p>Our girls’ abayas are designed to <strong>finish at the ankle</strong> when the correct size is selected. Fit may vary slightly depending on the style and your child’s proportions.</p>",
             "icon_source_3": "theme_library",
             "tertiary_options_icon": "question-mark",
             "html_code_3": "",
-            "tertiary_heading": "Will the color fade after washing?",
-            "tertiary_content": "<p>No, the fabric is made to maintain its color with proper care</p>",
+            "tertiary_heading": "What occasions are girls’ abayas suitable for?",
+            "tertiary_content": "<p>Our girls’ abayas are suitable for <strong>Eid, mosque, madrasa, weddings, family occasions and everyday modest wear</strong>.</p>",
             "icon_source_4": "theme_library",
-            "quaternary_options_icon": "check",
+            "quaternary_options_icon": "question-mark",
             "html_code_4": "",
-            "quaternary_heading": "",
-            "quaternary_content": ""
+            "quaternary_heading": "What styles of girls’ abayas do you sell?",
+            "quaternary_content": "<p>Our collection includes a variety of <strong>modest girls’ abayas</strong> in different colours and designs, suitable for both everyday wear and special occasions.</p>"
           }
         }
       },
@@ -107,6 +119,7 @@
         "title",
         "basic_description",
         "custom_liquid_LGpTRL",
+        "size_guide_gnyEKj",
         "variants",
         "price",
         "pickup_availability",
