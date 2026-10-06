@@ -45,6 +45,7 @@
       "blocks": {
         "mega-menu-1": {
           "type": "mega_menu",
+          "disabled": true,
           "settings": {
             "menu_item_name": "",
             "primary_heading": "Heading",
@@ -57,6 +58,7 @@
         },
         "mega-menu-0": {
           "type": "mega_menu",
+          "disabled": true,
           "settings": {
             "menu_item_name": "",
             "primary_heading": "Heading",
