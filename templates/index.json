@@ -50,7 +50,7 @@
             "slide_2_heading": "",
             "slide_2_text": "",
             "slide_2_button_text": "Ihraam & Belt",
-            "slide_2_button_link": "shopify://collections/ihram-belt",
+            "slide_2_button_link": "shopify://collections/ihram-and-belt",
             "slide_3_enabled": true,
             "slide_3_image_desktop": "shopify://shop_images/umrah-ihram-essentials-sunnah-culture-desktop_webp.png",
             "slide_3_image_mobile": "shopify://shop_images/umrah-ihram-essentials-sunnah-culture-mobile_webp.png",
@@ -58,7 +58,7 @@
             "slide_3_heading": "",
             "slide_3_text": "",
             "slide_3_button_text": "Shop Ihraam and Belt",
-            "slide_3_button_link": "shopify://collections/ihram-belt"
+            "slide_3_button_link": "shopify://collections/ihram-and-belt"
           },
           "blocks": {}
         }
@@ -100,7 +100,7 @@
             "collection_2": "mens-awrah-shorts",
             "collection_3": "abaya",
             "collection_4": "boys-thobes",
-            "collection_5": "ihram-belt",
+            "collection_5": "ihram-and-belt",
             "collection_6": "perfumes",
             "collection_7": "peel-off-nail-polish",
             "collection_8": "",
@@ -155,7 +155,7 @@
             "collection_1": "thobes",
             "collection_2": "abaya",
             "collection_3": "boys-thobes",
-            "collection_4": "ihram-belt",
+            "collection_4": "ihram-and-belt",
             "show_product_count": true,
             "card_border_radius": 12,
             "card_padding": 24,
