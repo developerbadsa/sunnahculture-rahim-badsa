@@ -96,7 +96,7 @@
         "ai_gen_block_1cf7024_iq3pa6": {
           "type": "ai_gen_block_1cf7024",
           "settings": {
-            "collection_1": "thobes",
+            "collection_1": "mens-thobes",
             "collection_2": "mens-awrah-shorts",
             "collection_3": "abaya",
             "collection_4": "boys-thobes",
@@ -152,7 +152,7 @@
             "divider_thickness": 1,
             "divider_color": "#d8c5a6",
             "header_spacing": 20,
-            "collection_1": "thobes",
+            "collection_1": "mens-thobes",
             "collection_2": "abaya",
             "collection_3": "boys-thobes",
             "collection_4": "ihram-and-belt",
@@ -378,7 +378,7 @@
         "collection_M8jb43": {
           "type": "collection",
           "settings": {
-            "collection": "thobes",
+            "collection": "mens-thobes",
             "show_number_of_products": false,
             "collection_overlay_opacity": 22,
             "collection_mask_overlay_color": "#000000",
@@ -491,7 +491,7 @@
         "collection_nT7M3F": {
           "type": "collection",
           "settings": {
-            "collection": "thobes",
+            "collection": "mens-thobes",
             "heading": ""
           }
         },
