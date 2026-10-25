@@ -50,7 +50,7 @@
     "quick_buy_variant_picker_type": "button",
     "currency_code_enabled": true,
     "email_address": "ydwood33@hotmail.com",
-    "phone_number": "+447947 185879",
+    "phone_number": "+4474 8217 5252",
     "social_instagram_link": "https://www.instagram.com/sunnahxculture",
     "social_tiktok_link": "https://www.tiktok.com/@sunnahxculture?_t=8jUyyVhJH2e&_r=1",
     "social_snapchat_link": "http://snapchat.com/add/sunnahxculture",
@@ -182,11 +182,6 @@
       "1232542678405107163": {
         "type": "shopify://apps/instafeed/blocks/head-block/c447db20-095d-4a10-9725-b5977662c9d5",
         "disabled": false,
-        "settings": {}
-      },
-      "15710897563947040993": {
-        "type": "shopify://apps/avada-boost-sales-trust-badge/blocks/app-embed/45454b7f-f6a7-4852-b770-8e0c3992a226",
-        "disabled": true,
         "settings": {}
       },
       "9388344762370057067": {
