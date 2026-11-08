@@ -35,6 +35,13 @@
             "text_style": "body"
           }
         },
+        "custom_text_xHtctV": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Sizing Recommendation: We recommend sizing up one size for the best and most comfortable fit.",
+            "text_style": "body"
+          }
+        },
         "variants": {
           "type": "variants",
           "settings": {
@@ -126,6 +133,7 @@
         "vendor",
         "title",
         "custom_text_RWJgtr",
+        "custom_text_xHtctV",
         "variants",
         "size_guide_DHNKLy",
         "price",
