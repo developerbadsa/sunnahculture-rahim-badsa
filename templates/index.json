@@ -38,9 +38,9 @@
             "slide_1_enabled": true,
             "slide_1_image_desktop": "shopify://shop_images/essential_everyday_linen_abayas_smaller-1.jpg",
             "slide_1_image_mobile": "shopify://shop_images/sunnahculture_essential_everyday_linen_abayas.jpg",
-            "slide_1_label": "",
-            "slide_1_heading": "",
-            "slide_1_text": "",
+            "slide_1_label": "Ramadan & Everyday Essentials",
+            "slide_1_heading": "Essential Everyday Linen Abayas",
+            "slide_1_text": "Discover lightweight, breathable linen abayas designed for everyday comfort, Taraweeh prayers, and Ramadan. Crafted for effortless style and total modesty.",
             "slide_1_button_text": "Abayas",
             "slide_1_button_link": "shopify://collections/abaya",
             "slide_2_enabled": true,
@@ -52,8 +52,6 @@
             "slide_2_button_text": "Ihraam & Belt",
             "slide_2_button_link": "shopify://collections/ihram-and-belt",
             "slide_3_enabled": false,
-            "slide_3_image_desktop": "shopify://shop_images/umrah-ihram-essentials-sunnah-culture-desktop_webp.png",
-            "slide_3_image_mobile": "shopify://shop_images/umrah-ihram-essentials-sunnah-culture-mobile_webp.png",
             "slide_3_label": "",
             "slide_3_heading": "",
             "slide_3_text": "",
@@ -646,7 +644,7 @@
           }
         },
         "google_reviews_rocket_app_block_yLYEWM": {
-          "type": "shopify://apps/google-reviews-rocket/blocks/app-block/d11c8893-a181-4aff-a280-7446d42cec3b",
+          "type": "shopify://apps/entangle-google-reviews/blocks/app-block/d11c8893-a181-4aff-a280-7446d42cec3b",
           "settings": {
             "widget_layout": "badge-I"
           }
